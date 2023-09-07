@@ -1,0 +1,209 @@
+The Master List:
+------------------------------------------
+IBM 709x Manuals:
+
+bitsavers.org/pdf/ibm/7090/C28-6355-4_7090oper_Jun65.pdf
+IBM Systems Reference Library
+IBM 7090/7094 IBSYS Operating System
+Version 13
+Operator's Guide
+File No. 7090-36
+Form C28-6355-4
+Jun. 1965
+
+bitsavers.org/pdf/ibm/7090/C28-6248-7_v13_IBSYS_Dec66.pdf
+IBM Systems Reference Library
+IBM 7090/7094 IBSYS Operating System
+Version 13
+System Monitor (IBSYS)
+File No. 7090-36
+Form C28-6248-7
+Dec. 1966
+
+bitsavers.org/pdf/ibm/fortran/F28-8074-3_FORTRANII_GenInf.pdf
+IBM Systems Reference Library
+FORTRAN II
+General Information Manual
+File No. GENL-25
+Form F28-8074-3
+Dec. 1963
+
+bitsavers.org/pdf/ibm/7090/C28-6054-5_FORTRANII_Apr64.pdf
+IBM Systems Reference Library
+IBM 7090/7094 Programming Systems
+FORTRAN II Programming
+File No. 7090-25
+Form C28-6054-5
+Apr. 1964
+
+bitsavers.org/pdf/ibm/7090/C28-6066-6_FORTRANII_oper.pdf
+IBM Systems Reference Library
+IBM 7090/7094 Programming Systems
+FORTRAN II Operations
+File No. 7090-25
+Form C28-6066-6
+1963
+
+bitsavers.org/pdf/ibm/7090/J28-6190-3_FORTRAN_II_IOPkg_Apr66.pdf
+IBM Systems Reference Library
+IBM 7090/7094 Programming Systems
+FORTRAN II Input/Output Package
+File No. 7090-25
+Form J28-6190-3
+Apr. 1966
+
+bitsavers.org/pdf/ibm/7090/C28-6235-5_FAP_Apr65.pdf
+IBM Systems Reference Library
+IBM 7090/7094 Programming Systems
+FORTRAN II Assembly Program (FAP)
+File No. 7090-21
+GC28-6235-5
+Apr. 1965
+
+bitsavers.org/pdf/ibm/7090/C28-6389-1_v13_IBJOB_Jun65.pdf
+IBM Systems Reference Library
+IBM 7090/7094 IBSYS Operating System
+Version 13
+IBJOB Processor
+File No. 7090-27
+Form C28-6389-1
+Jun. 1965
+
+bitsavers.org/pdf/ibm/7090/C28-6390-3_v13_F4_Apr66.pdf
+IBM Systems Reference Library
+IBM 7090/7094 IBSYS Operating System
+Version 13
+FORTRAN IV Language
+File No. 7090-25
+Form C28-6390-3
+Apr. 1966
+
+bitsavers.org/pdf/ibm/7090/C28-6391-0_v13_COBOL.pdf
+IBM Systems Reference Library
+IBM 7090/7094 IBSYS Operating System
+Version 13
+COBOL Language
+File No. 7090-24
+Form C28-6391-0
+1962
+
+bitsavers.org/pdf/ibm/7090/C28-6392-4_MAP_Dec66.pdf
+IBM Systems Reference Library
+IBM 7090/7094 IBSYS Operating System
+Version 13
+Macro Assembly Program (MAP) Language
+File No. 7090-21
+Form C28-6392-4
+Dec. 1966
+
+bitsavers.org/pdf/ibm/7090/C28-6331_IBLDR_overlay_1963.pdf
+IBM Systems Reference Library
+IBM 7090/7094 Programming Systems
+IBJOB Processor
+Overlay Feature of IBLDR
+File No. 7090-27
+Form C28-6331
+May 1963
+
+bitsavers.org/pdf/ibm/7090/C28-6345-4_v13_IOCS_Apr65.pdf
+IBM Systems Reference Library
+IBM 7090/7094 IBSYS Operating System
+Version 13
+Input/Output Control System
+File No. 7090-30
+Form C28-6345-4
+Apr. 1965
+
+bitsavers.org/pdf/ibm/7090/C28-6386-1_symbUpdPgm_Jan65.pdf
+IBM Systems Reference Library
+IBM 7090/7094 IBSYS Operating System
+Version 13
+Symbolic Update Program
+File No. 7090-48
+Form C28-6386-1
+Jan. 1965
+
+bitsavers.org/pdf/ibm/7090/C28-6365-1_genSort_Sep64.pdf
+IBM Systems Reference Library
+IBM 7090/7094 IBSYS Operating System
+Generalized Sorting Program
+File No. 7090-33
+Form C28-6365-1
+1964
+
+bitsavers.org/pdf/ibm/7090/22-6528-4_7090Manual.pdf
+Reference Manual
+IBM 7090 Data Processing System
+Form A22-6528-4
+Mar. 1962
+
+bitsavers.org/pdf/ibm/7094/A22-6703-4_7094_PoO_Oct66.pdf
+IBM Systems Reference Library
+IBM 7094 Principles of Operation
+File No. 7094-01
+Form A22-6703-4
+Oct. 1966
+
+
+IBM non-709x Manuals:
+
+http://www.bitsavers.org/pdf/ibm/1401/J24-1428-2_multiTapeUtilPgm.pdf
+IBM Systems Reference Library
+Multiple Tape Utility Program
+Specifications and Operating Procedures
+IBM 1401
+File 1401-32
+Form J28-1428-2
+1961
+
+bitsavers.org/pdf/ibm/360/tss/C28-2007-0_TSSfortIV_1966.pdf
+IBM Systems Reference Library
+IBM System/360 Time Sharing System
+IBM FORTRAN IV
+File No. S360-25
+Form C28-2007-0
+1966
+
+
+Non-IBM information:
+
+bitsavers.org/pdf/ibm/7090/books/SBC_usersGuide_Jan66.pdf
+Form: PASR M-62-0
+SBC Systems Reference Manual
+IBSYS Operating System
+The Service Bureau Corporation
+2450 Watson Court, Palo Alto, California
+Jan. 1966
+
+bitsavers.org/pdf/ibm/7090/books/Saxon_Programming_the_IBM_7090_1963.pdf
+Programming the IBM 7090: A Self-Instructional Programmed Manual
+James A. Saxon
+Saxon Research Corporation
+Prentice-Hall, Inc., Englewood Cliffs, N.J. 1963
+
+bitsavers.org/pdf/ibm/7090/books/Sherman_Programming_and_Coding_the_IBM_709-7090-7094_Computers_1963.pdf
+Programming and Coding the IBM 709-7090-7094 Computers
+Philip M. Sherman
+Bell Telephone Laboratories
+Murray Hill, New Jersey
+John Wiley and Sons, Inc., 1963
+
+bitsavers.org/pdf/mit/civil_engr/stress/Fenves_Stress_A_Reference_Manual_1965.pdf
+STRESS: A Reference Manual
+A Problem-Oriented Computer Language for Structural Engineering
+The Department of Civil Engineering
+Massachusetts Institute of Technology
+Steven J. Fenves, Robert D. Logcher, Samuel P. Mauch
+The M.I.T. Press
+March 15, 1965
+
+mitp-content-server.mit.edu:18180/books/content/sectbyfn?collid=books_pres_0&id=6497&fn=9780262060295_sch_0001.pdf
+(Chapter 1 of:)
+STRESS: A User"s Manual
+A Problem-Oriented Computer Language for Structural Engineering
+The Department of Civil Engineering
+Massachusetts Institute of Technology
+Steven J. Fenves, Robert D. Logcher, Samuel P. Mauch and Kenneth P. Reinschmidt
+The M.I.T. Press
+March 15, 1964
+------------------------------------------
