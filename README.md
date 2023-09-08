@@ -18,6 +18,10 @@ There is a YouTube video [here](https://www.youtube.com/watch?v=4xaBS6pWrG0) tha
 
 ## Additional details
 
+This emulator has a graphical interface with separate windows for the main console with all its flashing lights (though not a faithful recreation of an IBM 7094 in photo-realistic detail), the card reader, the line printer and all the tape drives, as well as several other specialized windows.
+
+B7094 can run two different preserved versions of the IBSYS operating system, and can compile and execute programs written in FORTRAN II and the Fortran Assembly Program (FAP) under the FORTRAN II subsystem; as well as FORTRAN IV, COBOL, and a Macro Assembly Program (MAP) under the IBJOB subsystem.  All the required IBM 7094 software to do that is included in the distribution.
+
 The source of B7094 is included in the distribution, to allow you to modify or enhance the program and rebuild it. You'll need to install Lazarus/Free Pascal to do this, the 32-bit and/or 64-bit versions. The current B7094 v3.4A release was built using the newest (as of the end of last year) releases of these development tools (Lazarus 2.2.4, 28 Sept 2022; Free Pascal 3.2.2, 20 May 2021).
 
 There is another YouTube video [here](https://www.youtube.com/watch?v=W5Blz5-chSU) that shows how to compile B7094 from the sources.
@@ -44,13 +48,15 @@ B7094 does not support the range of peripherals (and pass the array of diagnosti
 
 ## Advanced details
 
-A scripting language (in files "*.EC7" -- "Execute Commands for the B7094") serves to configure the emulator, load IBSYS, and submit programs (in a job stream including the necessary IBSYS control cards) via the emulated card reader or a designated tape drive. These scripts serve the same function as the "do_ibsys.txt" and "*.job" files used by the SimH-based i7090 and i7094, but they do not require typing a command line.  The canned demos in the Scripts directory are implemented by means of the EC7 scripting language (and utilize script commands to display text, display option menus, advance to and return from a succession of screens, and call EC7 subroutines defined in the same script file). However, a user can run their own programs by embedding them (by means of an Include command) in a suitable EC7 file, which can then be opened and run from the built-in Editor.  Some simple, in-line "Xample_*.EC7" files are provided as models for doing this.  More sophisticated jobs (such as running relocatable binaries) can be constructed by examining the demo scripts (and utilizing the tools provided in a "reloc_scripts_*" archive).
+A scripting language (in files with extension .EC7 -- "Execute Commands for the B7094") serves to configure the emulator, load IBSYS, and submit programs (in a job stream including the necessary IBSYS control cards) via the emulated card reader or a designated tape drive. These scripts serve the same function as the "do_ibsys.txt" and "*.job" files used by the SimH-based i7090 and i7094, but they do not require typing a command line.  The canned demos in the Scripts directory are implemented by means of the EC7 scripting language (and utilize script commands to display text, display option menus, advance to and return from a succession of screens, and call EC7 subroutines defined in the same script file). However, a user can run their own programs by embedding them (by means of an Include command) in a suitable EC7 file, which can then be opened and run from the built-in Editor.  Some simple, in-line "Xample_*.EC7" files are provided as models for doing this.  More sophisticated jobs (such as running relocatable binaries) can be constructed by examining the demo scripts (and utilizing the tools provided in a "reloc_scripts_*" archive).
 
 Like Rich Cornwell's SimH-based i7090, B7094 expects to "see" the correct parity on tapes (odd for binary records, even for BCD ones). This is in fact necessary to be able to run relocatable binary jobs in FORTRAN II (with the KSYS61 version of IBSYS only). Tapes created on other emulators can be used with B7094 provided they are:
 
 - in P7B format (originated by Paul Pierce: this is the default with Dave Pitt's s709, with SimH format being optional; while Rich Cornwell's i7090 and Bob Supnik's i7094 are the other way around, with SimH format the default, but P7B available as an option),
 
-- have the correct parity (i7090 creates tapes with correct parity, and I believe i7094 and s709 do as well, and 3) use the "alternate" BCD coding for BCD records (the default for i7090 and i7094, optional for s709).  Likewise, tapes created by B7094 can be used on other emulators (whether or not the other emulators expect to "see" parity; i7090 does, I believe i7094 and s709 do not), if those emulators can:
+- have the correct parity (i7090 creates tapes with correct parity, and I believe i7094 and s709 do as well, and 3) use the "alternate" BCD coding for BCD records (the default for i7090 and i7094, optional for s709).
+
+Likewise, tapes created by B7094 can be used on other emulators (whether or not the other emulators expect to "see" parity; i7090 does, I believe i7094 and s709 do not), if those emulators can:
 
 - utilize tapes in P7B format tapes, either by default (s709) or optionally (i7090, i7094), 
 
@@ -59,3 +65,11 @@ Like Rich Cornwell's SimH-based i7090, B7094 expects to "see" the correct parity
 B7094's "Tape Viewer" is a useful tool for examining the contents of any P7B tape: a small script can be created and run in the Editor to mount the tape, then clicking on the tape in the Tape Drives window will bring it up in the Tape Viewer.
 
 Grateful acknowledgement is due to Richard Cornwell for providing some of the sample demo jobs, and for providing technical assistance in getting this new release operational. And of course to Al Kossow et al. for the bitsavers archive, without which many retro-emulators couldn't exist; to Bob Supnik, Dave Pitts, and Richard Cornwell for their work getting **really**-working IBM 709x emulators operational in the mid-late 2000s.  And to Paul Pierce, who got the ball rolling with his collection of tapes, without which there would be nothing to run on such emulators (well, apart from the CTSS software from MIT).
+
+## About the mainframe
+
+The IBM 7094 computer was a commercial 36-bit (6-bit byte) "scientific" computer (with 15-bit addresses, encompassing 32K words) that was produced (beginning as the model 7090; the 7094 was a slightly enhanced version) starting in 1959, and withdrawn from sale in 1969.  While a few installations (e.g., at MIT) remained in service into the 1970s, by the late 60s many customers were switching over to the System/360 series (a 32-bit, 8-bit-byte architecture touted as being "universally" applicable to both commercial and scientific tasks, with a greatly expanded address space).  The 7094 was a member of the "7000 series", which also included commercial machines such as the 7070 and 7074 (architecturally dissimilar to the 7090 and 7094, but sharing manufacturing technology and peripherals) and the quasi-experimental 7030 "STRETCH" supercomputer.  The 7090/7094 was preceded by the vacuum-tube "700 series", an architecturally-similar line of 36-bit machines beginning with the 704 in 1954 (on which both Fortran and Lisp were developed) up through the 709 in 1958).  The machines introduced in 1959 featured IBM's first generation of discrete-transistor circuitry.
+
+While the machine supported random-access storage devices (disk and drum), and some installations utilized these (e.g., MIT's CTSS timesharing system), the more common "IBSYS" operating system made heavy use of magnetic tape and punched cards.
+
+You can read some amusing anecdotes about the IBM 7094 by clicking on the last option of B7094's initial demo window.
