@@ -1,4 +1,3 @@
----------------------------------------------
 # Change Log
 
 Enhancements in the new Version 3.4A release:
@@ -174,4 +173,3 @@ programs that can be re-run without recompiling them every time).  There
 are instructions on how to do this in the included README.txt file.  But
 note that this is provided for **advanced** users.  The relocatable jobs
 in the demo scripts have already been processed with these tools.
----------------------------------------------
