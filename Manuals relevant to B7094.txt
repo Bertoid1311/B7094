@@ -1,5 +1,3 @@
-The Master List:
-------------------------------------------
 IBM 709x Manuals:
 
 bitsavers.org/pdf/ibm/7090/C28-6355-4_7090oper_Jun65.pdf
@@ -206,4 +204,3 @@ Massachusetts Institute of Technology
 Steven J. Fenves, Robert D. Logcher, Samuel P. Mauch and Kenneth P. Reinschmidt
 The M.I.T. Press
 March 15, 1964
-------------------------------------------
