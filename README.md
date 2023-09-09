@@ -115,6 +115,12 @@ Sometimes, the emulator really can get hung. This can happen if you try to 'Powe
 
 If the emulator hangs, or if something is just taking more time than you care to wait for, I'm afraid there's nothing for it but to kill the process in the Task Manager.
 
+## Known bugs
+
+- If line numbering is turned on in the Editor window, the numbers in the parallel list box on the left side of the window will not update automatically as text is typed in. But they will be updated if the 'Line Numbers' checkbox is unchecked and then checked again, or if a file is loaded (the latter creates an additional editing box within the same Editor window; multiple text boxes are accessed via the file name tabs near the stop of the window).  If text is entered (or loaded from a file) that's long enough to activate the scroll bar for the edit box, a scroll bar for the list box containing the line numbers will also be activated, but the scrolling will not be synchronized.  It will be up to the used to synchronize the scrolling with the text.
+
+- Neither of the included stand-alone diagnostic programs (the '9M21A' card diagnostic, or the '9M71B' tape diagnostic) will run completely without errors.
+
 ## About the mainframe
 
 The IBM 7094 computer was a commercial 36-bit (6-bit byte) "scientific" computer (with 15-bit addresses, encompassing 32K words) that was produced (beginning as the model 7090; the 7094 was a slightly enhanced version) starting in 1959, and withdrawn from sale in 1969.  While a few installations (e.g., at MIT) remained in service into the 1970s, by the late 60s many customers were switching over to the System/360 series (a 32-bit, 8-bit-byte architecture touted as being "universally" applicable to both commercial and scientific tasks, with a greatly expanded address space).  The 7094 was a member of the "7000 series", which also included commercial machines such as the 7070 and 7074 (architecturally dissimilar to the 7090 and 7094, but sharing manufacturing technology and peripherals) and the quasi-experimental 7030 "STRETCH" supercomputer.  The 7090/7094 was preceded by the vacuum-tube "700 series", an architecturally-similar line of 36-bit machines beginning with the 704 in 1954 (on which both Fortran and Lisp were developed) up through the 709 in 1958).  The machines introduced in 1959 featured IBM's first generation of discrete-transistor circuitry.
