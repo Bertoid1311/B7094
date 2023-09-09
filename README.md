@@ -55,7 +55,7 @@ The Tape Viewer has been thoroughly re-worked:
 - There is now a "sliding window" in the Tape Viewer, where arbitrary "From Byte" and "To Byte" positions can be selected for display. The "Redisplay" button causes the chosen limits to take effect (if "From Byte" is blank, it defaults to 0; if "To Byte" is blank, it defaults to either the last position on the tape or to "From Byte" plus a maximum window size, whichever is lower). "Clear" clears "From Byte" and "To Byte". "Use Whole Tape" resets the limits from 0 up to either the actual size of the tape or the maximum window size, whichever is lower. The maximum window size is large enough to be able to see all of SYSOUT.BCD for 
 all the demos without the user having to increase the "From Byte" and click "Redisplay" to see the end of the tape. All the labels and buttons having to do with the adjustable view window are colored purple, to visually group them together.  The Tape Viewer resynchronizes the word framing when starting the display from an arbitrary point on the tape.
 
-## More advanced details
+## Additionalmachine advanced details
 
 A scripting language (in files with extension .EC7 -- "Execute Commands for the B7094") serves to configure the emulator, load IBSYS, and submit programs (in a job stream including the necessary IBSYS control cards) via the emulated card reader or a designated tape drive. These scripts serve the same function as the "do_ibsys.txt" and ".job" files used by the SimH-based i7090 and i7094, but they do not require typing a command line.  The canned demos in the Scripts directory are implemented by means of the EC7 scripting language (and utilize script commands to display text, display option menus, advance to and return from a succession of screens, and call EC7 subroutines defined in the same script file). However, a user can run their own programs by embedding them (by means of an Include command) in a suitable EC7 file, which can then be opened and run from the built-in Editor.  Some simple, in-line "Xample_xxx.EC7" files are provided as models for doing this.  More sophisticated jobs (such as running relocatable binaries) can be constructed by examining the demo scripts (and utilizing the tools provided in a "reloc_scripts_*" archive).
 
@@ -85,5 +85,5 @@ You can read some amusing anecdotes about the IBM 7094 by clicking on the last o
 
 ## About hexadecimal
 
-No, it doesn't make any sense to display register and memory values using hexadecimal representations for a 36-bit machine using 6-bit bytes (whereas it makes perfect sense to do so for a whose registers are multiples of 8-bit bytes, such as the IBM System/360 and nearly all modern machines. Neverthel;ess, Oct/Hex toggle buttons remain throughout the
+No, it doesn't make any sense to display register and memory values using hexadecimal representations for a 36-bit machine using 6-bit bytes (whereas it makes perfect sense to do so for a whose registers are multiples of 8-bit bytes, such as the IBM System/360 and nearly all modern machines. Nevertheless, Oct/Hex toggle buttons remain throughout the
 emulator. Try to ignore them.
