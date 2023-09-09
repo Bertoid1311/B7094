@@ -91,7 +91,7 @@ Grateful acknowledgment is due to Richard Cornwell for providing some of the sam
 
 ## Gotchas
 
-Screen "real estate" and the large number of display windows.
+Screen "real estate" and the large number of display windows:
 
 - Initial window positions are read from the ..\Bin\B7094.INI file when the emulator starts up, and saved back to B7094.INI when the emulator shuts down (thus recording a changed window position if any window is moved while the emulator is running).  It is possible, for certain monitors, that a window might end up being "out of sight" for a given INI file.  In that case, you'd have to edit the INI file manually to bring the "lost" window back within range.
 
