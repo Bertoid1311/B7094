@@ -18,7 +18,7 @@ There is a YouTube video [here](https://www.youtube.com/watch?v=4xaBS6pWrG0) tha
 
 ## Additional details
 
-This emulator has a graphical interface with separate windows for the main console with all its flashing lights (though not a faithful recreation of an IBM 7094 in photo-realistic detail), the card reader, the line printer and all the tape drives, as well as several other specialized windows.
+This emulator has a graphical interface with separate windows for the main console with all its flashing lights, the card reader, the line printer and all the tape drives, as well as several other specialized windows. The console is not, alas, a faithful recreation of an IBM 7094 in photo-realistic detail; it's a schematic representation modelled loosely on the console of an [IBM 7044](https://www.gettyimages.com/detail/news-photo/woman-at-a-design-model-of-the-operators-console-of-the-new-news-photo/107644558).  If you want photo-realism, check out Roberto Sancho Villa's work [here](https://github.com/rsanchovilla/SimH_cpanel).
 
 B7094 can run two different preserved versions of the IBSYS operating system, and can compile and execute programs written in FORTRAN II and the Fortran Assembly Program (FAP) under the FORTRAN II subsystem; as well as FORTRAN IV, COBOL, and a Macro Assembly Program (MAP) under the IBJOB subsystem.  All the required IBM 7094 software to do that is included in the distribution.
 
@@ -53,6 +53,8 @@ There are also some new capabilities in the emulation itself:
 - The demos have been reorganized into more logical groups by "subsystem" -- either FORTRAN II (which provides FORTRAN II and the Fortran Assembly Program) or IBJOB (which provides FORTRAN IV, COBOL, and a Macro Assembly Program).  A couple of the utility demos from the earlier release have been retained: the IBEDT editor used to maintain IBSYS itself (in the demo, used just to copy and list the contents of a system tape), and the IBJOB "Librarian" used to maintain the IBLIB subroutine library (here just used to list and cross-reference the contents of the library).  A couple of stand-alone diagnostic programs -- one loaded from the card reader the other from tape -- are still included (though neither one runs completely error-free).
 
 - A number of new script commands have been added to support the creation of card deck and tape images for relocatable binary jobs.
+
+- Since it doesn't really make any sense to display register and memory values using hexadecimal representations for a 36-bit machine using 6-bit bytes (whereas it makes perfect sense to do so for a machine whose registers are multiples of 8-bit bytes, such as the IBM System/360 and nearly all modern machines), the Oct/Hex toggle buttons previously present on the Console, Reader, and CoreView windows have been eliminated.
 
 B7094 does not support the range of peripherals (and pass the array of diagnostics) that Rich Cornwell's SimH-based i7090 does; neither does it support the spectacular photo-realistic panels created by Roberto Sancho Villa. And it can't run CTSS.  But B7094's graphical interface still provides some visual entertainment, and it's possibly easier than the more sophisticated emulators for a newcomer to get started with, while still providing some significant capabilities.
 
@@ -93,7 +95,5 @@ While the machine supported random-access storage devices (disk and drum), and s
 
 You can read some amusing anecdotes about the IBM 7094 by clicking on the last option of B7094's initial demo window.
 
-## About hexadecimal
+## Gotchas
 
-No, it doesn't make any sense to display register and memory values using hexadecimal representations for a 36-bit machine using 6-bit bytes (whereas it makes perfect sense to do so for a machine whose registers are multiples of 8-bit bytes, such as the IBM System/360 and nearly all modern machines). Nevertheless, Oct/Hex toggle buttons remain throughout the
-emulator. Try to ignore them.
