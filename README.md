@@ -85,5 +85,5 @@ You can read some amusing anecdotes about the IBM 7094 by clicking on the last o
 
 ## About hexadecimal
 
-No, it doesn't make any sense to display register and memory values using hexadecimal representations for a 36-bit machine using 6-bit bytes (whereas it makes perfect sense to do so for a machine whose registers are multiples of 8-bit bytes, such as the IBM System/360 and nearly all modern machines. Nevertheless, Oct/Hex toggle buttons remain throughout the
+No, it doesn't make any sense to display register and memory values using hexadecimal representations for a 36-bit machine using 6-bit bytes (whereas it makes perfect sense to do so for a machine whose registers are multiples of 8-bit bytes, such as the IBM System/360 and nearly all modern machines). Nevertheless, Oct/Hex toggle buttons remain throughout the
 emulator. Try to ignore them.
