@@ -87,6 +87,32 @@ B7094's "Tape Viewer" is a useful tool for examining the contents of any P7B tap
 
 Grateful acknowledgement is due to Richard Cornwell for providing some of the sample demo jobs, and for providing technical assistance in getting this new release operational. And of course to Al Kossow et al. for the bitsavers archive, without which many retro-emulators couldn't exist; to Bob Supnik, Dave Pitts, and Richard Cornwell for their work getting **really**-working IBM 709x emulators operational in the mid-late 2000s.  And to Paul Pierce, who got the ball rolling with his collection of tapes, without which there would be nothing to run on such emulators (well, apart from the CTSS software from MIT).
 
+## Gotchas
+
+Screen "real estate" and the large number of diplay windows.
+
+- Initial window positions are read from the ..\Bin\B7094.INI file when the emulator starts up, and saved back to B7094.INI when the emulator shuts down (thus recording a changed window position if any window is moved while the emulator is running).  It is possible, for certain monitors, that a window might end up being "out of sight" for a given INI file.  In that case, you'd have to edit the INI file manually to bring the "lost" window back within range.
+
+- There's no way to avoid a "cramped" window layout with a single monitor, with windows potentially obscuring other windows.  A partial remedy for this is that it's possible, from the Control Panel, to de-select (and re-select) windows for display by checking and unchecking the 12 checkboxes
+corresponding to the windows.  For the canned demos, the script files normally control when windows are displayed and hidden -- for example, by bringing up the Tape Viewer when a job completes, and then automatically hiding it when you click 'Continue' (on the Scripter window that says
+"Click 'Continue' to dismiss the tape viewer and redisplay the demo list.") But if you wanted, for example, to see the whole Operator Console window at the point when a job completes, you could de-select both the Tape Viewer and the Script Dialog windows.  Then you could re-select one (or both) of those windows and click 'Continue" on the Scripter window to resume the demo suite.
+
+There are some things that can make the emulator seem to hang, but are just **very** slow:
+
+- When the Tape Viewer is being displayed after finishing a job with a **lot** of output. (You'll encounter this when building 'STRESS III' from source. Be patient.)
+
+- When you switch the Tape Viewer from BCD mode to BIN mode, when there's a lot of data on the tape.
+
+- When you use the Tape Viewer on a system tape (KSYS61.BIN, for example). Especially if you load the system tape into the Tape Viewer in BCD mode and then realize you actually wanted BIN mode. You'll have to wait a while!
+
+- When you're using B7094's tracing facilities. There are lots of things that can be traced: device accesses, register stores, core writes, instruction execution, etc.  These are all selected on the Log/Trace screen (that you can display by clicking the 'Trace' checkbox on the Control Panel window. But be careful how you use this, if you don't want to slow things down unacceptably (either during the running of a "guest" program in the emulator or while waiting for the results of the tracing).  The most efficient way to use this is, in the Log/Trace window, to: 1) check the boxes in the 'Trace Record filters' section on the left to select the classes of items you want traced -- the fewer the "better", if you can narrow things down; 2) when the job finishes either 'Power Off' the emulator or click the 'Clear' pushbutton in the Log/Trace window.  You'll then be prompted 'Save current trace data?'. Click 'Yes' and a file ..\Output\B7094.TRC will be written (overwriting one that's already there, if there is one). The saving of the trace file can itself take a **bit** of time.
+
+  But the Log/Trace window also has a 'Trace Display filters' section on the right, and this allows you to filter and display in the window anything that's been recorded as a result of making the selections on the left (you check the desired checkboxes on the right, and then click the 'Display' pushbutton). But this can be a big annoyance if there's a lot of trace data to be filtered for display (examine the 'Lines:' counter above the 'Display' pushbutton to see if this might be the case). This process of filtering for "on-line" display can take a **long** time if there's a lot of trace data -- much longer than just saving all the trace data to a file and then using a text editor to view it.
+
+Sometimes, the emulator really can get hung. This can happen if you try to 'Power Off' while a job is running (it's "safer" to click the 'Stop' button on the Operator Console window and **then** click 'Power Off'.
+
+If the emulator hangs, or if something is just taking more time than you care to wait for, I'm afraid there's nothing for it but to kill the process in the Task Manager.
+
 ## About the mainframe
 
 The IBM 7094 computer was a commercial 36-bit (6-bit byte) "scientific" computer (with 15-bit addresses, encompassing 32K words) that was produced (beginning as the model 7090; the 7094 was a slightly enhanced version) starting in 1959, and withdrawn from sale in 1969.  While a few installations (e.g., at MIT) remained in service into the 1970s, by the late 60s many customers were switching over to the System/360 series (a 32-bit, 8-bit-byte architecture touted as being "universally" applicable to both commercial and scientific tasks, with a greatly expanded address space).  The 7094 was a member of the "7000 series", which also included commercial machines such as the 7070 and 7074 (architecturally dissimilar to the 7090 and 7094, but sharing manufacturing technology and peripherals) and the quasi-experimental 7030 "STRETCH" supercomputer.  The 7090/7094 was preceded by the vacuum-tube "700 series", an architecturally-similar line of 36-bit machines beginning with the 704 in 1954 (on which both Fortran and Lisp were developed) up through the 709 in 1958).  The machines introduced in 1959 featured IBM's first generation of discrete-transistor circuitry.
@@ -94,6 +120,3 @@ The IBM 7094 computer was a commercial 36-bit (6-bit byte) "scientific" computer
 While the machine supported random-access storage devices (disk and drum), and some installations utilized these (e.g., MIT's CTSS timesharing system), the more common "IBSYS" operating system made heavy use of magnetic tape and punched cards.
 
 You can read some amusing anecdotes about the IBM 7094 by clicking on the last option of B7094's initial demo window.
-
-## Gotchas
-
