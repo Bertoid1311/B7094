@@ -32,7 +32,15 @@ The second set of archives here (labelled "reloc_scripts_*") are packages contai
 
 ## Changes since the last (v3.3B) release
 
-B7094 is now hosted at GitHub; the earlier release was hosted at FossHub. This new version, as well as fixing some long-standing bugs in the user interface, has some new capabilities in the emulation itself:
+B7094 is now hosted at GitHub; the earlier release was hosted at FossHub.
+
+This new version fixes some long-standing bugs in the user interface:
+
+- The Editor is more useful than before; you can now save files in addition to just opening and running them. It is also possible to just type script commands into a new Editor window and run them immediately, without having to explicitly save the file.
+
+- The Stops and Core View windows are now fully functional, which provides some rudimentary debugging capabilities for programs being run on the emulated machine.
+
+There are also some new capabilities in the emulation itself:
 
 - The scripted demos have been expanded to allow choosing between two alternative versions of IBSYS: the originally-included two-tape ASYS1/ASYS8 system recovered by Paul Pierce a quarter-century ago, and the single-tape "Aerojet-General" KSYS61 version (also originally recovered by Paul Pierce).
 
@@ -43,6 +51,8 @@ B7094 is now hosted at GitHub; the earlier release was hosted at FossHub. This n
 - The emulator demo scripts can be run either in "verbose" mode, which provides lots of explanation and references; or "silent" mode, which skips all the verbiage and just presents straightforward option menus on the minimum number of click-through screens.
 
 - The demos have been reorganized into more logical groups by "subsystem" -- either FORTRAN II (which provides FORTRAN II and the Fortran Assembly Program) or IBJOB (which provides FORTRAN IV, COBOL, and a Macro Assembly Program).  A couple of the utility demos from the earlier release have been retained: the IBEDT editor used to maintain IBSYS itself (in the demo, used just to copy and list the contents of a system tape), and the IBJOB "Librarian" used to maintain the IBLIB subroutine library (here just used to list and cross-reference the contents of the library).  A couple of stand-alone diagnostic programs -- one loaded from the card reader the other from tape -- are still included (though neither one runs completely error-free).
+
+- A number of new script commands have been added to support the creation of card deck and tape images for relocatable binary jobs.
 
 B7094 does not support the range of peripherals (and pass the array of diagnostics) that Rich Cornwell's SimH-based i7090 does; neither does it support the spectacular photo-realistic panels created by Roberto Sancho Villa. And it can't run CTSS.  But B7094's graphical interface still provides some visual entertainment, and it's possibly easier than the more sophisticated emulators for a newcomer to get started with, while still providing some significant capabilities.
 
