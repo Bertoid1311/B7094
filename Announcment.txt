@@ -1,7 +1,0 @@
-A new release of the "B7094" IBM 7094 emulator (previously hosted at https://www.fosshub.com/B7094-IBM7094-Emulator.html) is now available on GitHub at https://github.com/Bertoid1311/B7094/.
-
-This new version, as well as fixing some long-standing bugs in the user interface, has some new capabilities in the emulation itself.
-
-There is a README.md file on the GitHub page that gives all the particulars.
-
-Enjoy!
