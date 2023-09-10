@@ -111,7 +111,7 @@ There are some things that can make the emulator seem to hang, but are just **ve
 
   But the Log/Trace window also has a 'Trace Display filters' section on the right, and this allows you to filter and display in the window anything that's been recorded as a result of making the selections on the left (you check the desired checkboxes on the right, and then click the 'Display' pushbutton). But this can be a big annoyance if there's a lot of trace data to be filtered for display (examine the 'Lines:' counter above the 'Display' pushbutton to see if this might be the case). This process of filtering for "on-line" display can take a **long** time if there's a lot of trace data -- much longer than just saving all the trace data to a file and then using a text editor to view it.
 
-Sometimes, the emulator really can get hung. This can happen if you try to 'Power Off' while a job is running (it's "safer" to click the 'Stop' button on the Operator Console window and **then** click 'Power Off'.
+Sometimes, the emulator really can get hung. This can happen if you try to 'Power Off' while a job is running (it's "safer" to click the 'Stop' button on the Operator Console window and **then** click 'Power Off').
 
 By the way, if you **are** running a demo job and don't want to wait for it to finish, you can click the 'Stop' button on the Operator Console window at any time. The Scripter will treat the job as having completed normally, and both the Tape Viewer window (albeit with truncated contents, of course) and the Script Dialog window that says "Click 'Continue' to dismiss the tape viewer and redisplay the demo list." will come up. Just click 'Continue' at that point, and the demo suite will continue normally.
 
