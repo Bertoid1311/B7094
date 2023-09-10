@@ -113,6 +113,8 @@ There are some things that can make the emulator seem to hang, but are just **ve
 
 Sometimes, the emulator really can get hung. This can happen if you try to 'Power Off' while a job is running (it's "safer" to click the 'Stop' button on the Operator Console window and **then** click 'Power Off'.
 
+By the way, if you **are** running a demo job and don't want to wait for it to finish, you can click the 'Stop' button on the Operator Console window at any time. The Scripter will treat the job as having completed normally, and both the Tape Viewer window (albeit with truncated contents, of course) and the Script Dialog window that says "Click 'Continue' to dismiss the tape viewer and redisplay the demo list." will come up. Just click 'Continue' at that point, and the demo suite will continue normally.
+
 If the emulator hangs, or if something is just taking more time than you care to wait for, I'm afraid there's nothing for it but to kill the process in the Task Manager.
 
 ## Known bugs
