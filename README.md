@@ -103,7 +103,19 @@ Likewise, tapes created by B7094 can be used on other emulators (whether or not 
 
 - interpret BCD records using "alternate" coding (i7090 and i7094 do this by default; s709 can optionally do so).
 
-B7094's "Tape Viewer" is a useful tool for examining the contents of any P7B tape: a small script can be created and run in the Editor to mount the tape, then clicking on the tape in the Tape Drives window will bring it up in the Tape Viewer.
+B7094's "Tape Viewer" is a useful tool for examining the contents of any P7B tape: a small script can be created and run in the Editor to mount the tape; then clicking on the tape in the Tape Drives window will bring it up in the Tape Viewer. But here's another way to do it with just the mouse:
+
+(1) Start the emulator, and in the first demo window click 'End Demonstration Script'.
+
+(2) In the Control Panel window, click the 'TapeDrives' checkbox. The Tape Drives window will appear, but not show any configured Tape Units.
+
+(3) On the Tape Drives window, click the 'All' radiobutton (this deselects 'Used').
+
+(4) On the Tape Drives window, click the 'Add Drive' button. Tape Unit 'A1' will appear. (You could continue to click and add additional Tape Units from 'A2'-'A0' and 'B1'-'B0' if you wanted to.)
+
+(5) On one of the added Tape Units, click the 'Opn' button and browse to any tape image file in the Open Dialog window. Any P7B file can be attached to the drive -- a SysIn.BCD or SysOut.BCD from a previous run (from the ..\Output directory), or any other tape.
+
+(6) Now click on the channel-letter+decimal-unit-number of the Tape Unit with your attached tape image file. The Tape Viewer window will appear, displaying the tape in whatever mode matches the image file extension (BCD mode for *.BCD, Binary mode for any other extension).
 
 Grateful acknowledgment is due to Richard Cornwell for providing some of the sample demo jobs, and for providing technical assistance in getting this new release operational. And of course to Al Kossow et al. for the bitsavers archive, without which many retro-emulators couldn't exist; to Bob Supnik, Dave Pitts, and Richard Cornwell for their work getting **really**-working IBM 709x emulators operational in the mid-late 2000s.  And to Paul Pierce, who got the ball rolling with his collection of tapes, without which there would be nothing to run on such emulators (well, apart from the CTSS software from MIT).
 
