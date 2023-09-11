@@ -191,7 +191,7 @@ B709FCoreView.lfm   - IBM 7302 Core Storage window
                       The '00000' button resets the base address to 0, while the 'Highest' button
                       resets the base address such that the **last** row displayed contains the final
                       four addresses of core (77774-77777). A typed-in base address can be any value
-                      between 0 and (one less than) the value selected by 'Highest': anything
+                      between 0 and (one less than) the value selected by 'Highest'; anything
                       outside that legal range is ignored. But base addresses do not have to be "aligned"
                       on multiples of 4 (though automatic wrap-around will "resynchronize" the base address
                       to a multiple of 4).
