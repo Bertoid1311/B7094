@@ -16,6 +16,20 @@ B7094 makes no changes to the Windows registry or any other part of the system o
 
 There is a YouTube video [here](https://www.youtube.com/watch?v=4xaBS6pWrG0) that shows the use and operation of B7094 (an earlier release, but the basic operation is the same).
 
+There is also more documentation in the "Docs" sub-folder of the install folder, in the following files:
+
+- **B7094SourceReadMe.txt** lists the source files in the ..\Build\Source sub-folder of the install folder. Describes each window file in some detail, making it something of a "user's manual". Describes how to install and configure Lazarus/Free Pascal and rebuild the B7094 executables.
+
+- **B7094ScripterSyntax.txt** describes in detail the command syntax of the EC7 script language.
+
+- **B7094SuggestedManuals.txt** gives links to some useful manuals on bitsavers and elsewhere.
+
+- **B7094DebuggingExamples.txt** gives a couple of simple illustrations of how the facililties in B7094 can be used to perform some (admittedly rudimentary) debugging of programs running on the emulated machine.
+
+- **B7094ReadMe.txt** is similar to the information in this section of the GitHub README.
+
+- **B7094WhatsNew.txt** describes the current status and history of the emulator (including its very earliest history).
+
 ## Additional details
 
 This emulator has a graphical interface with separate windows for the main console with all its flashing lights, the card reader, the line printer and all the tape drives, as well as several other specialized windows. The console is not, alas, a faithful recreation of an IBM 7094 in photo-realistic detail; it's a schematic representation modelled loosely on the console of an [IBM 7044](https://www.gettyimages.com/detail/news-photo/woman-at-a-design-model-of-the-operators-console-of-the-new-news-photo/107644558).  If you want photo-realism, check out Roberto Sancho Villa's work [here](https://github.com/rsanchovilla/SimH_cpanel).
