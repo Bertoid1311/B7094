@@ -109,7 +109,7 @@ There are some things that can make the emulator seem to hang, but are just **ve
 
 - When you're using B7094's tracing facilities. There are lots of things that can be traced: device accesses, register stores, core writes, instruction execution, etc.  These are all selected on the Log/Trace screen (that you can display by clicking the 'Trace' checkbox on the Control Panel window). But be careful how you use this, if you don't want to slow things down unacceptably (either during the running of a "guest" program in the emulator or while waiting for the results of the tracing).  The most efficient way to use this is, in the Log/Trace window, to:
 
-  (1) Check the boxes in the 'Trace Record filters' section on the left to select the classes of items you want traced -- the fewer the "better", if you can narrow things down;
+  (1) Check the boxes in the 'Trace Record filters' section on the left to select the classes of items you want traced (the fewer the "better", if you can narrow things down);
 
   (2) When the job finishes either 'Power Off' the emulator or click the 'Clear' pushbutton in the Log/Trace window.  You'll then be prompted to 'Save current trace data?'. Click 'Yes' and a file ..\Output\B7094.TRC will be written (overwriting one that's already there, if there is one). The saving of the trace file can itself take a **bit** of time.
 
