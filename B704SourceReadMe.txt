@@ -71,6 +71,7 @@ Special files, required for any GUI application:
 B7094.lpi - Main project file (to be opened in Lazarus IDE)
 B7094.lps - Lazarus "session" information
 B7094.lpr - Main entry point for B7094 (Application.Initialize . . . Application.Run)
+B7094.ico - Application icon
 
 Form files
 (GUI window definitions, containing widgets from the "LCL" -- the Lazarus Component Library).
@@ -83,14 +84,18 @@ B709FSplash.lfm     - Briefly displayed on startup. The splash screen is automat
                       must then be manually closed by clicking its 'Close' button.
 B709FControl.lfm    - Main control panel (for application, not machine).
                       Always visible.  Contains checkboxes to display/hide other windows.
-                      Contains 'Power Off' pushbutton,
-                     'Editor' pushbutton (to activate Text Editor).
+                      Contains 'Power Off' pushbutton, 'Editor' pushbutton (to activate Text Editor).
+                      The corresponding Pascal file (B7094FControl.pas) contains a change log
+                      for source code (which has been kept up to date).
 B709FConFig.lfm     - Configuration settings.
                       Specifies default directory paths, default startup script.
                       Displayed/hidden via checkbox on control panel.
 B709FConsole.lfm    - Operator Console for emulated machine.
-                      Displays main registers, channel registers.
-                      'Start/Stop' button, duplicate 'Power Off' button
+                      Displays main registers, channel registers. Contains
+                      'Start/Stop' button, 'Reset' button (zeroes all CPU and channel registers),
+                      'Clear' button (zeroes CPU, additionally zeroes core),
+                      'Load Card' and 'Load Tape' buttons, 'Auto' and 'Slow' speed-control
+                      checkboxes, duplicate 'Power Off' button
 B709FScriptDisp.lfm - The window display portion of the scripter system.
                       Can show text, option menus, 'Continue' and/or 'Cancel' buttons.
 B709FReader.lfm     - The IBM 711 card reader window.
