@@ -38,6 +38,10 @@ This new version fixes some long-standing bugs in the user interface:
 
 - The Editor is more useful than before; you can now save files in addition to just opening and running them. It is also possible to just type script commands into a new Editor window and run them immediately, without having to explicitly save the file.
 
+  This is not new, but it's worth pointing out here: if you're running the demo suite and at any point you click the 'End Demonstration Script' on a Scripter window, you can of course restart the demo suite by powering off the emulator and restarting it. But you can also, after having ended the demo, simply click the 'Editor' button on the Control Panel window to display the Text Editor window, click the 'Open' button on the Text Editor, navigate to the ..\Files\Scripts directory in the Open File dialog, select 'B7Demo.EC7' and click 'Open'. Then click 'Run' in the Text Editor to restart the demo suite. You could also 'Open' and 'Run' any other *.EC7 script (such as one of the "Xample_xxx.EC7' scripts in the same directory).
+
+  Note: the Text Editor will "remember" that a file is open even after the emulator is powered off (the information is saved in the ..\Bin\B7094.INI file). If you want the Text Editor to "forget" a file, you have to explicitly 'Close' it.
+
 - The Stops and Core View windows are now fully functional, which provides some rudimentary debugging capabilities for programs being run on the emulated machine.
 
 There are also some new capabilities in the emulation itself:
