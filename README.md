@@ -125,7 +125,7 @@ There are some things that can make the emulator seem to hang, but are just **ve
 
 - When you use the Tape Viewer on a system tape (KSYS61.BIN, for example). Especially if you load the system tape into the Tape Viewer in BCD mode and then realize you actually wanted BIN mode. You'll have to wait a while!
 
-- When you're using B7094's tracing facilities. There are lots of things that can be traced: device accesses, register stores, core writes, instruction execution, etc.  These are all selected on the Log/Trace screen (that you can display by clicking the 'Trace' checkbox on the Control Panel window). But be careful how you use this, if you don't want to slow things down unacceptably (either during the running of a "guest" program in the emulator or while waiting for the results of the tracing).  The most efficient way to use this is, in the Log/Trace window, to:
+- When you're using B7094's tracing facilities. There are lots of things that can be traced: device accesses, register stores, core writes, instruction execution, etc.  These are all selected on the Log/Trace screen (that you can display by clicking the 'Trace' checkbox on the Control Panel window). But be careful how you use this, if you don't want to slow things down unacceptably (either during the running of a program in the emulator or while waiting for the results of an already-recorded list of traced events to be displayed in the Log/Trace window).  The most efficient way to use this is, in the Log/Trace window, to:
 
   (1) Check the boxes in the 'Trace Record filters' section on the left to select the classes of items you want traced (the fewer the "better", if you can narrow things down);
 
