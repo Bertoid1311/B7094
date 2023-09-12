@@ -93,7 +93,7 @@ B709FConFig.lfm     - Configuration settings.
 B709FConsole.lfm    - Operator Console for emulated machine.
                       Displays main registers, channel registers. Contains
                       'Start/Stop' button, 'Reset' button (zeroes all CPU and channel registers),
-                      'Clear' button (zeroes CPU, additionally zeroes core),
+                      'Clear' button (Resets the CPU, and additionally zeroes core),
                       'Load Card' and 'Load Tape' buttons, 'Auto' and 'Slow' speed-control
                       checkboxes, duplicate 'Power Off' button
 B709FScriptDisp.lfm - The window display portion of the scripter system.
