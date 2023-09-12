@@ -87,7 +87,7 @@ B709FControl.lfm    - Main control panel (for application, not machine).
                       Contains 'Power Off' pushbutton, 'Editor' pushbutton (to activate Text Editor).
                       The corresponding Pascal file (B7094FControl.pas) contains a change log
                       for source code (which has been kept up to date).
-B709FConFig.lfm     - Configuration settings.
+B709FConfig.lfm     - Configuration settings.
                       Specifies default directory paths, default startup script.
                       Displayed/hidden via checkbox on control panel.
 B709FConsole.lfm    - Operator Console for emulated machine.
@@ -211,8 +211,7 @@ b709ferrorpanel.lfm - Error message display form.
 
 Pascal source files
 All of the above *.lfm files have associated Object Pascal "units" with the same
-base name, and with extensions either *.pas or *.PAS (sorry for the elegant variation in
-case).
+base name (with extension *.pas).
 
 Additionally, there are a number of Pascal source files with no associated forms:
 
