@@ -345,8 +345,8 @@ the build instructions given here assume that Lazarus/Free Pascal will be instal
 Download the Win32 and/or Win64 installers from
 https://sourceforge.net/projects/lazarus/files
 The Windows installers are, e.g.,
-lazarus-3.0RC1-fpc-3.2.2-win32.exe
-lazarus-3.0RC1-fpc-3.2.2-win64.exe
+lazarus-2.2.6-fpc-3.2.2-win32.exe
+lazarus-2.2.6-fpc-3.2.2-win64.exe
 
 If you want to create both 32-bit and 64-bit executables, the simplest
 way to do this (according to a lot of folks on the forums) is just to
