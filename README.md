@@ -36,7 +36,7 @@ This emulator has a graphical interface with separate windows for the main conso
 
 B7094 can run two different preserved versions of the IBSYS operating system, and can compile and execute programs written in FORTRAN II and the Fortran Assembly Program (FAP) under the FORTRAN II subsystem; as well as FORTRAN IV, COBOL, and a Macro Assembly Program (MAP) under the IBJOB subsystem.  All the required IBM 7094 software to do that is included in the distribution.
 
-The source of B7094 is included in the distribution, to allow you to modify or enhance the program and rebuild it. You'll need to install Lazarus/Free Pascal to do this, the 32-bit and/or 64-bit versions. The current B7094 v3.4A release was built using the newest (as of the end of last year) releases of these development tools (Lazarus 2.2.4, 28 Sept 2022; Free Pascal 3.2.2, 20 May 2021).
+The source of B7094 is included in the distribution, to allow you to modify or enhance the program and rebuild it. You'll need to install Lazarus/Free Pascal to do this, the 32-bit and/or 64-bit versions. The current B7094 v3.4A release was built using the newest (as of September 2023) releases of these development tools (Lazarus 3.0RC1, 27 June 2023; Free Pascal 3.2.2, 20 May 2021).
 
 There is another YouTube video [here](https://www.youtube.com/watch?v=W5Blz5-chSU) that shows how to compile B7094 from the sources.
 

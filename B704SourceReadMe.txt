@@ -7,8 +7,8 @@ build and run using the free Lazarus IDE [v1.8.0RC3] and the
 Free Pascal Compiler [v3.0.2].
 
 In December, 2022, development of the newest B7094 v3.4A release was
-begun using the newest (as of the end of 2022) releases of those development
-tools (Lazarus 2.2.4, 28 Sept 2022; Free Pascal 3.2.2, 20 May 2021).
+begun using the newest (as of September 2023) releases of those development
+tools (3.0RC1, 27 June 2023; Free Pascal 3.2.2, 20 May 2021).
 
 All the commentary below now refers exclusively to Lazarus/Free Pascal.
 Commercial Object Pascal development tools such as Borland Delphi (and its
@@ -237,23 +237,49 @@ b709dhelp.pas          - The beginnings of a help screen for the scripting langu
                          "B7094ScripterSyntax.txt" in this directory), but is not
                          compiled or linked with the application.
 B709Cmps.pas           - Specialized display components for Operator Console and other windows
-                         These must also be added to the Lazarus IDE upon installation,
-                         which will create a 'B709Cmps_package.pas' file.
+                         These must also be added to the Lazarus IDE following the IDE's
+                         initial installation and before it can be used to build B7094.
+                         (Doing so will create an additional source file: 'B709Cmps_package.pas'.
+
+And last but not least:
+
+B709Cmps_package.lpk   - This is the "package" file describing the custom components that
+                         will be installed into the IDE.
 
 
 *** The following are a few notes concerning the programming language that
 began life as "Delphi" (a commercial product from Borland), and has since been
 "resurrected" as a pair of free and open-source tools: "Lazarus" (the IDE,
 Integrated Development Environment) and "Free Pascal" (the compiler).
+(Lazarus is itself written in Free Pascal.)
 
+Don't be tripped up by the nomenclature used below: "Object Pascal" is
+a generic term referring to all the object-oriented dialects of Pascal
+developed over the years ( en.wikipedia.org/wiki/Object_Pascal );
+"Delphi" was a specific commercial version sold by Borland (joined at the
+hip with its IDE, as all these object-oriented Pascal dialects tended to be);
+( en.wikipedia.org/wiki/Delphi_(software) ); "Free Pascal"
+( en.wikipedia.org/wiki/Free_Pascal ) attempts to be as compatible with
+Delphi as its community of maintainers can make it, and "Lazarus"
+( en.wikipedia.org/wiki/Lazarus_(software) ) is Free Pascal's IDE.
+Got that? "Object Pascal" sounds more dignified than "Free Pascal",
+so that term is frequently used below, but "Free Pascal" or
+"Lazarus/Free Pascal" or "Lazarus/FP" are also freely interchanged -- and
+they're **all** talking about the same thing!
 
-*** DPR (lpi [+ lpr]), DFM (lfm) and PAS files
-These are the three main types of source file in Delphi (Lazarus/Free Pascal).
+*** *.lpr, *.lfm and *.pas files
+These are the three main types of source file in Free Pascal.
 
-The DPR (lpi, [+ lpr]) file is the main project file that links all the others together, and
-initiates execution of the application. There is only one DPR (lpi, [+ lpr]) file in a project.
+The *.lpr file is the "root" of the GUI application.  It instantiates all the
+windows (a.k.a. "forms", defined in the *.lfm files) and initiates execution
+of the application. It's the entry point of the code -- you can think of it
+as the "main" routine. There is only one *.lpr file in a project.
 
-The PAS files contain actual Object Pascal code. Each defines a "unit" which is
+The *.lpi file is the main project file that links all the others together --
+names them all for the Lazarus IDE. This is the file you open in Lazarus
+if you want to rebuild the program. There is only one *.lpi file in a project.
+
+The *.pas files contain actual Object Pascal code. Each defines a "unit" which is
 compiled separately and then linked together with all others. The guts of the
 code lies in the "implementation" part of the unit, and is generally private to
 the unit. However, items within a unit can be exposed for access by other units
@@ -262,16 +288,18 @@ the start of the unit. The interface part also contains a "uses" clause that
 specifies the names of other units that have exposed items which this unit needs
 access to.
 
-DFM (lfm) files are descriptions of the "Forms" (or windows) that make up the visible
-part of the application. This code is rarely edited directly by the programmer.
-Delphi (Lazarus/Free Pascal) maintains these files as the programmer edits the
-form layout using graphical editing facilities. Each DFM (lfm) defines exactly
-one form or window, and is always associated with a PAS file that contains the
-code for responding to user events coming from the form, and for updating the
-form display to the user.
+The *.lfm files are descriptions of the "forms" (or windows) that make up the visible
+part of the application. This code is rarely edited directly by the programmer
+(that is, if you tend to use the IDE to move widgets around on windows; but you certainly
+can use a text editor to add, delete, and change the characteristics of widgets
+in the *.lfm file, if that's your preferred mode of working). The Lazarus IDE
+maintains these files as the programmer edits the form layout using graphical editing
+facilities. Each *.lfm file defines exactly one form or window, and is always associated
+with a *.pas file that contains the code for responding to user events coming from
+the form, and for updating the form display to the user.
 
 
-*** Private, Protected and Public areas in Delphi objects.
+*** Private, Protected and Public areas in Object Pascal objects.
 These keywords delineate which fields and methods of an object are visible, and
 to what other entities they are visible.
 Private is known only to the methods of the object itself.
@@ -279,7 +307,7 @@ Protected is known only to the object, and its descendants.
 Public is visible to all.
 
 
-*** Properties in Delphi (Lazarus/Free Pascal).
+*** Properties in Object Pascal.
 An object may control how its fields are externally accessed by the use of
 properties. The property specifier in the public section of the object definition
 may simply link to the name of the underlying data field (defined in the private
@@ -289,7 +317,7 @@ name is prefixed with the letter "F", and the read function/write procedure name
 are the name of the variable, prefixed with "get" and "set" respectively.
 
 
-*** Delphi is a single-pass compiler.
+*** Object Pascal is a single-pass compiler.
 And therefore all items must be defined before they are referenced.
 This leads to higher level procedures being placed towards the end of the code
 in a unit, after any sub procedures and data items that they reference.
@@ -298,40 +326,68 @@ definition, and so may be placed freely anywhere after that.
 
 
 *** Some notes on building B7094 from source using the Lazarus IDE
-    in conjunction with the Free Pascal compiler.
-You can read about the history of Lazarus and Free Pascal on Wikipedia:
-https://en.wikipedia.org/wiki/Lazarus (IDE)
-https://en.wikipedia.org/wiki/Free Pascal
-
-Download the Win32 and/or Win64 installers from
-https://sourceforge.net/projects/lazarus/files
-The Windows installers are, e.g.,
-lazarus-1.8.0RC3-fpc-3.0.1-win32.exe
-lazarus-1.8.0RCS-fpc-3.0.1-win64.exe
-(As currently constituted, the B7094 project requires 1.8.0RC3.
-You'll get a fatal error [unknown identifier Application.Scaled]
-if you try to build with the stable release 1.6.4.)
+in conjunction with the Free Pascal compiler.
 
 Note for Linux/Mac OSX users: B7094 was originally written for a Windows
 environment using the Delphi VCL (Visual Component Library), and
 has Windows dependencies baked into it.  The Lazarus/Free Pascal version of
 B7094 uses the LCL (the Lazarus/FP equivalent of the VCL), and retains
 these Windows dependencies.  Both 32-bit and 64-bit builds of B7094
-using Lazarus/FP (or Delphi, for that matter) will run on Linux under
-Wine (or, presumably, Mac OSX under Darwine).  Lazarus/FP (and B7094) will
+using Lazarus/FP will run on Linux under Wine (and even on Mac OSX using
+Wine 8.x -- at least the x86-64 version). B7094 will
 run on versions of Windows ranging from 32-bit Windows XP (SP3)
-through contemporary 64-bit Windows 10.
+through contemporary 64-bit Windows.
 
-The installer puts Lazarus/FP by default in the directory C:\lazarus.
-The first time you start the Lazarus IDE, you'll get a screen asking
-you to confirm the default configuration.  Just click on "Start IDE".
-The IDE starts up with an empty (skeleton) project, including an empty
-"Form1", etc.  Click File->Close All to dismiss this.
+Since B7094 is primarily intended for Windows, and contains Windows dependencies,
+the build instructions given here assume that Lazarus/Free Pascal will be installed
+**on Windows**.
 
-After you've installed Lazarus/FP using one of the Windows installers,
-before building B7094.exe you need to install the custom components package
-(comprising files B709Cmps.pas/B709Cmps_package.pas/B709Cmps_package.res/B709Cmps_package.lpk)
-to the Lazarus design-time palette.  Click Package->Open Package File (.lpk)
+Download the Win32 and/or Win64 installers from
+https://sourceforge.net/projects/lazarus/files
+The Windows installers are, e.g.,
+lazarus-3.0RC1-fpc-3.2.2-win32.exe
+lazarus-3.0RC1-fpc-3.2.2-win64.exe
+
+If you want to create both 32-bit and 64-bit executables, the simplest
+way to do this (according to a lot of folks on the forums) is just to
+install **both** the 32-bit and 64-bit versions of Lazarus/FP mentioned
+above (there are cross-compilers, but they're not discussed here).
+The 32-bit version of Lazarus/FP creates 32-bit executables, and the
+64-bit version of Lazarus/FP creates 64-bit executables, without
+any additional fuss and bother.
+
+The installer puts Lazarus/FP by default in the directory C:\lazarus, but
+if you're installing both 32-bit and 64-bit versions, you'll want to change
+this to, e.g., C:\lazarus32 and C:\lazarus64.  On the same 'Select Destination
+Location' setup screen, there's a checkbox labelled 'Create a new secondary
+installation'.  Make sure this is checked (for **both** versions) -- this
+keeps the configuration files for the two versions separate.  You can specify
+a 'config' directory underneath your installation directory, and let the
+installer create the directory and put the config file there when prompted
+(but don't create the ..\config directory ahead of time, or you'll get an
+error message from the installer).  Pick whatever components and file
+associations you want (I skip the CHM help files and the Qt* interfaces,
+and keep the checked file associations).  Do what you want with the Start Menu
+shortcut (I skip it).
+
+The first time you start the Lazarus IDE, it starts up with an empty
+(skeleton) project, including an empty "Form1", etc.  Click
+File->Close All to dismiss this.  (If you then click File->Quit, you'll get
+a message 'Save changes to project project1?" -- answer 'No'.)
+
+B7094 uses custom screen widgets (e.g., for the register display "lights"
+on the Operator Console window) and these have to be incorporated into
+the IDE itself (yes, Lazarus will actually rebuild itself during this
+process).
+
+So after you've installed one or both versions of Lazarus/FP using one or both
+of the Windows installers, and before building either B7094.32.exe or
+B7094.64.exe you need to install the custom components package
+(initially comprising files B709Cmps.pas and B709Cmps_package.lpk; a new
+file B709Cmps_package.pas will be created during this process)
+to the Lazarus design-time palette.  Bring up the IDE (dismiss 'project1':
+File->Close All), and make sure the Messages window at the bottom of the screen is visible
+(View->Messages). Click Package->Open Package File (.lpk)
 and navigate to the directory containing the B7094 source code.  Select B7094_Cmps_package.lpk
 A window "Package B709Cmps_package V0.0" will open.  Click on B709Cmps.pas and
 make sure that in the "File Properties" panel the "Register unit" checkbox is checked.
@@ -340,28 +396,35 @@ compiled components package inside it.  When the green-highlighted message
 "Compile package B709Cmps_package 0.0: Success, ..." appears in the Messages (View->Messages) window
 (ignore any warnings), the package has been successfully compiled.
 To install the package, click Use->Install on the package window.
-Click the Yes button on the "Rebuild Lazarus?" confirmation window.
+Click the Yes button on the "...Do you want to rebuild Lazarus now?" confirmation window.
 The Lazarus IDE will now be rebuilt.  When the build process is finished, the
 IDE will restart automatically.
+
+You have to do this components installation for **both** versions of the IDE,
+if you've got them both installed.
 
 Once again, dismiss the skeleton project by clicking File->Close All.
 Then click Project->Open Project ..., navigate to the B7094 source-code directory, and
 select the project file B7094.lpi.  Answer the query window "Save changes to
 project project1?" by clicking the No button.  You can also now close the "Package B709Cmps_package V0.0"
-window.  Note: B7094.lpi is the actual project file under Lazarus.  There is also,
-however, a B7094.lpr file corresponding to, and converted from, the B7094.dpr
-file under Delphi.  However, this B7094.lpr file now counts as "Unit0",
-rather than the actual project file.
+window.
 
 The B709Main.pas unit will be displayed in the Source Editor window.  If it isn't, or to see
 the main form (or any other form) and its components, type Shift-F12 to bring up the View Project Forms
 window, select MainForm, and click OK.  You can toggle the form graphics display
 on and off by typing F12 (without the Shift).
 
-To build the simulator, click on Run->Build.  When you see the green-highlighted
+To build the emulator, click on Run->Build.  If you get a message "The output directory '..\Build\work'
+is missing." click the 'Create it' button. When you see the green-highlighted
 "...Compile Project, Target: B7094.exe: Success, ..." message in the Messages
-window, you should have a runnable B7094.exe.  You can ignore any warning
+window, you should have a runnable B7094.exe (you might want to rename this
+to B7094.32.exe or B7094.64.exe, whichever version you built).  You can ignore any warning
 messages.
+
+A "sesson" file (B7094.lps) is automatically created by Lazarus.  It saves the state of your current
+environment -- windows you have open, etc.  You can close any windows you find distracting -- forms
+editing windows, "object inspector", etc. and your choice of layout will be saved in the "session" file
+B7094.lps .  (Close the "Source Editor" by clicking File->Close Page).
 
 Note: Under Project->Project Options, in the "Compiler Options" half of the tree
 in the left pane, there's a "Debugging" entry.  These options have all been
