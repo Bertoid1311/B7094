@@ -8,7 +8,7 @@ Free Pascal Compiler [v3.0.2].
 
 In December, 2022, development of the newest B7094 v3.4A release was
 begun using the newest (as of September 2023) releases of those development
-tools (3.0RC1, 27 June 2023; Free Pascal 3.2.2, 20 May 2021).
+tools (Lazarus 2.2.6, 05 March 2023; Free Pascal 3.2.2, 20 May 2021).
 
 All the commentary below now refers exclusively to Lazarus/Free Pascal.
 Commercial Object Pascal development tools such as Borland Delphi (and its
