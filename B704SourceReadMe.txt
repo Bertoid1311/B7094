@@ -144,8 +144,11 @@ B709FTapeViewer.lfm - Tape Viewer window. Shows the contents, in 'BCD' or 'Binar
                       the window so that the next Record Gap or File Mark is visible in the display (generally
                       on the third line from the top, unless the bottom of the display is already the end of the
                       tape image file. 'Next Mark' wraps back to the beginning of the tape if it has already indexed
-                      through all Record/File markers on the tape.  Toggling between BCD and Binary modes
-                      returns the display to the beginning of the tape.
+                      through all Record/File markers on the tape.  The 'Deblock to:' checkbox and the
+                      text field beside it are for splitting the view of a BCD tape with fixed-length records
+                      and no printer carriage control characters into readable equal-length lines ('0' or blank
+                      in the text box means 'do not deblock').
+                      Toggling between BCD and Binary modes returns the display to the beginning of the tape.
 B709FTextEditor.lfm - The text editing window, mainly intended for creating, loading,
                       and running script file (*.EC7).  Multiple editing boxes (files)
                       can be open at once.  Checkboxes 'Ruler' and 'Line numbers' display
