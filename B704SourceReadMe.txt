@@ -365,9 +365,9 @@ a 'config' directory underneath your installation directory, and let the
 installer create the directory and put the config file there when prompted
 (but don't create the ..\config directory ahead of time, or you'll get an
 error message from the installer).  Pick whatever components and file
-associations you want (I skip the CHM help files and the Qt* interfaces,
-and keep the checked file associations).  Do what you want with the Start Menu
-shortcut (I skip it).
+associations you want (I skip the CHM help files, the Qt* interfaces, and
+the SSL stuff) and keep the checked file associations).  Do what you want
+with the Start Menu shortcut (I skip it).
 
 The first time you start the Lazarus IDE, it starts up with an empty
 (skeleton) project, including an empty "Form1", etc.  Click
@@ -389,7 +389,7 @@ file B709Cmps_package.pas will be created during this process)
 to the Lazarus design-time palette.  Bring up the IDE (dismiss 'project1':
 'File->Close All'), and make sure the Messages window at the bottom of the screen
 is visible ('View->Messages'). Click Package->Open Package File (.lpk)
-and navigate to the directory containing the B7094 source code.  Select B7094_Cmps_package.lpk
+and navigate to the directory containing the B7094 source code.  Select B7094Cmps_package.lpk
 A window "Package B709Cmps_package V0.0" will open.  Click on B709Cmps.pas and
 make sure that in the "File Properties" panel the "Register unit" checkbox is checked.
 Click the "Compile" button.  This will create a "lib" subdirectory in the B7094 source
