@@ -444,7 +444,7 @@ A "sesson" file ("B7094.lps") is automatically created by Lazarus.  It saves the
 of your current environment -- windows you have open, etc.  You can close any windows you
 find distracting -- forms editing windows, the "object inspector", etc., and your choice
 of layout will be saved in the "session" file "B7094.lps".
-(You can close the "Source Editor" by clicking 'File->Close Page').
+(You can close the "Source Editor" by clicking 'File->Close Page'.)
 
 Note: Under 'Project->Project Options', in the "Compiler Options" half of the tree
 in the left pane, there's a "Debugging" entry.  These options have all been
