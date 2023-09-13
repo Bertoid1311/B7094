@@ -134,6 +134,29 @@ To start, here's the procedure for **running** one of the Xample scripts. We'll 
 ####
     Include File='Sysdmp.Fap'    // Insert the source text
 
+"Sysdmp.Fap" is the actual Fortran Assembly Program code:
+
+####
+    *     FAP                                                               SYSDMP00
+    *      FORCE IBSYS TO DUMP CORE                                         SYSDMP01
+    *      SEE IBM 7090/7094 IBSYS OPERATING SYSTEM VERSION 13 MANUAL       SYSDMP02
+    *      C28-6248-7 DEC. 1966                                             SYSDMP03
+    *      SYSTEM CORE-STORAGE DUMP PROGRAM, P. 18                          SYSDMP04
+           COUNT   14                                                       SYSDMP05
+    *      SST IS A PSEUDO-OPERATION THAT LOADS THE SYSTEM SYMBOL TABLE     SYSDMP06
+    *      IT MAKES THE LOCATION OF SYSDMP (115 OCTAL) AVAILABLE HERE       SYSDMP07
+    *      SEE IBM 7090/7094 FORTRAN II ASSEMBLY PROGRAM (FAP) MANUAL       SYSDMP08
+    *      GC28-6235-5 APRIL 1965                                           SYSDMP09
+    *      APPENDIX C: SYSTEM SYMBOL TABLE, FORTRAN MONITOR, P. 69          SYSDMP10
+           SST                                                              SYSDMP11
+           TRA     SYSDMP                                                   SYSDMP12
+           END                                                              SYSDMP13
+
+If no path is given, the scripter "Include" command will look for the file in the ..\Files\Cards directory. This is true even if, as is the case here, the program and its enclosing control cards have to be converted to a tape before the job can run, since the FORTRAN II subsystem does not permit job input from cards (this conversion happens slightly further on in the "Xample_Sysdmp.Fap.KSYS.EC7" script file we currently have open in the Editor).  There are two alternatives to having your file in the expected directory: a) use the full path name in the Include command or b) add to or change the list of default search paths on the B7094 "Configuration" window (click the "Config" checkbox on the Control Panel to bring it up. (You might in fact want to create ..\Files\MyScripts and ..\Files\MyCards directories underneath your B7094 installation directory, and add these directories to the list of search paths on the Configuration window.
+
+
+
+
 ## Acknowledgments
 
 Grateful acknowledgment is due to Richard Cornwell for providing some of the sample demo jobs, and for providing technical assistance in getting this new release operational. And of course to Al Kossow et al. for the bitsavers archive, without which many retro-emulators couldn't exist; to Bob Supnik, Dave Pitts, and Richard Cornwell for their work getting **really**-working IBM 709x emulators operational in the mid-late 2000s.  And to Paul Pierce, who got the ball rolling with his collection of tapes, without which there would be nothing to run on such emulators (well, apart from the CTSS software from MIT).
