@@ -371,7 +371,7 @@ shortcut (I skip it).
 
 The first time you start the Lazarus IDE, it starts up with an empty
 (skeleton) project, including an empty "Form1", etc.  Click
-File->Close All to dismiss this.  (If you then click File->Quit, you'll get
+'File->Close All' to dismiss this.  (If you then click 'File->Quit', you'll get
 a message 'Save changes to project project1?" -- answer 'No'.)
 
 INSTALLING THE CUSTOM COMPONENTS PACKAGE FOR B7094
@@ -387,16 +387,16 @@ B7094.64.exe you need to install the custom components package
 (initially comprising files B709Cmps.pas and B709Cmps_package.lpk; a new
 file B709Cmps_package.pas will be created during this process)
 to the Lazarus design-time palette.  Bring up the IDE (dismiss 'project1':
-File->Close All), and make sure the Messages window at the bottom of the screen is visible
-(View->Messages). Click Package->Open Package File (.lpk)
+'File->Close All'), and make sure the Messages window at the bottom of the screen
+is visible ('View->Messages'). Click Package->Open Package File (.lpk)
 and navigate to the directory containing the B7094 source code.  Select B7094_Cmps_package.lpk
 A window "Package B709Cmps_package V0.0" will open.  Click on B709Cmps.pas and
 make sure that in the "File Properties" panel the "Register unit" checkbox is checked.
-Click the "Compile" button.  This will create a "lib" subdirectory in the B7094 source directory with the
-compiled components package inside it.  When the green-highlighted message
-"Compile package B709Cmps_package 0.0: Success, ..." appears in the Messages (View->Messages) window
+Click the "Compile" button.  This will create a "lib" subdirectory in the B7094 source
+directory with the compiled components package inside it.  When the green-highlighted message
+"Compile package B709Cmps_package 0.0: Success, ..." appears in the Messages ('View->Messages') window
 (ignore any warnings), the package has been successfully compiled.
-To install the package, click Use->Install on the package window.
+To install the package, click 'Use->Install' on the package window.
 Click the Yes button on the "...Do you want to rebuild Lazarus now?" confirmation window.
 The Lazarus IDE will now be rebuilt.  When the build process is finished, the
 IDE will restart automatically.
@@ -404,15 +404,21 @@ IDE will restart automatically.
 You have to do this components installation for **both** the 32-bit and 64-bit versions
 of the IDE, if you've got them both installed.
 
+To confirm that the package installation was successful in an IDE, go to
+'Package->Install/Uninstall Packages' and make sure that "B709Cmps_package 0.0"
+is listed in the left pane of the screen, at the top of the
+"Install" list, with the "Uninstall selection" button below
+it. (They should have labelled the list "Installed", not "Install"!)
+
 BUILDING B7094
 
 Start the IDE (the 32-bit Lazarus if you're building B7094.32.exe; the
 64-bit Lazarus if you're building B7094.64.exe).
-Once again, dismiss the skeleton project by clicking File->Close All.
+Once again, dismiss the skeleton project by clicking 'File->Close All'.
 Then click Project->Open Project ..., navigate to the B7094 source-code directory, and
 select the project file B7094.lpi.  Answer the query window "Save changes to
-project project1?" by clicking the No button.  You can also now close the "Package B709Cmps_package V0.0"
-window.
+project project1?" by clicking the No button.  You can also now close the
+"Package B709Cmps_package V0.0" window.
 
 The B709Main.pas unit will be displayed in the Source Editor window.  If it isn't, or to see
 the main form (or any other form) and its components, type Shift-F12 to bring up the View Project Forms
