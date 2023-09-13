@@ -392,16 +392,18 @@ B7094.64.exe you need to install the custom components package
 file B709Cmps_package.pas will be created during this process)
 to the Lazarus design-time palette.  Bring up the IDE (dismiss 'project1':
 'File->Close All'), and make sure the Messages window at the bottom of the screen
-is visible ('View->Messages'). Click Package->Open Package File (.lpk)
-and navigate to the directory containing the B7094 source code.  Select B7094Cmps_package.lpk
-A window "Package B709Cmps_package V0.0" will open.  Click on B709Cmps.pas and
-make sure that in the "File Properties" panel the "Register unit" checkbox is checked.
-Click the "Compile" button.  This will create a "lib" subdirectory in the B7094 source
-directory with the compiled components package inside it.  When the green-highlighted message
-"Compile package B709Cmps_package 0.0: Success, ..." appears in the Messages ('View->Messages') window
-(ignore any warnings), the package has been successfully compiled.
-To install the package, click 'Use->Install' on the package window.
-Click the Yes button on the "...Do you want to rebuild Lazarus now?" confirmation window.
+is visible ('View->Messages'). Click 'Package->Open Package File (.lpk)'
+and navigate to the ..\Build\Source directory containing the B7094 source code.
+Select B7094Cmps_package.lpk . A window "Package B709Cmps_package V0.0" will open.
+Click on B709Cmps.pas and make sure that in the "File Properties" panel the
+"Register unit" checkbox is checked. Click the "Compile" button.  This will create
+a "lib" subdirectory in the B7094 source directory (..\Build\Source\lib) with the
+compiled components package inside it (and a new source file B709Cmps_package.pas will
+also be created in ..\Build\Source).  When the green-highlighted message
+"Compile package B709Cmps_package 0.0: Success, ..." appears in the Messages
+('View->Messages') window (ignore any warnings), the package has been successfully
+compiled. To install the package into the IDE, click 'Use->Install' on the package window.
+Click the "Yes" button on the "...Do you want to rebuild Lazarus now?" confirmation window.
 The Lazarus IDE will now be rebuilt.  When the build process is finished, the
 IDE will restart automatically.
 
@@ -419,28 +421,31 @@ BUILDING B7094
 Start the IDE (the 32-bit Lazarus if you're building B7094.32.exe; the
 64-bit Lazarus if you're building B7094.64.exe).
 Once again, dismiss the skeleton project by clicking 'File->Close All'.
-Then click Project->Open Project ..., navigate to the B7094 source-code directory, and
-select the project file B7094.lpi.  Answer the query window "Save changes to
-project project1?" by clicking the No button.  You can also now close the
-"Package B709Cmps_package V0.0" window.
+Then click 'Project->Open Project' ..., navigate to the B7094 source-code directory
+(..\Build\Source), and select the project file "B7094.lpi".  Answer the
+query window "Save changes to project project1?" by clicking the 'No' button.
+(You can also now close the "Package B709Cmps_package V0.0" window, if you
+haven't already.)
 
-The B709Main.pas unit will be displayed in the Source Editor window.  If it isn't, or to see
-the main form (or any other form) and its components, type Shift-F12 to bring up the View Project Forms
-window, select MainForm, and click OK.  You can toggle the form graphics display
-on and off by typing F12 (without the Shift).
+The "B709Main.pas" unit will be displayed in the Source Editor window.  If it isn't, or to see
+the main form (or any other form) and its components, type 'Shift-F12' to bring up the
+"View Project Forms" window, select "MainForm", and click 'OK'.  You can toggle the
+form graphics display on and off by typing 'F12' (without the Shift).
 
-To build the emulator, click on Run->Build.  If you get a message "The output directory '..\Build\work'
-is missing." click the 'Create it' button. When you see the green-highlighted
-"...Compile Project, Target: B7094.exe: Success, ..." message in the Messages
-window, you should have a runnable B7094.exe (you might want to rename this
-to B7094.32.exe or B7094.64.exe, whichever version you built).  You can ignore any warning
-messages.
+To build the emulator, click on 'Run->Build'.  If you get a message
+"The output directory '..\Build\work' is missing." click the 'Create it' button.
+When you see the green-highlighted
+"...Compile Project, Target: B7094.exe: Success, ..."
+message in the "Messages" window, you should have a runnable B7094.exe (you might
+want to rename this to B7094.32.exe or B7094.64.exe, whichever version you built).
+You can ignore any warning messages or "hints".
 
-A "sesson" file (B7094.lps) is automatically created by Lazarus.  It saves the state of your current
-environment -- windows you have open, etc.  You can close any windows you find distracting -- forms
-editing windows, "object inspector", etc. and your choice of layout will be saved in the "session" file
-B7094.lps .  (Close the "Source Editor" by clicking File->Close Page).
+A "sesson" file ("B7094.lps") is automatically created by Lazarus.  It saves the state
+of your current environment -- windows you have open, etc.  You can close any windows you
+find distracting -- forms editing windows, the "object inspector", etc., and your choice
+of layout will be saved in the "session" file "B7094.lps".
+(You can close the "Source Editor" by clicking File->Close Page).
 
-Note: Under Project->Project Options, in the "Compiler Options" half of the tree
+Note: Under 'Project->Project Options', in the "Compiler Options" half of the tree
 in the left pane, there's a "Debugging" entry.  These options have all been
 deselected to minimize the size of the executable.
