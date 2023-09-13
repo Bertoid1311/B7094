@@ -427,10 +427,27 @@ query window "Save changes to project project1?" by clicking the 'No' button.
 (You can also now close the "Package B709Cmps_package V0.0" window, if you
 haven't already.)
 
-The "B709Main.pas" unit will be displayed in the Source Editor window.  If it isn't, or to see
-the main form (or any other form) and its components, type 'Shift-F12' to bring up the
-"View Project Forms" window, select "MainForm", and click 'OK'.  You can toggle the
-form graphics display on and off by typing 'F12' (without the Shift).
+When you first open B7094's project file ("B7094.lpi") in the IDE, the Pascal unit
+for B7094's "Operator Console" window ("B709FConsole.pas") will be displayed in the
+IDE's "Source Editor" window; and its associated form "B7094FConsole.lfm" will
+also be displayed, in graphical form (as it will appear when running the application).
+(This source file is designated "Unit1" in the project file, which is why the IDE
+selects it for automatic display on startup. "Unit0" is "B7094.lpr", which doesn't
+get displayed.)
+
+If it isn't displayed, or to see the Operator Console form (or any other form)
+together with its associated *.pas source file, type 'Shift-F12' to bring up the
+IDE's "View Project Forms" window, select "ConsoleForm", and click 'OK'. If multiple
+Project Forms are opened, there will continue to be only one "Source Editor" window
+open in the IDE, but it will have multiple tabs -- one for each Project Form. You
+can toggle each Project Form's graphical display on and off individually by selecting
+its tab in the Source Editor and then typing 'F12' (without the Shift).  
+
+You can close a displayed
+source file (and its associated form) by selecting either the window displaying
+the source file or clicking on the graphic for the form, and then clicking
+'File->Close Page'. ('File->Close All' will close all displayed source files and
+their associated forms, **and** the project file itself.)
 
 To build the emulator, click on 'Run->Build'.  If you get a message
 "The output directory '..\Build\work' is missing." click the 'Create it' button.
@@ -442,9 +459,8 @@ You can ignore any warning messages or "hints".
 
 A "sesson" file ("B7094.lps") is automatically created by Lazarus.  It saves the state
 of your current environment -- windows you have open, etc.  You can close any windows you
-find distracting -- forms editing windows, the "object inspector", etc., and your choice
+find distracting -- Source Editor windows, the "object inspector", etc., and your choice
 of layout will be saved in the "session" file "B7094.lps".
-(You can close the "Source Editor" by clicking 'File->Close Page'.)
 
 Note: Under 'Project->Project Options', in the "Compiler Options" half of the tree
 in the left pane, there's a "Debugging" entry.  These options have all been
