@@ -443,11 +443,10 @@ open in the IDE, but it will have multiple tabs -- one for each Project Form. Yo
 can toggle each Project Form's graphical display on and off individually by selecting
 its tab in the Source Editor and then typing 'F12' (without the Shift).  
 
-You can close a displayed
-source file (and its associated form) by selecting either the window displaying
-the source file or clicking on the graphic for the form, and then clicking
-'File->Close Page'. ('File->Close All' will close all displayed source files and
-their associated forms, **and** the project file itself.)
+You can close a displayed source file (and its associated form) by selecting either
+the window displaying the source file or clicking on the graphic for the form, and
+then clicking 'File->Close Page'. ('File->Close All' will close all displayed
+source files and their associated forms, **and** the project file itself.)
 
 To build the emulator, click on 'Run->Build'.  If you get a message
 "The output directory '..\Build\work' is missing." click the 'Create it' button.
