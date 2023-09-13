@@ -119,6 +119,21 @@ You can attach any file, with any name, to a tape drive -- either via a Tape Uni
 
 You can also save the text in the Tape Viewer window by clicking the 'Save' pushbutton at the top left of the window. There won't be any acknowledgment of the button press, but you'll get a "dump" file in the ..\Output directory with the extension '.DMP', named according to the tape image file that was being displayed (e.g., 'SYSOUT.BCD.DMP' or 'SYSIN.BCD.DMP').  The dump file name will always reflect the format (and hence the extension) of the tape image that was being displayed in the Tape Viewer (either '.BCD' or '.BIN') but in fact the text in the Tape Viewer window will be saved in whatever mode the Tape Viewer is currently displaying: either 'BCD' or 'Binary'.
 
+## Writing and running your own programs
+
+The EC7 script files comprising B7094's demo suite are a **bit** convoluted at first glance; so a number of simple, in-line script files (named ..\Files\Scripts\Xample_xxx.EC7) are provided as models for anybody who actually wants to write and run IBM 7090/7094 programs in any of the supported languages (FORTRAN II, FAP; FORTRAN IV, COBOL, MAP). These "Xample" scripts should make it possible to just concentrate on your own program and not have to worry about the "envelope" of IBSYS control cards or EC7 configuration commands. You can basically just copy one of the Xample scripts and make a very small alteration to have it run your own code.
+
+To start, here's the procedure for **running** one of the Xample scripts. We'll exhibit one that assembles and runs a very short FAP assembly-language program, under IBSYS's FORTRAN II subsystem, to request IBSYS to generate a core dump.
+
+(1) Start the emulator, and in the first demo window click 'End Demonstration Script'.
+
+(2) In the Control Panel window, click the 'Editor' button (or the 'Editor' checkbox, they do the same thing). The Text Editor window will appear. It'll likely be blank, but if it's not, click the 'Close' button and close any editing sessions that might currently be open.
+
+(3) Click the 'Open' button, and navigate to ..\Files\Scripts and open the file "Xample_Sysdmp.Fap.KSYS.EC7" (there's also an ASYS version of this file, but we're sticking with the KSYS version for reasons that will become clear). Scroll down a bit, past the mounting of all the SCRATCH tape drives, and you'll see a line:
+
+####
+    Include File='Sysdmp.Fap'    // Insert the source text
+
 ## Acknowledgments
 
 Grateful acknowledgment is due to Richard Cornwell for providing some of the sample demo jobs, and for providing technical assistance in getting this new release operational. And of course to Al Kossow et al. for the bitsavers archive, without which many retro-emulators couldn't exist; to Bob Supnik, Dave Pitts, and Richard Cornwell for their work getting **really**-working IBM 709x emulators operational in the mid-late 2000s.  And to Paul Pierce, who got the ball rolling with his collection of tapes, without which there would be nothing to run on such emulators (well, apart from the CTSS software from MIT).
