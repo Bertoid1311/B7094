@@ -436,8 +436,8 @@ To build the emulator, click on 'Run->Build'.  If you get a message
 "The output directory '..\Build\work' is missing." click the 'Create it' button.
 When you see the green-highlighted
 "...Compile Project, Target: B7094.exe: Success, ..."
-message in the "Messages" window, you should have a runnable B7094.exe (you might
-want to rename this to B7094.32.exe or B7094.64.exe, whichever version you built).
+message in the "Messages" window, you should have a runnable "B7094.exe" (you might
+want to rename this to "B7094.32.exe" or "B7094.64.exe", whichever version you built).
 You can ignore any warning messages or "hints".
 
 A "sesson" file ("B7094.lps") is automatically created by Lazarus.  It saves the state
