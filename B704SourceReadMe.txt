@@ -275,6 +275,10 @@ as the "main" routine. There is only one *.lpr file in a project.
 The *.lpi file is the main project file that links all the others together --
 names them all for the Lazarus IDE. This is the file you open in Lazarus
 if you want to rebuild the program. There is only one *.lpi file in a project.
+(A *.lps file will appear in your build directory once you've installed and
+started using the IDE; this contains per-session information such as what
+windows you left open the last time you exited the IDE. This file is not part
+of the B7094 source distribution.)
 
 The *.pas files contain actual Object Pascal code. Each defines a "unit" which is
 compiled separately and then linked together with all others. The guts of the
