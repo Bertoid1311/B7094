@@ -100,10 +100,7 @@ B709FScriptDisp.lfm - The window display portion of the scripter system.
                       Can show text, option menus, 'Continue' and/or 'Cancel' buttons.
 B709FReader.lfm     - The IBM 711 card reader window.
 B709FPrinter.lfm    - The IBM 716 line printer window. This window is updated by a TTimer
-                      with a default interval of 1000 msec. (1 second). If the 'Upd' checkbox
-                      (checked by default) is unchecked, the interval is shortened to
-                      250 msec.; and if it is then rechecked, the interval is increased
-                      to 5000 msec. (5 seconds).
+                      with a default interval of 1000 msec. (1 second).
 B709FTapeDrives.lfm - The IBM 729 framing window containing sub-windows for individual
                       tape drives.  A radiobutton allows displaying of 'All' configured
                       drives, or -- by default -- only those that have been 'Used' by
@@ -338,6 +335,8 @@ Wine 8.x -- at least the x86-64 version). B7094 will
 run on versions of Windows ranging from 32-bit Windows XP (SP3)
 through contemporary 64-bit Windows.
 
+INSTALLING LAZARUS/FREE PASCAL
+
 Since B7094 is primarily intended for Windows, and contains Windows dependencies,
 the build instructions given here assume that Lazarus/Free Pascal will be installed
 **on Windows**.
@@ -375,6 +374,8 @@ The first time you start the Lazarus IDE, it starts up with an empty
 File->Close All to dismiss this.  (If you then click File->Quit, you'll get
 a message 'Save changes to project project1?" -- answer 'No'.)
 
+INSTALLING THE CUSTOM COMPONENTS PACKAGE FOR B7094
+
 B7094 uses custom screen widgets (e.g., for the register display "lights"
 on the Operator Console window) and these have to be incorporated into
 the IDE itself (yes, Lazarus will actually rebuild itself during this
@@ -400,9 +401,13 @@ Click the Yes button on the "...Do you want to rebuild Lazarus now?" confirmatio
 The Lazarus IDE will now be rebuilt.  When the build process is finished, the
 IDE will restart automatically.
 
-You have to do this components installation for **both** versions of the IDE,
-if you've got them both installed.
+You have to do this components installation for **both** the 32-bit and 64-bit versions
+of the IDE, if you've got them both installed.
 
+BUILDING B7094
+
+Start the IDE (the 32-bit Lazarus if you're building B7094.32.exe; the
+64-bit Lazarus if you're building B7094.64.exe).
 Once again, dismiss the skeleton project by clicking File->Close All.
 Then click Project->Open Project ..., navigate to the B7094 source-code directory, and
 select the project file B7094.lpi.  Answer the query window "Save changes to
