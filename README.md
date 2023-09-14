@@ -129,7 +129,11 @@ To start, here's the procedure for **running** one of the Xample scripts. We'll 
 
 (2) In the Control Panel window, click the 'Editor' button (or the 'Editor' checkbox, they do the same thing). The Text Editor window will appear. It'll likely be blank, but if it's not, click the 'Close' button and close any editing sessions that might currently be open.
 
-(3) Click the 'Open' button, and navigate to ..\Files\Scripts and open the file "Xample_Sysdmp.Fap.KSYS.EC7" (there's also an ASYS version of this file, but we're sticking with the KSYS version for reasons that will explained below). Scroll down a bit, past the mounting of all the SCRATCH tape drives, and you'll see a line:
+(3) Click the 'Open' button, and navigate to ..\Files\Scripts and open the file "Xample_Sysdmp.Fap.KSYS.EC7" (there's also an ASYS version of this file, but we're sticking with the KSYS version for reasons that will explained below).
+
+(4) Now just click the 'Run' button on the Editor window, and the job will run. You could then 'Close' the file in the Editor, if you want; otherwise it will be kept open even if you 'Power Off' and restart the emulator. (Editor sessions are saved in the ..\Bin\B7094.INI file in the [EditFiles] section.)  But don't close the example script file just yet.
+
+Scroll down a bit in the Editor, past the mounting of all the SCRATCH tape drives, and you'll see a line:
 
 ####
     Include File='Sysdmp.Fap'    // Insert the source text
@@ -155,12 +159,17 @@ To start, here's the procedure for **running** one of the Xample scripts. We'll 
 Note that the "Include File=" command in the script is surrounded by text constituting the IBSYS and FORTRAN control cards that precede and follow the actual user-program source code. Without the single quotes required by the EC7 script interpreter, the first cards in the "job deck" would look like:
 
 ####
+    $LIST
+    $DATE
+    $UNITS
     $JOB           SYSDMP
     $EXECUTE       FORTRAN
     *     ID       SYSDMP
     *     XEQ
     
-The cards beginning with '$' are IBSYS control cards; note that any "argument" on such a card must begin in column 16. The cards beginning with '*' are FORTRAN processor control cards, and the FORTRAN control-card commands must begin in column 7. The 'XEQ' control card is supposed to mean "execute immediately" rather than "just compile or assemble, but do not execute", but IBSYS versions are idiosyncratic with regard to "honoring" this -- ASYS respects the absence of an XEQ card; KSYS does **not**, and will go ahead with immediate execution whether or not it's there. Of course, in all cases, attempting to execute the program is denied if there are errors reported by the compiler or assembler ("EXECUTION DELETED" is the usual message).
+The cards beginning with '$' are IBSYS control cards; note that any "argument" on such a card must begin in column 16. All the IBSYS control cards are all documented in the "IBM 7090/7094 IBSYS Operating System Version 13 Operator's Guide", section "Control Cards", p. 12., at bitsavers.org/pdf/ibm/7090/C28-6355-4_7090oper_Jun65.pdf
+
+The cards beginning with '*' are FORTRAN processor control cards, and the FORTRAN control-card commands must begin in column 7. The 'XEQ' control card is supposed to mean "execute immediately" rather than "just compile or assemble, but do not execute", but IBSYS versions are idiosyncratic with regard to "honoring" this -- ASYS respects the absence of an XEQ card; KSYS does **not**, and will go ahead with immediate execution whether or not it's there. Of course, in all cases, attempting to execute the program is denied if there are errors reported by the compiler or assembler ("EXECUTION DELETED" is the usual message).
 
 The cards following the inserted source code are:
 
