@@ -138,7 +138,7 @@ Scroll down a bit in the Editor, past the mounting of all the SCRATCH tape drive
 ####
     Include File='Sysdmp.Fap'    // Insert the source text
 
-"Sysdmp.Fap" is the actual Fortran Assembly Program code:
+"Sysdmp.Fap" (in ..\Files\Cards) is the actual Fortran Assembly Program code:
 
 ####
     *     FAP                                                               SYSDMP00
