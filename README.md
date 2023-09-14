@@ -152,7 +152,7 @@ To start, here's the procedure for **running** one of the Xample scripts. We'll 
            TRA     SYSDMP                                                   SYSDMP12
            END                                                              SYSDMP13
 
-Note that the "Include File=" command in the script is surrounded by text constituting the IBSYS control cards that precede and follow the actual user-program source code. Without the single quotes required by the EC7 script interpreter, the first cards in the "job deck" would look like:
+Note that the "Include File=" command in the script is surrounded by text constituting the IBSYS and FORTRAN control cards that precede and follow the actual user-program source code. Without the single quotes required by the EC7 script interpreter, the first cards in the "job deck" would look like:
 
 ####
     $JOB           SYSDMP
