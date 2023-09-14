@@ -132,8 +132,7 @@ To start, here's the procedure for **running** one of the Xample scripts. We'll 
 (3) Click the 'Open' button, and navigate to ..\Files\Scripts and open the file "Xample_Sysdmp.Fap.KSYS.EC7" (there's also an ASYS version of this file, but we're sticking with the KSYS version for reasons that will explained below). Scroll down a bit, past the mounting of all the SCRATCH tape drives, and you'll see a line:
 
 ####
-    json
-    // Include File='Sysdmp.Fap'    // Insert the source text
+    Include File='Sysdmp.Fap'    // Insert the source text
 
 "Sysdmp.Fap" is the actual Fortran Assembly Program code:
 
@@ -153,7 +152,26 @@ To start, here's the procedure for **running** one of the Xample scripts. We'll 
            TRA     SYSDMP                                                   SYSDMP12
            END                                                              SYSDMP13
 
-Note that the "Include File" command in the script is surrounded by text constituting the IBSYS control cards that precede and follow the actual user-program source code. Strictly speaking, the first "card" in "..\Files\Cards\Sysdmp.Fap" is actually a FORTRAN processor control card, not a comment -- note that the 'F' is aligned with column 7; the rest of the lines beginning with asterisks **are** comments. The first comment is used by the Assembler as the text of page headings on the SYSOU1 tape. In a similar example script that could have been shown here, "..\Files\Scripts\Xample_MatrixInv05.Ftn.KSYS.EC7", the Include file "..\Files\Cards\MatrixInvO5.Ftn" **is** pure FORTRAN II source code (though the initial line of that is also a comment whose text is used for page headings in the compiler report). But the core dump is more entertaining. Oh and by the way, there's a convention in the "..\Files\Cards" directory that source "decks" with ".Ftn" in the file names are FORTRAN II, whereas decks with ".For" in the names are IBJOB/FORTRAN IV. And of course ".Cob" indicates IBJOB/COBOL. There's no file that's pure IBJOB/MAP, but the source code for one of the demo jobs -- "..\Files\Cards\Lsqrs.For" -- is a very large deck with multiple "Control Sections" (as they're called in the native lingo of this machine), and some of them are MAP subroutines (and the multiple sections also necessitate the embedding of some IBJOB control cards ($IBFTC, $IBMAP) in that particular file. Similarly, "..\Files\Cards\StressIII.Ftn" is a large multi-section file with embedded FORTRAN control cards.
+Note that the "Include File=" command in the script is surrounded by text constituting the IBSYS control cards that precede and follow the actual user-program source code. Without the single quotes required by the EC7 script interpreter, the first cards in the "job deck" would look like:
+
+####
+    $JOB           SYSDMP
+    $EXECUTE       FORTRAN
+    *     ID       SYSDMP
+    *     XEQ
+    
+The cards beginning with '$' are IBSYS control cards; note that any "argument" on such a card must begin in column 16. The cards beginning with '*' are FORTRAN processor control cards, and the FORTRAN control-card commands must begin in column 7. The 'XEQ' control card is supposed to mean "execute immediately" rather than "just compile or assemble, but do not execute", but IBSYS versions are idiosyncratic with respect to "honoring" this -- ASYS does, KSYS does **not**. Of course, in all cases, attempting to execute the program is denied if there are errors reported by the compiler or assembler ("EXECUTION DELETED" is the usual message).
+
+The cards following the inserted source code are:
+
+####
+    ~
+    $IBSYS
+    $STOP
+
+The '~' character is just our convention to represent an End-Of-File card. '$IBSYS' tells the FORTRAN processor to return control to the IBSYS monitor. '$STOP' tells the system to print some final statistics and halt the CPU.
+
+Strictly speaking, the first "card" in "..\Files\Cards\Sysdmp.Fap" is actually a FORTRAN processor control card, not a comment -- note that the 'F' is aligned with column 7; the rest of the lines beginning with asterisks **are** comments. The first comment is used by the Assembler as the text of page headings on the SYSOU1 tape. In a similar example script that could have been shown here, "..\Files\Scripts\Xample_MatrixInv05.Ftn.KSYS.EC7", the Include file "..\Files\Cards\MatrixInvO5.Ftn" **is** pure FORTRAN II source code (though the initial line of that is also a comment whose text is used for page headings in the compiler report). But the core dump is more entertaining. Oh and by the way, there's a convention in the "..\Files\Cards" directory that source "decks" with ".Ftn" in the file names are FORTRAN II, whereas decks with ".For" in the names are IBJOB/FORTRAN IV. And of course ".Cob" indicates IBJOB/COBOL. There's no file that's pure IBJOB/MAP, but the source code for one of the demo jobs -- "..\Files\Cards\Lsqrs.For" -- is a very large deck with multiple "Control Sections" (as they're called in the native lingo of this machine), and some of them are MAP subroutines (and the multiple sections also necessitate the embedding of some IBJOB control cards ($IBFTC, $IBMAP) in that particular file. Similarly, "..\Files\Cards\StressIII.Ftn" is a large multi-section file with embedded FORTRAN control cards.
 
 If no path is given, the scripter "Include File" command will find the file of that name in the ..\Files\Cards directory. This is the default directory where B7094 keeps source-code "decks" for all the included demo programs. This is true even if, as is the case here, the program and its enclosing control cards must be converted to a tape before the job can run (which is required here because the FORTRAN II subsystem does not permit job input from cards. This conversion occurs slightly further on in the "Xample_Sysdmp.Fap.KSYS.EC7" script file you currently have open in the Editor.) The ..\Files\Tapes directory is where the IBSYS tapes live, in addition to some other binary files that are used to create relocatable binary jobs for input on tape. Most of the files in ..\Files\Cards are text files -- either source code or input data for a demo program -- though there are also some binary files in that directory, used to create relocatable binary jobs for input via the card reader.
 
