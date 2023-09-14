@@ -160,7 +160,7 @@ Note that the "Include File=" command in the script is surrounded by text consti
     *     ID       SYSDMP
     *     XEQ
     
-The cards beginning with '$' are IBSYS control cards; note that any "argument" on such a card must begin in column 16. The cards beginning with '*' are FORTRAN processor control cards, and the FORTRAN control-card commands must begin in column 7. The 'XEQ' control card is supposed to mean "execute immediately" rather than "just compile or assemble, but do not execute", but IBSYS versions are idiosyncratic with respect to "honoring" this -- ASYS does, KSYS does **not**. Of course, in all cases, attempting to execute the program is denied if there are errors reported by the compiler or assembler ("EXECUTION DELETED" is the usual message).
+The cards beginning with '$' are IBSYS control cards; note that any "argument" on such a card must begin in column 16. The cards beginning with '*' are FORTRAN processor control cards, and the FORTRAN control-card commands must begin in column 7. The 'XEQ' control card is supposed to mean "execute immediately" rather than "just compile or assemble, but do not execute", but IBSYS versions are idiosyncratic with regard to "honoring" this -- ASYS respects the absence of an XEQ card; KSYS does **not**, and will go ahead with immediate execution whether or not it's there. Of course, in all cases, attempting to execute the program is denied if there are errors reported by the compiler or assembler ("EXECUTION DELETED" is the usual message).
 
 The cards following the inserted source code are:
 
