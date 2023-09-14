@@ -27,6 +27,7 @@ separated by a comma.
 in angle brackets. The syntax for these items is given after the command
 definitions.
 
+
 Emulator Configuration
   CONFIG SET CHANNELS ["="] <number>
   Sets the number of emulated channels. Must be between 1 and 8.
@@ -52,7 +53,7 @@ Emulator Configuration
   ENTER KEYS ["="] <number>
   Place a 36-bit value in the console keys (the <number> is octal).
 
-  
+
 Emulator Control
   PRESS RESET|CLEAR|START|LOADCARD|LOADTAPE
   Simulates pressing the specified main console button.
@@ -149,6 +150,7 @@ Display Control
   Optional deblocking of BCD records without carriage control.
   Display mode and line number can be specified, and the result saved to a file.
 
+
 Scripting Control
   IF <condition> <command>
   Executes the specified command if the specified condition evaluates to TRUE.
@@ -190,6 +192,7 @@ Scripting Control
   Sets the specified user-defined variable (in range 0..99) to a string literal
   (the "@" is optional here, necessary when the variable is being dereferenced).
 
+
 Text file Generation
   TEXTLOAD [CLEAR]|(*(<string>|INCLUDE <file spec>))|(END|READER|(SAVE BCD|CBN <file spec>))
   This is typically used to construct job decks to be saved to card or tape. 
@@ -202,6 +205,7 @@ Text file Generation
   SAVE	  Writes the buffer contents to the specified PC file, in the specified format (BCD or CBN)
   See the demonstration scripts for examples.
 
+
 Miscellaneous
   TRACE ON|OFF|(SAVE [[TO] <filespec>])
   Turns trace recording on or off, or saves collected trace information to the specified file.
@@ -211,8 +215,16 @@ Miscellaneous
   WORKDIR Sets the current directory to the string specified or to one of the B7094
           installation folder's predefined subfolders: "Tape", "Card", "Bin" or "Output".
   RUN 	  Runs the specfied DOS command.
-  OUTPUT  Controls whether the DOS command output is visible. 	  
-  
+  OUTPUT  Controls whether the DOS command output is visible.
+
+  &BINPATH, &CARDPATH, &TAPEPATH, &SCRIPTPATH, &OUTPUTPATH
+  "macros" that expand to the absolute paths of subdirectories
+  Bin, Files\Cards, Files\Tapes, Files\Scripts, Output
+  respectively.
+
+  &DATE
+  macro that expands to the current date as mmddyy (all digits).
+
 
 Common subterms used in the syntax definitions above.
 
