@@ -82,7 +82,7 @@ The Tape Viewer has been thoroughly re-worked:
 
 - The hexadecimal column in the binary-mode display (that previously showed the P7B formatting of a tape image) has been eliminated, and replaced by a new character column showing machine words interpreted as if they contain six characters using internal BCD character codes, rather than the usual external (or "alternate") BCD character codes used on a BCD tape. This column always contains gibberish for a "pure" BCD tape, but on a hybrid BCD and binary tape (such as a job tape containing a program in relocatable binary form), or even on a "pure" binary tape (such as an IBSYS tape), this column sometimes shows human-readable text that can be of interest.
 
-- There is now a "sliding window" in the Tape Viewer, where arbitrary "From Byte" and "To Byte" positions can be selected for display. The "Redisplay" button causes the chosen limits to take effect (if "From Byte" is blank, it defaults to 0; if "To Byte" is blank, it defaults to either the last position on the tape or to "From Byte" plus a maximum window size, whichever is lower). "Clear" clears "From Byte" and "To Byte". "Use Whole Tape" resets the limits from 0 up to either the actual size of the tape or the maximum window size, whichever is lower. The maximum window size is large enough to be able to see all of SYSOUT.BCD for 
+- There is now a "sliding window" in the Tape Viewer, where arbitrary "From Byte" and "To Byte" positions can be selected for display. The "Redisplay" button causes the chosen limits to take effect (if "From Byte" is blank, it defaults to 0; if "To Byte" is blank, it defaults to either the last position on the tape or to "From Byte" plus a maximum window size, whichever is lower). "Clear" clears "From Byte" and "To Byte". "Use Whole Tape" resets the limits from 0 up to either the actual size of the tape or the maximum window size, whichever is lower. The maximum window size is large enough to be able to see all of ..\Output\SysOut.BCD for 
 all the demos without the user having to increase the "From Byte" and click "Redisplay" to see the end of the tape. All the labels and buttons having to do with the adjustable view window are colored purple, to visually group them together.  The Tape Viewer resynchronizes the word framing when starting the display from an arbitrary point on the tape.
 
 ## Additional advanced details
@@ -111,7 +111,7 @@ B7094's "Tape Viewer" is a useful tool for examining the contents of any P7B tap
 
 (4) On the Tape Drives window, click the 'Add Drive' button. Tape Unit 'A1' will appear. (You could continue to click and add additional Tape Units from 'A2'-'A0' and 'B1'-'B0' if you wanted to.)
 
-(5) On one of the added Tape Units, click the 'Opn' button and browse to any tape image file in the Open Dialog window. Any P7B file can be attached to the drive -- a SysIn.BCD or SysOut.BCD from a previous run (from the ..\Output directory), or any other tape.
+(5) On one of the added Tape Units, click the 'Opn' button and browse to any tape image file in the Open Dialog window. Any P7B file can be attached to the drive -- a ..\Output\SysIn.BCD or ..\Output\SysOut.BCD from a previous run (from the ..\Output directory), or any other tape.
 
 (6) Now click on the channel-letter+decimal-unit-number of the Tape Unit with your attached tape image file. The Tape Viewer window will appear, displaying the tape in whatever mode matches the image file extension (BCD mode for *.BCD, Binary mode for any other extension).
 
@@ -169,7 +169,7 @@ Note that the "Include File=" command in the script is surrounded by text consti
     
 The cards beginning with '$' are IBSYS control cards; note that any "argument" on such a card must begin in column 16. All the IBSYS control cards are documented in the "IBM 7090/7094 IBSYS Operating System Version 13 Operator's Guide", section "Control Cards", p. 12., at bitsavers.org/pdf/ibm/7090/C28-6355-4_7090oper_Jun65.pdf ; as well as the "IBM 7090/7094 IBSYS Operating System Version 13 System Monitor (IBSYS)" manual, section "System Supervisor", p. 10, at bitsavers.org/pdf/ibm/7090/C28-6248-7_v13_IBSYS_Dec66.pdf .
 
-$LIST causes **all** control cards to be listed on the lineprinter as well as the System Output Unit (SYSOU1 -- in this example, tape drive A3, with mounted tape image file SysOut.BCD). Normally, only a subset of control cards is also listed on the lineprinter.
+$LIST causes **all** control cards to be listed on the lineprinter as well as the System Output Unit (SYSOU1 -- in this example, tape drive A3, with mounted tape image file ..\Output\SysOut.BCD). Normally, only a subset of control cards is also listed on the lineprinter.
 
 $DATE sets the system date (the argument is "plugged in" to the card by the scripter's '&DATE' macro).
 
