@@ -167,9 +167,21 @@ Note that the "Include File=" command in the script is surrounded by text consti
     *     ID       SYSDMP
     *     XEQ
     
-The cards beginning with '$' are IBSYS control cards; note that any "argument" on such a card must begin in column 16. All the IBSYS control cards are all documented in the "IBM 7090/7094 IBSYS Operating System Version 13 Operator's Guide", section "Control Cards", p. 12., at bitsavers.org/pdf/ibm/7090/C28-6355-4_7090oper_Jun65.pdf
+The cards beginning with '$' are IBSYS control cards; note that any "argument" on such a card must begin in column 16. All the IBSYS control cards are all documented in the "IBM 7090/7094 IBSYS Operating System Version 13 Operator's Guide", section "Control Cards", p. 12., at bitsavers.org/pdf/ibm/7090/C28-6355-4_7090oper_Jun65.pdf .
 
-The cards beginning with '*' are FORTRAN processor control cards, and the FORTRAN control-card commands must begin in column 7. The 'XEQ' control card is supposed to mean "execute immediately" rather than "just compile or assemble, but do not execute", but IBSYS versions are idiosyncratic with regard to "honoring" this -- ASYS respects the absence of an XEQ card; KSYS does **not**, and will go ahead with immediate execution whether or not it's there. Of course, in all cases, attempting to execute the program is denied if there are errors reported by the compiler or assembler ("EXECUTION DELETED" is the usual message).
+$LIST causes **all** control cards to be listed on the lineprinter as well as the System Output Unit (SYSOU1 -- in our case, tape drive A3; image file SysOut.BCD). Normally, only a subset of control cards is also listed on the lineprinter.
+
+$DATE sets the system date (the argument is provided by the scripter).
+
+$UNITS causes all the "System Unit function names" to be listed on the output tape (and in our case the lineprinter as well). These are symbolic names for various functions served (mainly, and exclusively in our case apart from the card reader) by tape drives. SYSIN1 (or SYSIN2) means "system input"; SYSOU1 (or SYSOU2) means "system output" (think stdin and stdout in a Unix system); SYSPP1 (or SYSPP2) means "peripheral punch" (mainly for object code, to be punched on cards offline on another computer); SYSUT1, SYSUT2, ..., SYSUT9 ("system utility") are essentially "temp files" used for various things by various programs; etc.  Each System Unit in use has to be associated with a physical tape drive, designated by its "channel letter" and (decimal) "unit number": A1, A2, ..., A0 ("A0" comes at the end because you should think of it as being "A10"); B1, B2, ..., B0.  (A 7094 system could have up to 8 channels, designated by A, B, C, ..., H; we don't ever have to deal with more than 2 (A and B).  The $UNITS control card is not **required** here; it's just there to document what's going on. It's present in all the demo jobs (and in the case of the ASYS demos, it shows the list before and after System Unit reassignments via the "$ATTACH . . .", "$AS . . ." control cards -- refer to the IBM manual). One other physical device specification you'll see in the scripts, in addition to the physical tape drive designations, is "RDA" -- "card reader on channel A", which also has the System Unit function name "SYSCRD".
+
+The $JOB card marks the beginning of a "job" -- a unit of work in IBSYS. It must always be present.
+
+The $EXECUTE card causes IBSYS to invoke one of its major "subsystems" -- in this case, the FORTRAN processor. (But the IBJOB processor is also invoked by means of the $EXECUTE card.)
+
+The cards beginning with '*' are FORTRAN processor control cards, and the FORTRAN control-card commands must begin in column 7. All the Fortran Processor control cards are all documented in the "IBM 7090/7094 Programming Systems FORTRAN II Programming" manual, Chapter 14 "FORTRAN II Monitor Control Cards", p. 37 at bitsavers.org/pdf/ibm/7090/C28-6054-5_FORTRANII_Apr64.pdf and the "IBM 7090/7094 Programming Systems FORTRAN II Operations" manual, Chapter 13 "FORTRAN II Monitor Control Cards and Utility Cards", p. 30 at bitsavers.org/pdf/ibm/7090/C28-6066-6_FORTRANII_oper.pdf
+
+The 'XEQ' control card is supposed to mean "execute immediately" rather than "just compile or assemble, but do not execute", but our two IBSYS versions' FORTRAN processors are idiosyncratic with regard to "honoring" this -- ASYS respects the absence of an XEQ card; KSYS does **not**, and will go ahead with immediate execution whether or not it's there. Of course, in all cases, attempting to execute the program is denied if there are errors reported by the compiler or assembler ("EXECUTION DELETED" is the usual message).
 
 The cards following the inserted source code are:
 
