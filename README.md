@@ -132,8 +132,8 @@ To start, here's the procedure for **running** one of the Xample scripts. We'll 
 (3) Click the 'Open' button, and navigate to ..\Files\Scripts and open the file "Xample_Sysdmp.Fap.KSYS.EC7" (there's also an ASYS version of this file, but we're sticking with the KSYS version for reasons that will explained below). Scroll down a bit, past the mounting of all the SCRATCH tape drives, and you'll see a line:
 
 ####
-    diff
-    + Include File='Sysdmp.Fap'    // Insert the source text
+    json
+    // Include File='Sysdmp.Fap'    // Insert the source text
 
 "Sysdmp.Fap" is the actual Fortran Assembly Program code:
 
