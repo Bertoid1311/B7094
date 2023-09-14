@@ -167,9 +167,9 @@ Note that the "Include File=" command in the script is surrounded by text consti
     *     ID       SYSDMP
     *     XEQ
     
-The cards beginning with '$' are IBSYS control cards; note that any "argument" on such a card must begin in column 16. All the IBSYS control cards are all documented in the "IBM 7090/7094 IBSYS Operating System Version 13 Operator's Guide", section "Control Cards", p. 12., at bitsavers.org/pdf/ibm/7090/C28-6355-4_7090oper_Jun65.pdf ; as well as the "IBM 7090/7094 IBSYS Operating System Version 13 System Monitor (IBSYS)" manual, section "System Supervisor", p. 10, at bitsavers.org/pdf/ibm/7090/C28-6248-7_v13_IBSYS_Dec66.pdf .
+The cards beginning with '$' are IBSYS control cards; note that any "argument" on such a card must begin in column 16. All the IBSYS control cards are documented in the "IBM 7090/7094 IBSYS Operating System Version 13 Operator's Guide", section "Control Cards", p. 12., at bitsavers.org/pdf/ibm/7090/C28-6355-4_7090oper_Jun65.pdf ; as well as the "IBM 7090/7094 IBSYS Operating System Version 13 System Monitor (IBSYS)" manual, section "System Supervisor", p. 10, at bitsavers.org/pdf/ibm/7090/C28-6248-7_v13_IBSYS_Dec66.pdf .
 
-$LIST causes **all** control cards to be listed on the lineprinter as well as the System Output Unit (SYSOU1 -- in our case, tape drive A3; image file SysOut.BCD). Normally, only a subset of control cards is also listed on the lineprinter.
+$LIST causes **all** control cards to be listed on the lineprinter as well as the System Output Unit (SYSOU1 -- in this example, tape drive A3, with mounted tape image file SysOut.BCD). Normally, only a subset of control cards is also listed on the lineprinter.
 
 $DATE sets the system date (the argument is provided by the scripter).
 
@@ -179,7 +179,7 @@ The $JOB card marks the beginning of a "job" -- a unit of work in IBSYS. It must
 
 The $EXECUTE card causes IBSYS to invoke one of its major "subsystems" -- in this case, the FORTRAN processor. (The IBJOB processor is also invoked by means of the $EXECUTE card.)
 
-The cards beginning with '*' are FORTRAN processor control cards, and the FORTRAN control-card commands must begin in column 7. All the Fortran Processor control cards are all documented in the "IBM 7090/7094 Programming Systems FORTRAN II Programming" manual, Chapter 14 "FORTRAN II Monitor Control Cards", p. 37 at bitsavers.org/pdf/ibm/7090/C28-6054-5_FORTRANII_Apr64.pdf ; as well as the "IBM 7090/7094 Programming Systems FORTRAN II Operations" manual, Chapter 13 "FORTRAN II Monitor Control Cards and Utility Cards", p. 30 at bitsavers.org/pdf/ibm/7090/C28-6066-6_FORTRANII_oper.pdf .
+The cards beginning with '*' are FORTRAN processor control cards, and the FORTRAN control-card commands must begin in column 7. All the Fortran Processor control cards are documented in the "IBM 7090/7094 Programming Systems FORTRAN II Programming" manual, Chapter 14 "FORTRAN II Monitor Control Cards", p. 37 at bitsavers.org/pdf/ibm/7090/C28-6054-5_FORTRANII_Apr64.pdf ; as well as the "IBM 7090/7094 Programming Systems FORTRAN II Operations" manual, Chapter 13 "FORTRAN II Monitor Control Cards and Utility Cards", p. 30 at bitsavers.org/pdf/ibm/7090/C28-6066-6_FORTRANII_oper.pdf .
 
 The 'XEQ' control card is supposed to mean "execute immediately" rather than "just compile or assemble, but do not execute", but our two IBSYS versions' FORTRAN processors are idiosyncratic with regard to "honoring" this -- ASYS respects the absence of an XEQ card; KSYS does **not**, and will go ahead with immediate execution whether or not it's there. Of course, in all cases, attempting to execute the program is denied if there are errors reported by the compiler or assembler ("EXECUTION DELETED" is the usual message).
 
