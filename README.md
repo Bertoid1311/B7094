@@ -240,7 +240,7 @@ When the Editor window reappears, it will have turned green, and the filename ta
 
 ![Screenshot](Editor_screenshot3.jpg)
 
-When you clicked 'Run', the Editor automatically created a temporary file ..\Output\Temp.EC7 and ran the Scripter from that file. You can continue to make changes in your script and 'Run' them, and those changes will automatically be saved to 'Temp.EC7'. If you click 'Close', you'll be prompted to save the file. You could also use the 'SaveAs' button at any time to save your script anywhere, under any name you choose.
+When you clicked 'Run', the Editor automatically created a temporary file ..\Output\Temp.EC7 and ran the Scripter from that file. You can continue to make changes in your script and 'Run' them, and those changes will automatically be saved to 'Temp.EC7'. If you make a change and then click 'Close', you'll be prompted to save the file. You could also use the 'SaveAs' button at any time to save your script anywhere, under any name you choose.
 
 And that's basically all there is to the Editor. The EC7 scripting language is another story. Probably the best way to get a grip on that would be to examine the existing scripts in the ..\Files\Scripts directory. Most of what you'll want to do will be in there somewhere. But there's also a manual, ..\Docs\B7094ScripterSyntax.txt that gives a full description of the language (admittedly, in somewhat opaque "formal syntax" style).
 
