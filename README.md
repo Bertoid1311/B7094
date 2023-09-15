@@ -214,6 +214,22 @@ There's one other amusing bit of trivia about the original Paul Pierce version o
 
 The methods described above will take care of compile-and-go (or assemble-and-go) jobs, which will probably be sufficient for the vast majority of users.  It is possible, though, to compile a program from source and then create and submit a relocatable binary version of the program whenever it needs to be re-run.  This is, however, as the Emerald City cabbie said to Dorothy, "a horse of a different color".  See the README.txt file included with the reloc_scripts.* archives for more details about that.
 
+## The Editor and the Scripter
+
+B7094's main "driver" is a command interpreter called the Scripter, which parses and executes a custom interpreted language called EC7 ("Execute Commands for the B7094"). As shown above with the files ..\Files\Scripts\Xample_xxx.EC7 , in order to "point" B7094 at a script and start it running you need to use the Editor (either that, or select the script as the default to run when B7094 starts up -- click the Config checkbox on the Control Panel to see about that).
+
+You can think of the Editor as a more primitive version of Notepad.  You can load files into it (any files, not just EC7 scripts), edit them with the mouse and keyboard, and save them anywhere. You've got select, cut, copy and paste via the mouse (as with Notepad); but no search and replace, formatting, etc.
+
+So to use the Editor to create and run an EC7 script, start B7094 and in the first demo window click 'End Demonstration Script'.  By the way, if you've had enough of the demos and want to turn them off temporarily or for good, just click the 'Config' checkbox on the Control Panel to bring up the Configuration window and, near the bottom, deselect the 'Enable Startup Script' checkbox.
+
+Now activate the Editor window by either clicking the 'Editor' button on the Control Panel window, or by clicking the Editor checkbox there (they do the same thing). Unless you've previously had a file open in the Editor (and its name was saved in ..\Bin\B7094.INI and the file still exists), the Editor will initially come up as an all-white box with some buttons and checkboxes near the top.
+
+To create a new file (generally you'll be creating a script for B7094 to run), click the 'New' button. The box will turn blue, it'll get a scrollbar on the right, and a tab will appear with the label 'New' in it.
+
+You can start typing at this point, like so:
+
+![Screenshot](Editor_screenshot1.jpg)
+
 ## Acknowledgments
 
 Grateful acknowledgment is due to Richard Cornwell for providing some of the sample demo jobs, and for providing technical assistance in getting this new release operational. And of course to Al Kossow et al. for the bitsavers archive, without which many retro-emulators couldn't exist; to Bob Supnik, Dave Pitts, and Richard Cornwell for their work getting **really**-working IBM 709x emulators operational in the mid-late 2000s.  And to Paul Pierce, who got the ball rolling with his collection of tapes, without which there would be nothing to run on such emulators (well, apart from the CTSS software from MIT).
