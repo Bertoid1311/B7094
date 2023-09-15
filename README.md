@@ -276,11 +276,11 @@ There are some things that can make the emulator seem to hang, but are just **ve
 
 - If you've activated the Core Plot window. This is a graphical display of core usage, with memory locations represented by blocks of colored pixels. Pixels in a block are black initially; a write to a location turns them blue, a read from a location turns them green, a (pending) instruction fetch flashes a pixel block white (before the actual fetch turns it green). This can be entertaining (and one of the canned demos features it), but it **really** slows down the emulator.
 
-Sometimes, the emulator really can get hung. This can happen if you try to 'Power Off' while a job is running (it's "safer" to click the 'Stop' button on the Operator Console window and **then** click 'Power Off').
+B7094 is a multi-threaded, event-driven application, and sometimes (hopefully not too often) things can jam up. For example, if you start the application and then click 'Power Off' before the Splash window has a chance to close on its own, the application will freeze. In this case, if you just click 'Close' on the Splash window (ignoring the spinning mouse pointer), B7094 will then terminate. Something similar can happen if you try to 'Power Off' while a job is running (it's "safer" to click the 'Stop' button on the Operator Console window and then click 'Power Off'), but if you click 'Power Off' a second time (once again ignoring the spinning mouse pointer), the application will terminate.
 
 By the way, if you **are** running a demo job and don't want to wait for it to finish, you can click the 'Stop' button on the Operator Console window at any time. The Scripter will treat the job as having completed normally, and both the Tape Viewer window (albeit with truncated contents, of course) and the Script Dialog window that says "Click 'Continue' to dismiss the tape viewer and redisplay the demo list." will come up. Just click 'Continue' at that point, and the demo suite will continue normally.
 
-If the emulator hangs, or if something is just taking more time than you care to wait for, I'm afraid there's nothing for it but to kill the process in the Task Manager.
+If the does hang permanently, or if something is just taking more time than you care to wait for, I'm afraid there's nothing for it but to kill the process in the Task Manager.
 
 ## Known bugs
 
