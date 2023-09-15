@@ -234,6 +234,14 @@ Now click the 'Run' button, and voilà:
 
 ![Screenshot](Editor_screenshot2.jpg)
 
+Click either the 'Continue' or the 'Cancel' button, and the 'B7094 Scripter' window will close, the script will end, and the Editor window will re-open (in the former case, because there's no more script to Continue; in the latter case, continuation of a longer script would be Cancelled at that point).
+
+When the Editor window reappears, it will have turned green, and the filename tab will now show 'Temp.EC7':
+
+![Screenshot](Editor_screenshot2.jpg)
+
+When you clicked 'Run', the Editor automatically created a temporary file ..\Output\Temp.EC7 and ran the Scripter from that file. You can continue to make changes in your script and 'Run' them, and those changes will automatically be saved to 'Temp.EC7'. If you click 'Close', you'll be prompted to save the file. You could also use the 'SaveAs' button at any time to save your script anywhere, under any name you choose.
+
 ## Acknowledgments
 
 Grateful acknowledgment is due to Richard Cornwell for providing some of the sample demo jobs, and for providing technical assistance in getting this new release operational. And of course to Al Kossow et al. for the bitsavers archive, without which many retro-emulators couldn't exist; to Bob Supnik, Dave Pitts, and Richard Cornwell for their work getting **really**-working IBM 709x emulators operational in the mid-late 2000s.  And to Paul Pierce, who got the ball rolling with his collection of tapes, without which there would be nothing to run on such emulators (well, apart from the CTSS software from MIT).
