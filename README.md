@@ -238,7 +238,7 @@ Click either the 'Continue' or the 'Cancel' button, and the 'B7094 Scripter' win
 
 When the Editor window reappears, it will have turned green, and the filename tab will now show 'Temp.EC7':
 
-![Screenshot](Editor_screenshot2.jpg)
+![Screenshot](Editor_screenshot3.jpg)
 
 When you clicked 'Run', the Editor automatically created a temporary file ..\Output\Temp.EC7 and ran the Scripter from that file. You can continue to make changes in your script and 'Run' them, and those changes will automatically be saved to 'Temp.EC7'. If you click 'Close', you'll be prompted to save the file. You could also use the 'SaveAs' button at any time to save your script anywhere, under any name you choose.
 
