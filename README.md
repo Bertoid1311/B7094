@@ -242,6 +242,8 @@ When the Editor window reappears, it will have turned green, and the filename ta
 
 When you clicked 'Run', the Editor automatically created a temporary file ..\Output\Temp.EC7 and ran the Scripter from that file. You can continue to make changes in your script and 'Run' them, and those changes will automatically be saved to 'Temp.EC7'. If you click 'Close', you'll be prompted to save the file. You could also use the 'SaveAs' button at any time to save your script anywhere, under any name you choose.
 
+And that's basically all there is to the Editor. The EC7 scripting language is another story. Probably the best way to get a grip on that would be to examine the existing scripts in the ..\Files\Scripts directory. Most of what you'll want to do will be in there somewhere. But there's also a manual, ..\Docs\B7094ScripterSyntax.txt that gives a full description of the language (admittedly, in somewhat opaque "formal syntax" style).
+
 ## Acknowledgments
 
 Grateful acknowledgment is due to Richard Cornwell for providing some of the sample demo jobs, and for providing technical assistance in getting this new release operational. And of course to Al Kossow et al. for the bitsavers archive, without which many retro-emulators couldn't exist; to Bob Supnik, Dave Pitts, and Richard Cornwell for their work getting **really**-working IBM 709x emulators operational in the mid-late 2000s.  And to Paul Pierce, who got the ball rolling with his collection of tapes, without which there would be nothing to run on such emulators (well, apart from the CTSS software from MIT).
