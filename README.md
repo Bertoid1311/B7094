@@ -121,7 +121,7 @@ You can also save the text in the Tape Viewer window by clicking the 'Save' push
 
 ## Writing and running your own programs
 
-The EC7 script files comprising B7094's demo suite are a **bit** convoluted at first glance; so a number of simple, in-line script files (named ..\Files\Scripts\Xample_xxx.EC7) are provided as models for anybody who actually wants to write and run IBM 7090/7094 programs in any of the supported languages (FORTRAN II, FAP; FORTRAN IV, COBOL, MAP). These "Xample" scripts should make it possible to just concentrate on your own program and not have to worry about the "envelope" of IBSYS control cards or EC7 configuration commands. You can basically just copy one of the Xample scripts and make a few very small alterations to have it run your own code.
+The EC7 script files comprising B7094's demo suite are a **bit** convoluted at first glance; so a number of simple, in-line script files (named ..\Files\Scripts\Xample_xxx.EC7) are provided as templates for anybody who actually wants to write and run IBM 7090/7094 programs in any of the supported languages (FORTRAN II, FAP; FORTRAN IV, COBOL, MAP). These "Xample" scripts should make it possible to just concentrate on your own program and not have to worry about the "envelope" of IBSYS control cards or EC7 configuration commands. You can basically just copy one of the Xample scripts and make a few very small alterations to have it run your own code.
 
 To start, here's the procedure for **running** one of the Xample scripts. We'll exhibit one that assembles and runs a very short FAP assembly-language program, under IBSYS's FORTRAN II subsystem, to request IBSYS to generate a core dump.
 
