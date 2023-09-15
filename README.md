@@ -230,6 +230,10 @@ You can start typing at this point, like so:
 
 ![Screenshot](Editor_screenshot1.jpg)
 
+Now click the 'Run' button, and voilà:
+
+![Screenshot](Editor_screenshot2.jpg)
+
 ## Acknowledgments
 
 Grateful acknowledgment is due to Richard Cornwell for providing some of the sample demo jobs, and for providing technical assistance in getting this new release operational. And of course to Al Kossow et al. for the bitsavers archive, without which many retro-emulators couldn't exist; to Bob Supnik, Dave Pitts, and Richard Cornwell for their work getting **really**-working IBM 709x emulators operational in the mid-late 2000s.  And to Paul Pierce, who got the ball rolling with his collection of tapes, without which there would be nothing to run on such emulators (well, apart from the CTSS software from MIT).
