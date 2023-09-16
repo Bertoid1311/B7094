@@ -242,9 +242,9 @@ You can click 'New' multiple times, and get multiple edit boxes. When they're cr
 
 And that's basically all there is to the Editor. The EC7 scripting language is another story. Probably the best way to get a grip on that would be to examine the existing scripts in the ..\Files\Scripts directory. Most of what you'll want to do will be in there somewhere. But there's also a manual, ..\Docs\B7094ScripterSyntax.txt that gives a full description of the language (admittedly, in somewhat opaque "formal syntax" style). Here's a sequence of commands from one of the more difficult-to-parse entries in the Syntax manual, and its result:
 
-![Screenshot](Editor_screenshot4.jpg)
+![Screenshot](Editor_screenshot3.jpg)
 
-![Screenshot](Editor_screenshot5.jpg)
+![Screenshot](Editor_screenshot4.jpg)
 
 ## Acknowledgments
 
