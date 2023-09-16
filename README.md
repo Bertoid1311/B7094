@@ -224,7 +224,7 @@ So to use the Editor to create and run an EC7 script, start B7094 and in the fir
 
 Now activate the Editor window by either clicking the 'Editor' button on the Control Panel window, or by clicking the Editor checkbox there (they do the same thing). Unless you've previously had a file open in the Editor (and its name was saved in ..\Bin\B7094.INI and the file still exists), the Editor will initially come up as an all-white box with some buttons and checkboxes near the top.
 
-To create a new file (generally you'll be creating a script for B7094 to run), click the 'New' button. The box will turn blue, it'll get a scrollbar on the right, and a tab will appear with the label 'New' in it.
+To create a new file (generally you'll be creating a script for B7094 to run), click the 'New' button. The box will turn green, it'll get a scrollbar on the right, and a tab will appear with the label 'Temp.EC7' in it.
 
 You can start typing at this point, like so:
 
@@ -236,11 +236,9 @@ Now click the 'Run' button, and voilà:
 
 Click either the 'Continue' or the 'Cancel' button, and the 'B7094 Scripter' window will close, the script will end, and the Editor window will re-open (in the former case, because there's no more script to Continue; in the latter case, continuation of a longer script would be Cancelled at that point).
 
-When the Editor window reappears, it will have turned green, and the filename tab will now show 'Temp.EC7':
+When you clicked 'New', the Editor automatically created a temporary file ..\Output\Temp.EC7 , and when you clicked 'Run' it automatically saved what you had typed and ran the Scripter from that file. You can continue to make changes in your script and 'Run' them, and those changes will automatically be saved to 'Temp.EC7'. If you make a change and then click 'Close', you'll be prompted to save the file. You can also 'Save' it yourself at any time, or use the 'SaveAs' button to save your script anywhere, under any name you choose.
 
-![Screenshot](Editor_screenshot3.jpg)
-
-When you clicked 'Run', the Editor automatically created a temporary file ..\Output\Temp.EC7 and ran the Scripter from that file. You can continue to make changes in your script and 'Run' them, and those changes will automatically be saved to 'Temp.EC7'. If you make a change and then click 'Close', you'll be prompted to save the file. You could also use the 'SaveAs' button at any time to save your script anywhere, under any name you choose.
+You can click 'New' multiple times, and get multiple edit boxes. When they're created, the edit boxes will all point to ..\Output\Temp.EC7, but they will have entirely separate contents in memory, and you can switch between them and 'Run' the scripts in them freely. But here's the catch: if you want to **keep** one or more of the multiple "Temp.EC7' text boxes, you must save it to a "real" file (named something other than ..\Output\Temp.EC7) before you power off. You can also 'Open' "real" files to have them simultaneously open in multiple edit boxes.
 
 And that's basically all there is to the Editor. The EC7 scripting language is another story. Probably the best way to get a grip on that would be to examine the existing scripts in the ..\Files\Scripts directory. Most of what you'll want to do will be in there somewhere. But there's also a manual, ..\Docs\B7094ScripterSyntax.txt that gives a full description of the language (admittedly, in somewhat opaque "formal syntax" style). Here's a sequence of commands from one of the more difficult-to-parse entries in the Syntax manual, and its result:
 
