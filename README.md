@@ -254,9 +254,9 @@ The EC7 scripting language is another story. Probably the best way to get a grip
 
 ## Totally manual operation
 
-You can also, if you wish, "rough it" by eschewing the Editor, the Scripter, and the canned demos altogether and operating B7094 as if you were sitting in the midst of a machine room with a physical mainframe. You do this by means of the buttons on the Console window and the various other window representing the attached peripheral devices.
+You can also, if you wish, "rough it" by eschewing the Editor, the Scripter, and the canned demos altogether and operating B7094 as if you were sitting in the midst of a machine room with a physical mainframe. You would do this by means of the buttons on the Console window and the various other windows representing the attached peripheral devices.
 
-Here's a step-by-step simple example:
+Here's a simple step-by-step example:
 
 (1) Start the emulator, and in the first demo window click 'End Demonstration Script'. (You know by now that you can turn off the bothersome demos by disabling them on the Configuration window, right?)
 
