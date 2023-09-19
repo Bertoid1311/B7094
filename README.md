@@ -252,7 +252,7 @@ The EC7 scripting language is another story. Probably the best way to get a grip
 
 ![Screenshot](Editor_screenshot5.jpg)
 
-## The Editor and the Scripter
+## Totally manual operation
 
 You can also, if you wish, "rough it" by eschewing the Editor, the Scripter, and the canned demos altogether and operating B7094 as if you were sitting in the midst of a machine room with a physical mainframe. You do this by means of the buttons on the Console window and the various other window representing the attached peripheral devices.
 
@@ -272,11 +272,21 @@ Here's a step-by-step simple example:
 
 ![Screenshot](Printer_screenshot.jpg)
 
-(7) The program will continue running until the CPU is stopped by clicking 'Stop' at the top of the Console window.  (WARNING: Do click 'Stop' and not just 'Power Off' or B7094 will hang and have to be killed in the Task Manager. You can, of course, click 'Stop' and **then** click 'Power Off', and the emulator will exit normally.
+(7) The program will continue running until the CPU is stopped by clicking 'Stop' at the top of the Console window.  (WARNING: Do click 'Stop' first before you click 'Power Off', or B7094 will hang and have to be killed in the Task Manager. But if you click 'Stop' and **then** click 'Power Off', the emulator will exit normally.
 
-After you've stopped the CPU, here's how you can reset things and re-run the same (or a different) program:
+After you've stopped the CPU, here's how you can reset things and re-run the same program (similar steps could be taken to run a different program).
 
-(1) 
+(1) Click 'Clear' on the Line Printer window to delete the text there.
+
+(2) Click 'Reload' on the Card Reader window to reload the last card file you loaded, or click 'Open' to reload the same or a new file.
+
+(3) Click 'Clear' on the Console window. This both clears (zeroes-out) core memory **and** resets the CPU (whereas 'Reset' just resets the CPU without clearing memory; the emulator's 'Reset' is the equivalent of a power-off/power-on cycle of a physical machine, which would have left the contents of non-volatile core memory intact).
+
+(4) Select the required 'off'/'ON' states of the Switches (re-select Switch 6 to re-run 9M21A). On a physical machine, the physical switches would stay put unless toggled manually; our 'Reset' turns them all back to 'off' as a convenience and a safety precaution.)
+
+(6) Once again, click the lavender 'Load Card' (or 'Load Tape', if you're running a program on tape) to start the program running.
+
+Note: The above style of totally manual operation works best with simple stand-alone programs such as the card diagnostic deck demonstrated here. For programs requiring more complicated configuration of the system (such as adding tape drives) it quickly becomes cumbersome **not** to be using the Scripter. IBSYS itself probably falls into the "too cumbersome to run manually" category.
 
 ## Acknowledgments
 
