@@ -278,7 +278,7 @@ After you've stopped the CPU, here's how you can reset things and re-run the sam
 
 (1) Click 'Clear' on the Line Printer window to delete the text there.
 
-(2) Click 'Reload' on the Card Reader window to reload the last card file you loaded, or click 'Open' to reload the same or a new file.
+(2) Click 'Reload' on the Card Reader window to reload the last card file you loaded, or click 'Open' to reload the same or load a new file.
 
 (3) Click 'Clear' on the Console window. This both clears (zeroes-out) core memory **and** resets the CPU (whereas 'Reset' just resets the CPU without clearing memory; the emulator's 'Reset' is the equivalent of a power-off/power-on cycle of a physical machine, which would have left the contents of non-volatile core memory intact).
 
