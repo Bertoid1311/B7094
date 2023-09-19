@@ -272,7 +272,7 @@ Here's a simple step-by-step example:
 
 ![Screenshot](Printer_screenshot.jpg)
 
-(7) The program will continue running until the CPU is stopped by clicking 'Stop' at the top of the Console window.  (WARNING: Do click 'Stop' first before you click 'Power Off', or B7094 will hang and have to be killed in the Task Manager. But if you click 'Stop' and **then** click 'Power Off', the emulator will exit normally.
+(7) The program will continue running until the CPU is stopped by clicking 'Stop' at the top of the Console window.  (WARNING: Do not click 'Power Off' before you click 'Stop', or B7094 will hang and have to be killed in the Task Manager. But if you click 'Stop' and **then** click 'Power Off', the emulator will exit normally.
 
 After you've stopped the CPU, here's how you can reset things and re-run the same program (similar steps could be taken to run a different program).
 
