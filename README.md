@@ -117,7 +117,7 @@ B7094's "Tape Viewer" is a useful tool for examining the contents of any P7B tap
 
 You can attach any file, with any name, to a tape drive -- either via a Tape Unit's 'Opn' button or via an EC7 script's 'Mount' command. But any file you expect to be usable with IBSYS must have a filename extension of either '.BCD' or '.BIN' (upper- or lower-case, doesn't matter). This is true even if the file is otherwise a properly-formatted P7B image containing "real" data. Further, any file intended for use with IBSYS that contains BCD records (with even parity), or **begins** with BCD records in the case of a "hybrid" tape (such as a job input tape) must have the '.BCD' extension. And a file which contains binary records (with odd parity), such as an operating system or stand-alone diagnostic tape, must have the '.BIN' extension.
 
-You can also save the text in the Tape Viewer window by clicking the 'Save' pushbutton at the top left of the window. There won't be any acknowledgment of the button press, but you'll get a "dump" file in the ..\Output directory with the extension '.DMP', named according to the tape image file that was being displayed (e.g., 'SYSOUT.BCD.DMP' or 'SYSIN.BCD.DMP').  The dump file name will always reflect the format (and hence the extension) of the tape image that was being displayed in the Tape Viewer (either '.BCD' or '.BIN') but in fact the text in the Tape Viewer window will be saved in whatever mode the Tape Viewer is currently displaying: either 'BCD' or 'Binary'.
+You can also save the text in the Tape Viewer window by clicking the 'Save' button at the top left of the window. There won't be any acknowledgment of the button press, but you'll get a "dump" file in the ..\Output directory with the extension '.DMP', named according to the tape image file that was being displayed (e.g., 'SYSOUT.BCD.DMP' or 'SYSIN.BCD.DMP').  The dump file name will always reflect the format (and hence the extension) of the tape image that was being displayed in the Tape Viewer (either '.BCD' or '.BIN') but in fact the text in the Tape Viewer window will be saved in whatever mode the Tape Viewer is currently displaying: either 'BCD' or 'Binary'.
 
 ## Writing and running your own programs
 
@@ -252,6 +252,32 @@ The EC7 scripting language is another story. Probably the best way to get a grip
 
 ![Screenshot](Editor_screenshot5.jpg)
 
+## The Editor and the Scripter
+
+You can also, if you wish, "rough it" by eschewing the Editor, the Scripter, and the canned demos altogether and operating B7094 as if you were sitting in the midst of a machine room with a physical mainframe. You do this by means of the buttons on the Console window and the various other window representing the attached peripheral devices.
+
+Here's a step-by-step simple example:
+
+(1) Start the emulator, and in the first demo window click 'End Demonstration Script'. (You know by now that you can turn off the bothersome demos by disabling them on the Configuration window, right?)
+
+(2) In the Control Panel window, click the checkboxes for 'Reader' and 'Printer' to bring up the corresponding windows.
+
+(3) In the 'IBM 711 Card Reader window', click the 'Open' button and navigate to ..\Files\Cards. On the 'Open file' dialog window, select either 'Any file (*.*)' or 'Column Binary card files (*.CBN)' in the drop-down box to the right of the 'File name:' field. Double-click, or click and 'Open', "9M21A.CBN". The cards will appear in the Card Reader window and the file name will appear in the Card Reader window's title bar. (The column-binary data is not human-readable, except for the sequence numbers in the final eight columns of each card.)
+
+(4) At the bottom right of the Console window, in the row of buttons labelled 'Switches:', click the button corresponding to Switch 6. The label of the button will change from 'off' to 'ON', and its color will change from grey to purple.
+
+(5) At the top of the Console window, click the lavender button labelled 'Load Card'.
+
+(6) Now watch the 'IBM 716 Line Printer' window. First, the message 'NOW PERFORMING DIAGNOSTIC 9M21' will appear. Then, after a moment, additional lines will appear announcing "100 PROGRAM PASSES COMPLETE 9M21", like so:
+
+![Screenshot](Printer_screenshot.jpg)
+
+(7) The program will continue running until the CPU is stopped by clicking 'Stop' at the top of the Console window.  (WARNING: Do click 'Stop' and not just 'Power Off' or B7094 will hang and have to be killed in the Task Manager. You can, of course, click 'Stop' and **then** click 'Power Off', and the emulator will exit normally.
+
+After you've stopped the CPU, here's how you can reset things and re-run the same (or a different) program:
+
+(1) 
+
 ## Acknowledgments
 
 Grateful acknowledgment is due to Richard Cornwell for providing some of the sample demo jobs, and for providing technical assistance in getting this new release operational. And of course to Al Kossow et al. for the bitsavers archive, without which many retro-emulators couldn't exist; to Bob Supnik, Dave Pitts, and Richard Cornwell for their work getting **really**-working IBM 709x emulators operational in the mid-late 2000s.  And to Paul Pierce, who got the ball rolling with his collection of tapes, without which there would be nothing to run on such emulators (well, apart from the CTSS software from MIT).
@@ -278,9 +304,9 @@ There are some things that can make the emulator seem to hang, but are just **ve
 
   (1) Check the boxes in the 'Trace Record filters' section on the left to select the classes of items you want traced (the fewer the "better", if you can narrow things down);
 
-  (2) When the job finishes either 'Power Off' the emulator or click the 'Clear' pushbutton in the Log/Trace window.  You'll then be prompted to 'Save current trace data?'. Click 'Yes' and a file ..\Output\B7094.TRC will be written (overwriting one that's already there, if there is one). The saving of the trace file can itself take a **bit** of time.
+  (2) When the job finishes either 'Power Off' the emulator or click the 'Clear' button in the Log/Trace window.  You'll then be prompted to 'Save current trace data?'. Click 'Yes' and a file ..\Output\B7094.TRC will be written (overwriting one that's already there, if there is one). The saving of the trace file can itself take a **bit** of time.
 
-  But the Log/Trace window also has a 'Trace Display filters' section on the right, and this allows you to filter and display in the window anything that's been recorded as a result of making the selections on the left (you check the desired checkboxes on the right, and then click the 'Display' pushbutton). But this can be a big annoyance if there's a lot of trace data to be filtered for display (examine the 'Lines:' counter above the 'Display' pushbutton to see if this might be the case). This process of filtering for "on-line" display can take a **long** time if there's a lot of trace data -- much longer than just saving all the trace data to a file and then using a text editor to view it.
+  But the Log/Trace window also has a 'Trace Display filters' section on the right, and this allows you to filter and display in the window anything that's been recorded as a result of making the selections on the left (you check the desired checkboxes on the right, and then click the 'Display' button). But this can be a big annoyance if there's a lot of trace data to be filtered for display (examine the 'Lines:' counter above the 'Display' button to see if this might be the case). This process of filtering for "on-line" display can take a **long** time if there's a lot of trace data -- much longer than just saving all the trace data to a file and then using a text editor to view it.
 
 - If you've activated the Core Plot window. This is a graphical display of core usage, with memory locations represented by blocks of colored pixels. Pixels in a block are black initially; a write to a location turns them blue, a read from a location turns them green, a (pending) instruction fetch flashes a pixel block white (before the actual fetch turns it green). This can be entertaining (and one of the canned demos features it), but it **really** slows down the emulator.
 
