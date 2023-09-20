@@ -292,7 +292,7 @@ After you've stopped the CPU, here's how you can reset things and re-run the sam
 
 (6) Once again, click the lavender 'Load Card' button to start the program running.
 
-Here's another example, this time showing how to load and run the tape-based 9M71B diagnostic) via manual operation of an emulated tape drive, and also showing how to perform Console Keys entry on the Console window.
+Here's another example, this time showing how to load and run the tape-based 9M71B diagnostic via manual operation of an emulated tape drive, and also showing how to perform Console Keys entry on the Console window.
 
 (1) Start the emulator, and click 'End Demonstration Script'.
 
@@ -322,15 +322,15 @@ Finally, we'll have a little light show, exercising all 7 of the index registers
 
 (2) On the Console window, click the buttons for  Switches 2, 3, 4 and 5, turning them all 'ON'.
 
-(3) In the Tape Unit panel for the 'A1' drive you added above, click the 'Rew' button to rewind the loaded tape image.
+(3) In the Tape Unit panel for the 'A1' drive you added above, click the 'Rew' button to rewind the loaded tape image (it's still 9M71B.BIN).
 
 (4) Once again, click the lavender 'Load Tape' button to start the program running.
 
 (5) This time, the program halts the CPU with the IC (instruction counter) at 2.  Click 'Start' to continue the program.
 
-Enjoy the show! When you get tired of it, either 'Power Off' the emulator or just click the 'Stop' button on the Console window to halt the CPU (you can then continue to use the emulator).
+Enjoy the show! When you get tired of it, either 'Power Off' the emulator or just click the 'Stop' button on the Console window to halt the CPU. You can then continue to use the emulator however you like.
 
-Note: The above style of totally manual operation works best with simple stand-alone programs such as the card diagnostic deck demonstrated here. For programs requiring more complicated configuration of the system (such as adding tape drives) it quickly becomes cumbersome **not** to be using the Scripter. IBSYS itself probably falls into the "too cumbersome to run manually" category.
+Note: The above style of totally manual operation works best with simple stand-alone programs such as the card diagnostic and tape diagnostic programs demonstrated here. For programs requiring a more complicated configuration and setup of the system (such as adding tape drives or assembling jobs) it quickly becomes cumbersome **not** to be using the Scripter. IBSYS itself probably falls into the "too cumbersome to run manually" category.
 
 ## Acknowledgments
 
