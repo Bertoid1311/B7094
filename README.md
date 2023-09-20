@@ -262,6 +262,8 @@ Here's a simple step-by-step example:
 
 (2) In the Control Panel window, click the checkboxes for 'Reader' and 'Printer' to bring up the corresponding windows.
 
+![Screenshot](Control_Panel_screenshot.jpg)
+
 (3) In the 'IBM 711 Card Reader' window, click the 'Open' button and navigate to ..\Files\Cards. On the 'Open file' dialog window, select either 'Any file (*.*)' or 'Column Binary card files (*.CBN)' in the drop-down box to the right of the 'File name:' field. Double-click, or click and 'Open', "9M21A.CBN". The cards will appear in the Card Reader window and the file name will appear in the Card Reader window's title bar. (The column-binary data is not human-readable, except for the sequence numbers in the final eight columns of each card.)
 
 ![Screenshot](Reader_screenshot.jpg)
@@ -269,6 +271,8 @@ Here's a simple step-by-step example:
 (4) At the bottom right of the Console window, in the row of buttons labelled 'Switches:', click the button corresponding to Switch 6. The label of the button will change from 'off' to 'ON', and its color will change from grey to purple.
 
 (5) At the top of the Console window, click the lavender button labelled 'Load Card'.
+
+![Screenshot](Console_screenshot.jpg)
 
 (6) Now watch the 'IBM 716 Line Printer' window. First, the message 'NOW PERFORMING DIAGNOSTIC 9M21' will appear. Then, after a moment, additional lines will appear announcing "100 PROGRAM PASSES COMPLETE 9M21", like so:
 
