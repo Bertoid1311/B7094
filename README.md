@@ -68,7 +68,7 @@ There are also some new capabilities in the emulation itself:
 
 - The emulator demo scripts can be run either in "verbose" mode, which provides lots of explanation and references; or "silent" mode, which skips all the verbiage and just presents straightforward option menus on the minimum number of click-through screens.
 
-- The demos have been reorganized into more logical groups by "subsystem" -- either FORTRAN II (which provides FORTRAN II and the Fortran Assembly Program) or IBJOB (which provides FORTRAN IV, COBOL, and a Macro Assembly Program).  A couple of the utility demos from the earlier release have been retained: the IBEDT editor used to maintain IBSYS itself (in the demo, used just to copy and list the contents of a system tape), and the IBJOB "Librarian" used to maintain the IBLIB subroutine library (here just used to list and cross-reference the contents of the library).  A couple of stand-alone diagnostic programs -- one loaded from the card reader the other from tape -- are still included (though neither one runs completely error-free).
+- The demos have been reorganized into more logical groups by "subsystem" -- either FORTRAN II (which provides FORTRAN II and the Fortran Assembly Program) or IBJOB (which provides FORTRAN IV, COBOL, and a Macro Assembly Program).  A couple of the utility demos from the earlier release have been retained: the IBEDT editor used to maintain IBSYS itself (in the demo, used just to copy and list the contents of a system tape), and the IBJOB "Librarian" used to maintain the IBLIB subroutine library (here just used to list and cross-reference the contents of the library).  A couple of stand-alone diagnostic programs -- one loaded from the card reader the other from tape -- are still included (and both can now run error-free).
 
 - A number of new script commands have been added to support the creation of card deck and tape images for relocatable binary jobs.
 
@@ -329,8 +329,6 @@ If the emulator does hang permanently, or if something is just taking more time 
 ## Known bugs
 
 - If line numbering is turned on in the Editor window, the numbers in the parallel list box on the left side of the window will not update automatically as text is typed in. But they will be updated if the 'Line Numbers' checkbox is unchecked and then checked again, or if a file is loaded (the latter creates an additional editing box within the same Editor window; multiple text boxes are accessed via the file name tabs near the top of the window).  If text is entered (or loaded from a file) that's long enough to activate the scroll bar for the edit box, a scroll bar for the list box containing the line numbers will also be activated, but the scrolling will not be synchronized.  It will be up to the user to synchronize the line numbers with the text -- such as, by moving both bars to the beginning (or the end), and then scrolling downward (or upward) in discrete steps.
-
-- Neither of the included stand-alone diagnostic programs (the '9M21A' card diagnostic, or the '9M71B' tape diagnostic) will run completely without errors.
 
 ## About the mainframe
 
