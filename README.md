@@ -272,7 +272,7 @@ Here's a simple step-by-step example:
 
 (5) At the top of the Console window, click the lavender button labelled 'Load Card'.
 
-![Screenshot](Console_screenshot.jpg)
+![Screenshot](Console_screenshot1.jpg)
 
 (6) Now watch the 'IBM 716 Line Printer' window. First, the message 'NOW PERFORMING DIAGNOSTIC 9M21' will appear. Then, after a moment, additional lines will appear announcing "100 PROGRAM PASSES COMPLETE 9M21", like so:
 
