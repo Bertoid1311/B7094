@@ -256,7 +256,7 @@ The EC7 scripting language is another story. Probably the best way to get a grip
 
 You can also, if you wish, "rough it" by eschewing the Editor, the Scripter, and the canned demos altogether and operating B7094 as if you were sitting in the midst of a machine room with a physical mainframe. You would do this by means of the buttons on the Console window and the various other windows representing the attached peripheral devices.
 
-Here's a simple step-by-step example:
+Here's a step-by-step example of loading and running a program (the 9M21A diagnostic) via manual operation of the emulated card reader. This is a completely stand-alone program which does not involve configuring the system for or loading the IBSYS monitor.
 
 (1) Start the emulator, and in the first demo window click 'End Demonstration Script'. (You know by now that you can turn off the bothersome demos by disabling them on the Configuration window, right?)
 
@@ -276,7 +276,7 @@ Here's a simple step-by-step example:
 
 (6) Now watch the 'IBM 716 Line Printer' window. First, the message 'NOW PERFORMING DIAGNOSTIC 9M21' will appear. Then, after a moment, additional lines will appear announcing "100 PROGRAM PASSES COMPLETE 9M21", like so:
 
-![Screenshot](Printer_screenshot.jpg)
+![Screenshot](Printer_screenshot1.jpg)
 
 (7) The program will continue running until the CPU is stopped by clicking 'Stop' at the top of the Console window.
 
@@ -284,13 +284,49 @@ After you've stopped the CPU, here's how you can reset things and re-run the sam
 
 (1) Click 'Clear' on the Line Printer window to delete the text there.
 
-(2) Click 'Reload' on the Card Reader window to reload the last card file you loaded, or click 'Open' to reload the same or load a new file.
+(2) Click 'Reload' on the Card Reader window to reload the last card file you loaded, or click 'Open' to reload either the same or load a new file.
 
 (3) Click 'Clear' on the Console window. This both clears (zeroes-out) core memory **and** resets the CPU (whereas 'Reset' just resets the CPU without clearing memory; the emulator's 'Reset' is the equivalent of a power-off/power-on cycle of a physical machine, which would have left the contents of non-volatile core memory intact).
 
 (4) Select the required 'off'/'ON' states of the Switches (re-select Switch 6 to re-run 9M21A). On a physical machine, the physical switches would stay put unless toggled manually; our 'Reset' turns them all back to 'off' as a convenience and a safety precaution.)
 
-(6) Once again, click the lavender 'Load Card' (or 'Load Tape', if you're running a program on tape) to start the program running.
+(6) Once again, click the lavender 'Load Card' button to start the program running.
+
+Here's another example, this time showing how to load and run the tape-based 9M71B diagnostic) via manual operation of an emulated tape drive, and also showing how to perform Console Keys entry on the Console window.
+
+(1) Start the emulator, and click 'End Demonstration Script'.
+
+(2) In the Control Panel window, click the checkboxes for 'TapeDrives' and 'Printer'.
+
+(3) On the 'IBM 729 Tape Drives' window, click the 'All' radiobutton, then click 'Add Drive'.
+
+(4) In the newly-visible Tape Unit panel, click the 'Opn' button, and navigate to ..\Files\Tapes. Open tape image file "9M71B.BIN".
+
+(5) On the Console window, click the button for  Switch 6, turning it 'ON'.
+
+(6) On the Console window, type the octal number "300017" into the text box labelled "Enter Console Keys', and then click the 'Accept' button. You will see the 'KEYS' register light up, like so:
+
+![Screenshot](Console_screenshot2.jpg)
+
+(7) At the top of the Console window, click the lavender button labelled 'Load Tape'.
+
+(8) Now watch the 'IBM 716 Line Printer' window. You should see the following appear:
+
+![Screenshot](Printer_screenshot2.jpg)
+
+Finally, we'll have a little light show, exercising all 7 of the index registers in succession, until you get tired and click 'Stop' on the Console window.
+
+(1) At the top of the Console window, click the green 'Clear' button. This clears core and resets the CPU (and also turns 'off' all the switches and clears the Console Keys register).
+
+(2) On the Console window, click the buttons for  Switches 2, 3, 4 and 5, turning them all 'ON'.
+
+(3) In the Tape Unit panel for the 'A1' drive you added above, click the 'Rew' button to rewind the loaded tape image.
+
+(4) Once again, click the lavender 'Load Tape' button to start the program running.
+
+(5) This time, the program halts the CPU with the IC (instruction counter) at 2.  Click 'Start' to continue the program.
+
+Enjoy the show! When you get tired of it, either 'Power Off' the emulator or just click the 'Stop' button on the Console window to halt the CPU (you can then continue to use the emulator).
 
 Note: The above style of totally manual operation works best with simple stand-alone programs such as the card diagnostic deck demonstrated here. For programs requiring more complicated configuration of the system (such as adding tape drives) it quickly becomes cumbersome **not** to be using the Scripter. IBSYS itself probably falls into the "too cumbersome to run manually" category.
 
