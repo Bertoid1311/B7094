@@ -107,13 +107,11 @@ B7094's "Tape Viewer" is a useful tool for examining the contents of any P7B tap
 
 (2) In the Control Panel window, click the 'TapeDrives' checkbox. The Tape Drives window will appear, but not show any configured Tape Units.
 
-(3) On the Tape Drives window, click the 'All' radiobutton (this deselects 'Used').
+(3) On the Tape Drives window, click the 'Add Drive' button. Tape Unit 'A1' will appear, and the 'Show All' radiobutton will be automatically selected. (You could continue to click and add additional Tape Units from 'A2'-'A0' and 'B1'-'B0' if you wanted to.)
 
-(4) On the Tape Drives window, click the 'Add Drive' button. Tape Unit 'A1' will appear. (You could continue to click and add additional Tape Units from 'A2'-'A0' and 'B1'-'B0' if you wanted to.)
+(4) On one of the added Tape Units, click the 'Opn' button and browse to any tape image file in the Open Dialog window. Any P7B file can be attached to the drive -- a ..\Output\SysIn.BCD or ..\Output\SysOut.BCD from a previous run (from the ..\Output directory), or any other tape.
 
-(5) On one of the added Tape Units, click the 'Opn' button and browse to any tape image file in the Open Dialog window. Any P7B file can be attached to the drive -- a ..\Output\SysIn.BCD or ..\Output\SysOut.BCD from a previous run (from the ..\Output directory), or any other tape.
-
-(6) Now click on the channel-letter+decimal-unit-number of the Tape Unit with your attached tape image file. The Tape Viewer window will appear, displaying the tape in whatever mode matches the image file extension (BCD mode for *.BCD, Binary mode for any other extension).
+(5) Now click on the channel-letter+decimal-unit-number of the Tape Unit with your attached tape image file. The Tape Viewer window will appear, displaying the tape in whatever mode matches the image file extension (BCD mode for *.BCD, Binary mode for any other extension).
 
 You can attach any file, with any name, to a tape drive -- either via a Tape Unit's 'Opn' button or via an EC7 script's 'Mount' command. But any file you expect to be usable with IBSYS must have a filename extension of either '.BCD' or '.BIN' (upper- or lower-case, doesn't matter). This is true even if the file is otherwise a properly-formatted P7B image containing "real" data. Further, any file intended for use with IBSYS that contains BCD records (with even parity), or **begins** with BCD records in the case of a "hybrid" tape (such as a job input tape) must have the '.BCD' extension. And a file which contains binary records (with odd parity), such as an operating system or stand-alone diagnostic tape, must have the '.BIN' extension.
 
@@ -298,7 +296,7 @@ Here's another example, this time showing how to load and run the tape-based 9M7
 
 (2) In the Control Panel window, click the checkboxes for 'TapeDrives' and 'Printer'.
 
-(3) On the 'IBM 729 Tape Drives' window, click the 'All' radiobutton, then click 'Add Drive'.
+(3) On the 'IBM 729 Tape Drives' window, click 'Add Drive' (this automatically selects the 'Show All' radiobutton).
 
 (4) In the newly-visible Tape Unit panel, click the 'Opn' button, and navigate to ..\Files\Tapes. Open tape image file "9M71B.BIN". The name of the image file will appear next to its channel-letter+decimal-unit-number=device-address identifier. The 'Size:' of the image will also be displayed.
 
