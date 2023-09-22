@@ -284,7 +284,7 @@ After you've stopped the CPU, here's how you can reset things and re-run the sam
 
 (2) Click 'Reload' on the Card Reader window to reload the last card file you loaded, or click 'Open' to reload either the same or load a new file.
 
-(3) Click 'Clear' on the Console window. This both clears (zeroes-out) core memory **and** resets the CPU (whereas 'Reset' just resets the CPU without clearing memory. The emulator's 'Reset' is actually the equivalent of the power-off/power-on cycle of a physical machine, which would have left the contents of non-volatile core memory intact).
+(3) Click 'Clear' on the Console window. This both clears (zeroes-out) core memory **and** resets the CPU (whereas 'Reset' just resets the CPU without clearing memory). The emulator's 'Reset' is actually the equivalent of the power-off/power-on cycle of a physical machine, which would have left the contents of non-volatile core memory intact.
 
 (4) Select the required 'off'/'ON' states of the Switches (re-select Switch 6 to re-run 9M21A). On a physical machine, the physical switches would stay put unless toggled manually; our 'Reset' turns them all back to 'off' as a convenience and a safety precaution.)
 
