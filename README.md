@@ -349,7 +349,7 @@ Finally, we'll have a little light show, exercising all 7 of the index registers
 
 (5) This time, the program halts the CPU with the IC (instruction counter) at 2.  Click 'Start' to continue the program.
 
-Again, the Scripter equivalent:
+Once more, the Scripter equivalent:
 
 ####
     Config Del All
