@@ -421,6 +421,8 @@ You could even alternate between executing commands via the Editor and Scripter,
 
 ![Screenshot](Printer_screenshot5.jpg)
 
+(13) Now click on the channel-letter+decimal-unit-number of the Tape Unit corresponding to SYSOU1 (A3). The Tape Viewer window will appear, displaying in BCD mode the output generated during this very brief run of IBSYS.
+
 **Note:** The above style of totally (or partially) manual operation works best with simple stand-alone programs such as the card diagnostic and tape diagnostic programs demonstrated here. For programs requiring a more complicated configuration and setup of the system (such as adding tape drives or assembling jobs) it quickly becomes cumbersome **not** to be using the Scripter. IBSYS itself probably falls into the "too cumbersome to run manually" category.
 
 The emulator is fairly robust. If you do something silly, like clicking 'Drop All Drives' while the CPU is operating, you'll get a message "CPU/Channel Check exists. Continue running script?". Just click 'No' at that point (you really have no other choice), then click either 'Reset' or 'Clear' on the Console window to clear the CPU error. You can then bring up the Editor, Open and 'Run' B7Demo.EC7 (or any other script file), and you'll be back in business.
