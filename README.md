@@ -264,7 +264,7 @@ Here's a step-by-step example of loading and running a program (the 9M21A diagno
 
 (3) In the 'IBM 711 Card Reader' window, click the 'Open' button and navigate to ..\Files\Cards. On the 'Open file' dialog window, select either 'Any file (*.*)' or 'Column Binary card files (*.CBN)' in the drop-down box to the right of the 'File name:' field. Double-click, or click and 'Open', "9M21A.CBN". The cards will appear in the Card Reader window and the file name will appear in the Card Reader window's title bar. (The column-binary data is not human-readable, except for the sequence numbers in the final eight columns of each card.)
 
-![Screenshot](Reader_screenshot.jpg)
+![Screenshot](Reader_screenshot1.jpg)
 
 (4) At the bottom right of the Console window, in the row of buttons labelled 'Switches:', click the button corresponding to Switch 6. The label of the button will change from 'off' to 'ON', and its color will change from grey to purple.
 
@@ -365,9 +365,62 @@ Once more, the Scripter equivalent:
 
 Enjoy the show! When you get tired of it, either 'Power Off' the emulator or just click the 'Stop' button on the Console window to halt the CPU. You can then continue to use the emulator however you like.
 
-The emulator is fairly robust. If you do something silly, like clicking 'Drop All Drives' while the CPU is operating, you'll get a message "CPU/Channel Check exists. Continue running script?". Just click 'No' at that point (you really have no other choice), then click either 'Reset' or 'Clear' on the Console window to clear the CPU error. You can then bring up the Editor, Open and 'Run' B7Demo.EC7 (or any other script file), and you'll be back in business.
+You could even alternate between executing commands via the Editor and Scripter, and pushing buttons on windows to operate the emulated machine manually. The following is a trivial example, but it makes the point.
 
-**Note:** The above style of totally manual operation works best with simple stand-alone programs such as the card diagnostic and tape diagnostic programs demonstrated here. For programs requiring a more complicated configuration and setup of the system (such as adding tape drives or assembling jobs) it quickly becomes cumbersome **not** to be using the Scripter. IBSYS itself probably falls into the "too cumbersome to run manually" category.
+(1) Start the emulator, 'End Demonstration Script', and in the Control Panel check Reader, Printer, and TapeDrives. Also check Editor, or click the 'Editor' button.
+
+(2) On the Tape Drives window, click the 'All' radiobutton.
+
+(3) In the Editor, click 'New', copy and paste the following commands, and click 'Run'.
+
+####
+    Config Add Tape=A2
+    Config Add Tape=A3
+    TextLoad Clear
+    TextLoad End
+    TextLoad Save BCD File='SysIn.BCD'
+    Mount Tape=A2 File='&OutputPath\SysIn.BCD'
+    TextLoad Save BCD File='SysOut.BCD'
+    Mount Tape=A3 File='&OutputPath\SysOut.BCD'
+    Config Add Tape=B3
+    Set Boot=B3
+
+(4) On the Tape Drives window, in the Tape Unit panel for B3, click the 'Opn' button, and navigate to ..\Files\Tapes. Open tape image file "KSYS61.BIN".
+
+(5) On the Console window, click 'Load Tape'.
+
+(6) Check the Line Printer window. You should see:
+
+![Screenshot](Printer_screenshot3.jpg)
+
+(7) On the Console window, click 'Start'.
+
+(8) Now the Line Printer window will show:
+
+![Screenshot](Printer_screenshot4.jpg)
+
+(9) Now copy and paste the following commands into the Editor window (replacing the text already there), and click 'Run' again.
+
+####
+    TextLoad Clear
+    '$UNITS'
+    '$STOP'
+    '~'
+    TextLoad Reader
+
+(10) Now the Card Reader window will show:
+
+![Screenshot](Reader_screenshot2.jpg)
+
+(11) On the Console window, click 'Start' again.
+
+(12) Finally, the Line Printer windows will show:
+
+![Screenshot](Printer_screenshot5.jpg)
+
+**Note:** The above style of totally (or partially) manual operation works best with simple stand-alone programs such as the card diagnostic and tape diagnostic programs demonstrated here. For programs requiring a more complicated configuration and setup of the system (such as adding tape drives or assembling jobs) it quickly becomes cumbersome **not** to be using the Scripter. IBSYS itself probably falls into the "too cumbersome to run manually" category.
+
+The emulator is fairly robust. If you do something silly, like clicking 'Drop All Drives' while the CPU is operating, you'll get a message "CPU/Channel Check exists. Continue running script?". Just click 'No' at that point (you really have no other choice), then click either 'Reset' or 'Clear' on the Console window to clear the CPU error. You can then bring up the Editor, Open and 'Run' B7Demo.EC7 (or any other script file), and you'll be back in business.
 
 ## Acknowledgments
 
