@@ -374,6 +374,7 @@ You could even alternate between executing commands via the Editor and Scripter,
 (3) In the Editor, click 'New', copy and paste the following commands, and click 'Run'.
 
 ####
+    Config Del All
     Config Add Tape=A2
     Config Add Tape=A3
     Config Add Tape=B3
