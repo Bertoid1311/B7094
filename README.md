@@ -387,6 +387,7 @@ You could even alternate between executing commands via the Editor and Scripter,
     Mount Tape=A3 File='&OutputPath\SysOut.BCD'
     Mount Tape=B4 SCRATCH
     Set Boot=B3
+    Press Clear
     Set SenSw 1 ON
 
 (4) On the Tape Drives window, in the Tape Unit panel for B3, click the 'Opn' button, and navigate to ..\Files\Tapes. Open tape image file "KSYS61.BIN".
