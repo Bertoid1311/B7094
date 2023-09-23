@@ -376,13 +376,15 @@ You could even alternate between executing commands via the Editor and Scripter,
 ####
     Config Add Tape=A2
     Config Add Tape=A3
+    Config Add Tape=B3
+    Config Add Tape=B4
     TextLoad Clear
     TextLoad End
     TextLoad Save BCD File='SysIn.BCD'
     Mount Tape=A2 File='&OutputPath\SysIn.BCD'
     TextLoad Save BCD File='SysOut.BCD'
     Mount Tape=A3 File='&OutputPath\SysOut.BCD'
-    Config Add Tape=B3
+    Mount Tape=B4 SCRATCH
     Set Boot=B3
     Set SenSw 1 ON
 
