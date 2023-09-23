@@ -298,7 +298,7 @@ The following Scripter commands will re-run the above example:
     Set SenSw 6 ON
     Press LoadCard
 
-You can bring up the Editor and copy-and-paste the above commands into a 'New' edit box to try them out. Scripter commands are case-insensitve; the capitalization above is strictly a matter of personal preference. Also, the '=' in a script is generally optional; it's there to improve readability but is otherwise ignored. Note that we cannot stop the CPU via the Scripter; the 'Press LoadCard' command will not return until the CPU stops on its own (or is manually stopped by clicking the Console's 'Stop' button, as above).
+You can bring up the Editor and copy-and-paste the above commands into a 'New' edit box and then click 'Run' to try them out. Scripter commands are case-insensitve; the capitalization above is strictly a matter of personal preference. Also, the '=' in a script is generally optional; it's there to improve readability but is otherwise ignored. Note that we cannot stop the CPU via the Scripter; the 'Press LoadCard' command will not return until the CPU stops on its own (or is manually stopped by clicking the Console's 'Stop' button, as above).
 
 Here's another example, this time showing how to load and run the tape-based 9M71B diagnostic via manual operation of an emulated tape drive, and also showing how to perform Console Keys entry on the Console window.
 
