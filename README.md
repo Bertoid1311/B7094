@@ -384,12 +384,13 @@ You could even alternate between executing commands via the Editor and Scripter,
     Mount Tape=A3 File='&OutputPath\SysOut.BCD'
     Config Add Tape=B3
     Set Boot=B3
+    Set SenSw 1 ON
 
 (4) On the Tape Drives window, in the Tape Unit panel for B3, click the 'Opn' button, and navigate to ..\Files\Tapes. Open tape image file "KSYS61.BIN".
 
 (5) On the Console window, click 'Load Tape'.
 
-(6) Check the Line Printer window. You should see:
+(6) Check the Line Printer window. After a few seconds, you should see:
 
 ![Screenshot](Printer_screenshot3.jpg)
 
