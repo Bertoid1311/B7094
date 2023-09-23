@@ -349,6 +349,20 @@ Finally, we'll have a little light show, exercising all 7 of the index registers
 
 (5) This time, the program halts the CPU with the IC (instruction counter) at 2.  Click 'Start' to continue the program.
 
+Again, the Scripter equivalent:
+
+####
+    Config Del All
+    Config Add Tape=A1
+    Mount Tape=A1 File='9M71B.BIN'
+    Press Clear
+    Set SenSw 2 ON
+    Set SenSw 3 ON
+    Set SenSw 4 ON
+    Set SenSw 5 ON
+    Press LoadTape
+    Press Start
+
 Enjoy the show! When you get tired of it, either 'Power Off' the emulator or just click the 'Stop' button on the Console window to halt the CPU. You can then continue to use the emulator however you like.
 
 Note: The above style of totally manual operation works best with simple stand-alone programs such as the card diagnostic and tape diagnostic programs demonstrated here. For programs requiring a more complicated configuration and setup of the system (such as adding tape drives or assembling jobs) it quickly becomes cumbersome **not** to be using the Scripter. IBSYS itself probably falls into the "too cumbersome to run manually" category.
