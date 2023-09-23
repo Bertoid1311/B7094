@@ -324,6 +324,19 @@ Here's another example, this time showing how to load and run the tape-based 9M7
 
 ![Screenshot](Printer_screenshot2.jpg)
 
+Again, the following Scripter commands will re-run the above example:
+
+####
+    Config Del All
+    Config Add Tape=A1
+    Mount Tape=A1 File='9M71B.BIN'
+    Press Clear
+    Set SenSw 6 ON
+    Enter Keys=300017
+    Press LoadTape
+
+This time, the CPU stops on its own, the script ends, and the Editor window reappears.
+
 Finally, we'll have a little light show, exercising all 7 of the index registers in succession, until you get tired and click 'Stop' on the Console window.
 
 (1) At the top of the Console window, click the green 'Clear' button. This clears core and resets the CPU (and also turns 'off' all the switches and clears the Console Keys register).
