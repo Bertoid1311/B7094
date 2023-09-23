@@ -293,8 +293,9 @@ After you've stopped the CPU, here's how you can reset things and re-run the sam
 The following Scripter commands will re-run the above example:
 
 ####
-    Press Clear
+    Reader Clear
     Load Reader File='9M21A.CBN'
+    Press Clear
     Set SenSw 6 ON
     Press LoadCard
 
@@ -407,6 +408,7 @@ You could even alternate between executing commands via the Editor and Scripter,
 (9) Now copy and paste the following commands into the Editor window (replacing the text already there), and click 'Run' again.
 
 ####
+    Reader Clear
     TextLoad Clear
     '$UNITS'
     '$STOP'
