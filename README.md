@@ -107,7 +107,7 @@ B7094's "Tape Viewer" is a useful tool for examining the contents of any P7B tap
 
 (2) In the Control Panel window, click the 'TapeDrives' checkbox. The Tape Drives window will appear, but not show any configured Tape Units.
 
-(3) On the Tape Drives window, click the 'Add Drive' button. Tape Unit 'A1' will appear, and the 'Show All' radiobutton will be automatically selected. (You could continue to click and add additional Tape Units from 'A2'-'A0' and 'B1'-'B0' if you wanted to.)
+(3) On the Tape Drives window, click the 'Add Drive' button. Tape Unit 'A1' will appear, and the 'Show All' radiobutton will be automatically selected. (Continuing to click 'Add Drive' would configure additional Tape Units in the sequence A1,A2,...,A0,B1,B2,...,B0. 'Drop All Drives' deletes all configured drives. 'Drop' deletes the drive shown in the text box to the right of the button. A drive's "CUU" [channel-letter+two-decimal-digit-unit-number] can be typed into the box [case insensitive, nonsense is rejected]; or the mouse can be dragged across any part of a displayed Tape Unit to populate the 'Drop' box with the CUU.)
 
 (4) On one of the added Tape Units, click the 'Opn' button and browse to any tape image file in the Open Dialog window. Any P7B file can be attached to the drive -- a ..\Output\SysIn.BCD or ..\Output\SysOut.BCD from a previous run (from the ..\Output directory), or any other tape.
 
