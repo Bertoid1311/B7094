@@ -477,6 +477,16 @@ However, all is not lost: you can now **manually** turn on Switch 1 by clicking 
 
 ![Screenshot](Printer_screenshot7.jpg)
 
+In a more realistic scenario, where IBSYS is running one of its subsystems (such as IBJOB), it takes more than just having Sense Switch 1 ON to be able to continue to accept input from the card reader. You also, before invoking the subsystem, have to execute the following IBSYS commands (in the card reader):
+
+####
+    $ATTACH        RDA
+    $AS            SYSIN1
+
+Refer to the demo scripts in ..\Files\Scripts\*.EC7 to see how this is done. And note that FORTRAN II does not allow you to use the card reader for SYSIN1 at all.  If you try that, you'll get this:
+
+![Screenshot](Printer_screenshot8.jpg)
+
 **Note:** The above style of totally (or partially) manual operation works best with simple stand-alone programs such as the card diagnostic and tape diagnostic programs demonstrated here. For programs requiring a more complicated configuration and setup of the system (such as adding tape drives or assembling jobs) it quickly becomes cumbersome **not** to be using the Scripter. IBSYS itself probably falls into the "too cumbersome to run manually" category.
 
 The emulator is fairly robust. If you do something silly, like clicking 'Drop All Drives' while the CPU is operating, you'll get a message "CPU/Channel Check exists. Continue running script?". Just click 'No' at that point (you really have no other choice), then click either 'Reset' or 'Clear' on the Console window to clear the CPU error. You can then bring up the Editor, Open and 'Run' B7Demo.EC7 (or any other script file), and you'll be back in business.
