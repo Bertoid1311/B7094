@@ -509,9 +509,9 @@ There are some things that can make the emulator seem to hang, but are just **ve
 
 - When the Tape Viewer is being displayed after finishing a job with a **lot** of output. (You'll encounter this when building 'STRESS III' from source. Be patient.)
 
-- When you switch the Tape Viewer from BCD mode to BIN mode, when there's a lot of data on the tape.
+- When you switch the Tape Viewer from BCD mode to BIN mode, when there's a lot of data on the tape. Or if you load a hybrid (BCD + relocatable binary) SysIn.BCD tape into the Tape Viewer in BCD mode and then decide you want to see the binary sections in BIN mode. You might have to wait a while!
 
-- When you use the Tape Viewer on a system tape (KSYS61.BIN, for example). Or if you load a hybrid (BCD + relocatable binary) SysIn.BCD tape into the Tape Viewer in BCD mode and then decide you want to see the binary sections in BIN mode. You might have to wait a while!
+- When you use the Tape Viewer on a system tape (KSYS61.BIN, for example).
 
 If you see "(Not Responding)" in the Tape Viewer's title bar, don't panic! It's just taking a while.
 
