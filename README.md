@@ -228,9 +228,10 @@ The second short word is at byte offset (from 0) 967608, and is at the end of (c
 
 You can see these short words for yourself in B7094's Tape Viewer, if you have the patience to wait for the tape to be loaded into it. Now, B7094 can detect short words and pad them out with 0 bytes, which happens to be correct here (both words are '500000000000' octal, which is how most records end on this tape). But a few years ago, when I tried this original ASYS1.BIN tape with one of the SimH-based emulators (I won't say which one), and ran the FORTRAN IV "Sieve of Eratosthenes" prime-number demo, I got to see my first-ever 1960s core dump: immediately following the "$EXECUTE IBJOB" control card I got the message on the lineprinter "SYSTEMS CORE DUMP TAKEN AT THIS POINT". Interestingly, it's possible to generate a "repaired" version of this tape, on B7094, just by running $IBEDT to copy SYSLB1 (this is in fact one of the included demos).
 
-The copied tape will then work fine on the other emulators.
+The copied tape will then work fine on the other emulators:
 
 ![Screenshot](Original_ASYS1_Copy_screenshot1.jpg)
+
 ![Screenshot](Original_ASYS1_Copy_screenshot2.jpg)
 
 The methods described above will take care of compile-and-go (or assemble-and-go) jobs, which will probably be sufficient for the vast majority of users.  It is possible, though, to compile a program from source and then create and submit a relocatable binary version of the program whenever it needs to be re-run.  This is, however, as the Emerald City cabbie said to Dorothy, "a horse of a different color".  See the README.txt file included with the reloc_scripts.* archives for more details about that.
