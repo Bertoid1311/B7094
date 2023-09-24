@@ -242,7 +242,7 @@ One other point is worth mentioning here, just to avoid any possible consternati
 
 That extra File Mark isn't transferred by IBEDT to the copy of SYSLB1, but B7094 is "replacing" it by the End of Data byte:
 
-![Screenshot](Original_ASYS1_screenshot4.jpg)
+![Screenshot](Original_ASYS1_Copy_screenshot3.jpg)
 
 The Pitts-recreated version of ASYS1.BIN (found in the software kits for both Bob Supnik's i7094 and Dave Pitts' s709) does not have the extra File Mark at the end of the tape, so if that tape is copied by IBEDT on B7094, the copy will have one extra byte -- B7094's End of Data mark -- at the end.  You can try this yourself. It's not part of the demo suite, but there's a ..\Files\Tapes\ASYS1_Pitts.BIN and a ..\Files\Scripts\IBEDT_LB1.ASYS_Pitts.EC7 (which also utilizes ..\Files\Scripts\Setup_ASYS_Pitts.EC7) that will boot the Pitts version of ASYS1 and run IBEDT to copy SYSLB1.  To try this, open ..\Files\Scripts\IBEDT_LB1.ASYS_Pitts.EC7 in the Editor and run it from there. You'll get a copied system tape that's exactly one byte longer than the original. That extra byte is harmless, but if it bothers you, you can always use a tool like 'dd' to snip it off. The SYSLB2 tape, by the way -- ASYS8.BIN -- is the same for all the emulators, and is the Paul Pierce original image.
 
