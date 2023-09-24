@@ -232,6 +232,8 @@ The copied tape will then work fine on the other emulators:
 
 ![Screenshot](Original_ASYS1_Copy_screenshot1.jpg)
 
+. . .
+
 ![Screenshot](Original_ASYS1_Copy_screenshot2.jpg)
 
 The methods described above will take care of compile-and-go (or assemble-and-go) jobs, which will probably be sufficient for the vast majority of users.  It is possible, though, to compile a program from source and then create and submit a relocatable binary version of the program whenever it needs to be re-run.  This is, however, as the Emerald City cabbie said to Dorothy, "a horse of a different color".  See the README.txt file included with the reloc_scripts.* archives for more details about that.
