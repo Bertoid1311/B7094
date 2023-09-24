@@ -483,7 +483,7 @@ In a more realistic scenario, where IBSYS is running one of its subsystems (such
     $ATTACH        RDA
     $AS            SYSIN1
 
-Refer to the demo scripts in ..\Files\Scripts\*.EC7 to see how this is done. And note that FORTRAN II does not allow you to use the card reader for SYSIN1 at all.  If you try that, you'll get this:
+Refer to the demo scripts in ..\Files\Scripts\\*.EC7 to see how this is done. And note that FORTRAN II does not allow you to use the card reader for SYSIN1 at all.  If you try that, you'll get this:
 
 ![Screenshot](Printer_screenshot8.jpg)
 
