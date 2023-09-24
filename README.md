@@ -78,6 +78,8 @@ B7094 does not support the range of peripherals (and pass the array of diagnosti
 
 ## About the "Tape Viewer"
 
+![Screenshot](Tape_Viewer_screenshot.jpg)
+
 The Tape Viewer has been thoroughly re-worked:
 
 - The hexadecimal column in the binary-mode display (that previously showed the P7B formatting of a tape image) has been eliminated, and replaced by a new character column showing machine words interpreted as if they contain six characters using internal BCD character codes, rather than the usual external (or "alternate") BCD character codes used on a BCD tape. This column always contains gibberish for a "pure" BCD tape, but on a hybrid BCD and binary tape (such as a job tape containing a program in relocatable binary form), or even on a "pure" binary tape (such as an IBSYS tape), this column sometimes shows human-readable text that can be of interest.
@@ -456,6 +458,8 @@ There are some things that can make the emulator seem to hang, but are just **ve
 - When you switch the Tape Viewer from BCD mode to BIN mode, when there's a lot of data on the tape.
 
 - When you use the Tape Viewer on a system tape (KSYS61.BIN, for example). Especially if you load the system tape into the Tape Viewer in BCD mode and then realize you actually wanted BIN mode. You'll have to wait a while!
+
+If you see "(Not Responding)" in the Tape Viewer's title bar, don't panic! It's just taking a while.
 
 - When you're using B7094's tracing facilities. There are lots of things that can be traced: device accesses, register stores, core writes, instruction execution, etc.  These are all selected on the Log/Trace screen (that you can display by clicking the 'Trace' checkbox on the Control Panel window). But be careful how you use this, if you don't want to slow things down unacceptably (either during the running of a program in the emulator or while waiting for the results of an already-recorded list of traced events to be displayed in the Log/Trace window).  The most efficient way to use this is, in the Log/Trace window, to:
 
