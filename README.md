@@ -473,7 +473,7 @@ Also note the "Set SenSw 1 ON" in the list of commands we executed (and that Swi
 
 ![Screenshot](Printer_screenshot6.jpg)
 
-However, all is not lost: you can now **manually** turn on Switch 1 by clicking its button on the Console and (provided you loaded the card reader as described above) the commands will now run normally:
+However, all is not lost: you can now **manually** turn on Switch 1 by clicking its button on the Console and (provided you loaded the card reader as described above) click 'Start' again, and the commands will now run normally:
 
 ![Screenshot](Printer_screenshot7.jpg)
 
