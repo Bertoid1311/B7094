@@ -113,7 +113,15 @@ B7094's "Tape Viewer" is a useful tool for examining the contents of any P7B tap
 
 (4) On one of the added Tape Units, click the 'Opn' button and browse to any tape image file in the Open Dialog window. Any P7B file can be attached to the drive -- a ..\Output\SysIn.BCD or ..\Output\SysOut.BCD from a previous run (from the ..\Output directory), or any other tape. ('Clo' [close] will detach a tape image file if there's one attached. 'Rew' [rewind] is only likely to be used when re-running a stand-alone tape program [such as 9M71B.BIN] manually. 'PRO' [protect] switches write-protection on and off for a drive. **Note:** You can have a tape image file open and attached to only one drive at a time. If you open the same tape image file in a second drive, that file will be closed and detached from the first drive automatically.)
 
-(5) Now click on the channel-letter+decimal-unit-number of the Tape Unit with your attached tape image file. The Tape Viewer window will appear, displaying the tape in whatever mode matches the image file extension (BCD mode for *.BCD, Binary mode for any other extension). (If you 'CLO'se and detach a tape unit's file, or drop the tape unit altogether, the Tape Viewer will be informed of that and will close automatically.)
+(5) Now click on the channel-letter+decimal-unit-number of the Tape Unit with your attached tape image file. The Tape Viewer window will appear, displaying the tape in whatever mode matches the image file extension (BCD mode for *.BCD, Binary mode for any other extension):
+
+![Screenshot](Tape_Viewer_screenshot2.jpg)
+
+Whichever mode the Tape Viewer chooses based on the tape image file's extension, you can always switch to the other mode by clicking the 'BCD' or 'Binary' radiobutton:
+
+![Screenshot](Tape_Viewer_screenshot3.jpg)
+
+If you 'CLO'se and detach a tape unit's file, or drop the tape unit altogether, the Tape Viewer will be informed of that and will close automatically.)
 
 You can attach any file, with any name, to a tape drive -- either via a Tape Unit's 'Opn' button or via an EC7 script's 'Mount' command. But any file you expect to be usable with IBSYS must have a filename extension of either '.BCD' or '.BIN' (upper- or lower-case, doesn't matter). This is true even if the file is otherwise a properly-formatted P7B image containing "real" data. Any tape image file intended as a job input (SYSIN1) tape for IBSYS, which will either consist entirely of BCD records (with even parity), or begin with BCD records (in the case of a "hybrid" tape containing a program as relocatable binary object code), **must** have the '.BCD' extension. A tape image file which consists entirely of binary records (with odd parity), such as an operating system tape or a stand-alone diagnostic tape, must have the '.BIN' extension.
 
