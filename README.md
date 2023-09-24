@@ -429,7 +429,7 @@ You could even alternate between executing commands via the Editor and Scripter,
 
 (13) Now click on the channel-letter+decimal-unit-number of the Tape Unit corresponding to SYSOU1 (A3). The Tape Viewer window will appear, displaying in BCD mode the output generated during this very brief run of IBSYS.
 
-You can see from the unit assignments that this IBSYS tape really "expects" to be loaded from drive A1 (SYSLB1) and that drive B3 is assigned the function of secondary Peripheral Punch tape (SYSPP2), but we're simply showing that as far as B7094 is concerned, any configured drive can be set as the 'Load Tape' drive (though if no "Set Boot=" Scripter command is executed, the default is in fact A1).
+You can see from the unit assignments listed above that this IBSYS tape really "expects" to be loaded from drive A1 (SYSLB1) and that drive B3 is assigned the function of secondary Peripheral Punch tape (SYSPP2), but we're simply showing that as far as B7094 is concerned, any configured drive can be set as the 'Load Tape' drive (though if no "Set Boot=" Scripter command is executed, the default is in fact A1).
 
 **Note:** The above style of totally (or partially) manual operation works best with simple stand-alone programs such as the card diagnostic and tape diagnostic programs demonstrated here. For programs requiring a more complicated configuration and setup of the system (such as adding tape drives or assembling jobs) it quickly becomes cumbersome **not** to be using the Scripter. IBSYS itself probably falls into the "too cumbersome to run manually" category.
 
