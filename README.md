@@ -475,7 +475,7 @@ Also note the "Set SenSw 1 ON" in the list of commands we executed (and that Swi
 
 However, all is not lost: you can now **manually** turn on Switch 1 by clicking its button on the Console and (provided you loaded the card reader as described above) the commands will now run normally:
 
-![Screenshot](Printer_screenshot6.jpg)
+![Screenshot](Printer_screenshot7.jpg)
 
 **Note:** The above style of totally (or partially) manual operation works best with simple stand-alone programs such as the card diagnostic and tape diagnostic programs demonstrated here. For programs requiring a more complicated configuration and setup of the system (such as adding tape drives or assembling jobs) it quickly becomes cumbersome **not** to be using the Scripter. IBSYS itself probably falls into the "too cumbersome to run manually" category.
 
