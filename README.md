@@ -78,7 +78,7 @@ B7094 does not support the range of peripherals (and pass the array of diagnosti
 
 ## About the "Tape Viewer"
 
-![Screenshot](Tape_Viewer_screenshot.jpg)
+![Screenshot](Tape_Viewer_screenshot1.jpg)
 
 The Tape Viewer has been thoroughly re-worked:
 
