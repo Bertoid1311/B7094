@@ -410,7 +410,7 @@ You could even alternate between executing commands via the Editor and Scripter,
 
 (2) On the Tape Drives window, click the 'All' radiobutton.
 
-(3) In the Editor, click 'New', copy and paste the following commands, and click 'Run'.
+(3) In the Editor, click 'New', copy and paste the following commands, and click 'Run'. The Editor window will disappear for a moment, and then reappear with a green background. You can 'Hide' the Editor if it's blocking the other windows you'll want to see, and then just click the 'Editor' button (or check the Editor checkbox) in the Control Panel to bring it back.
 
 ####
     Config Del All
@@ -428,6 +428,8 @@ You could even alternate between executing commands via the Editor and Scripter,
     Set Boot=B3
     Press Clear
     Set SenSw 1 ON
+
+Note that, except for tape unit B3, which we haven't yet done anything with, the other 3 tapes show "Posn: 0" and "Size: 1". This is because the BCD tapes were all created (by "TextLoad Save") with a single P7B Tape Mark (EOF, or End of File; byte Hex 8F), and the binary SCRATCH tape was created with a single 0 byte.  You can see the EOFs in BCD mode of the Tape Viewer (as '~'), but Binary mode shows nothing (a single byte would be a very Short Word indeed!). The "read/write heads" of all the drives are still, however, pointing at the first byte position of the tape image file ("Posn: 0", counting from 0 offset).
 
 (4) On the Tape Drives window, in the Tape Unit panel for B3, click the 'Opn' button, and navigate to ..\Files\Tapes. Open tape image file "KSYS61.BIN".
 
@@ -466,6 +468,14 @@ You could even alternate between executing commands via the Editor and Scripter,
 (13) Now click on the channel-letter+decimal-unit-number of the Tape Unit corresponding to SYSOU1 (A3). The Tape Viewer window will appear, displaying in BCD mode the output generated during this very brief run of IBSYS.
 
 You can see from the unit assignments listed above that this IBSYS tape really "expects" to be loaded from drive A1 (SYSLB1) and that drive B3 is assigned the function of secondary Peripheral Punch tape (SYSPP2), but we're simply showing that as far as the emulator is concerned, any configured drive can be set as the 'Load Tape' drive (though if no "Set Boot=" Scripter command is executed, the default is in fact A1).
+
+Also note the "Set SenSw 1 ON" in the list of commands we executed (and that Switch 1 is 'ON' on the Console window). This is necessary to tell IBSYS to look for control cards (the '$' cards) in the card reader. If Switch 1 remained 'off', then IBSYS would start looking for control cards on the tape drive corresponding to IBSYS's default assigment of System Unit SYSIN1, and this would happen the second time you pressed 'Start':
+
+![Screenshot](Printer_screenshot6.jpg)
+
+However, all is not lost: you can now **manually** turn on Switch 1 by clicking its button on the Console and (provided you loaded the card reader as described above) the commands will now run normally:
+
+![Screenshot](Printer_screenshot6.jpg)
 
 **Note:** The above style of totally (or partially) manual operation works best with simple stand-alone programs such as the card diagnostic and tape diagnostic programs demonstrated here. For programs requiring a more complicated configuration and setup of the system (such as adding tape drives or assembling jobs) it quickly becomes cumbersome **not** to be using the Scripter. IBSYS itself probably falls into the "too cumbersome to run manually" category.
 
