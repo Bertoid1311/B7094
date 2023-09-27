@@ -310,7 +310,7 @@ Here's a step-by-step example of loading and running a program (the 9M21A diagno
 
 **Note:** If you click the 'Load Card' (or 'Load Tape') Console button when nothing is loaded in the Card Reader (or no tape image file is mounted on the designated "boot" tape drive [by default A1, though this can be changed via the Scripter's "Set Boot=" command]) then your button click will simply be ignored.
 
-(6) Now watch the 'IBM 716 Line Printer' window. First, the message 'NOW PERFORMING DIAGNOSTIC 9M21' will appear. Then, after a moment, additional lines will appear announcing "100 PROGRAM PASSES COMPLETE 9M21", like so:
+(6) Now watch the 'IBM 716 Line Printer' window. First, the message 'NOW PERFORMING DIAGNOSTIC 9M21' will appear. Then, after a while, additional lines will appear announcing "100 PROGRAM PASSES COMPLETE 9M21". (Hint: if you don't want to wait "a while", click the 'Dark' radiobutton on the Control Panel window.). The Line Printer window will accumulate output, like so:
 
 ![Screenshot](Printer_screenshot1.jpg)
 
