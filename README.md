@@ -425,8 +425,8 @@ You could even alternate between executing commands via the Editor and Scripter,
     TextLoad Save BCD File='SysOut.BCD'
     Mount Tape=A3 File='&OutputPath\SysOut.BCD'
     Mount Tape=B4 SCRATCH
-    Set Boot=B3
     Press Clear
+    Set Boot=B3
     Set SenSw 1 ON
 
 Note that, except for tape unit B3, which we haven't yet done anything with, the other 3 tapes show "Posn: 0" and "Size: 1". This is because the BCD tapes were all created (by "TextLoad Save") with a single P7B Tape Mark (EOF, or End of File; byte Hex 8F), and the binary SCRATCH tape was created with a single 0 byte.  You can see the EOFs in BCD mode of the Tape Viewer (as '~'), but Binary mode shows nothing (a single byte would be a very Short Word indeed!). The "read/write heads" of all the drives are still, however, pointing at the first byte position of the tape image file ("Posn: 0", counting from 0 offset).
@@ -467,7 +467,7 @@ Note that, except for tape unit B3, which we haven't yet done anything with, the
 
 (13) Now click on the channel-letter+decimal-unit-number of the Tape Unit corresponding to SYSOU1 (A3). The Tape Viewer window will appear, displaying in BCD mode the output generated during this very brief run of IBSYS.
 
-You can see from the unit assignments listed above that this IBSYS tape really "expects" to be loaded from drive A1 (SYSLB1) and that drive B3 is assigned the function of secondary Peripheral Punch tape (SYSPP2), but we're simply showing that as far as the emulator is concerned, any configured drive can be set as the 'Load Tape' drive (though if no "Set Boot=" Scripter command is executed, the default is in fact A1).
+You can see from the unit assignments listed above that this IBSYS tape really "expects" to be loaded from drive A1 (SYSLB1) and that drive B3 is assigned the function of secondary Peripheral Punch tape (SYSPP2), but we're simply showing that as far as the emulator is concerned, any configured drive can be set as the 'Load Tape' drive (though if no "Set Boot=" Scripter command is executed, the default is in fact A1; note that resetting the CPU via 'Reset' or 'Clear' resets the default to A1, hence the "Set Boot=" must come after 'Clear' in the above initial configuration commands.).
 
 Also note the "Set SenSw 1 ON" in the list of commands we executed (and that Switch 1 is 'ON' on the Console window). This is necessary to tell IBSYS to look for control cards (the '$' cards) in the card reader. If Switch 1 remained 'off', then IBSYS would start looking for control cards on the tape drive corresponding to IBSYS's default assigment of System Unit SYSIN1, and this would happen the second time you pressed 'Start':
 
