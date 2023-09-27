@@ -304,7 +304,7 @@ Here's a step-by-step example of loading and running a program (the 9M21A diagno
 
 (4) At the bottom right of the Console window, in the row of buttons labelled 'Switches:', click the button corresponding to Switch 6. The label of the button will change from 'off' to 'ON', and its color will change from grey to purple.
 
-(5) At the top of the Console window, click the lavender button labelled 'Load Card'.
+(5) At the top of the Console window, click the lavender button labelled 'Load Card'. (Do **not** click 'Start'.)
 
 ![Screenshot](Console_screenshot1.jpg)
 
@@ -326,7 +326,7 @@ After you've stopped the CPU, here's how you can reset things and re-run the sam
 
 (4) Select the required 'off'/'ON' states of the Switches (re-select Switch 6 to re-run 9M21A). On a physical machine, the physical switches would stay put unless toggled manually; our 'Reset' turns them all back to 'off' as a convenience and a safety precaution.)
 
-(6) Once again, click the lavender 'Load Card' button to start the program running.
+(6) Once again, click the lavender 'Load Card' button to start the program running. (Not 'Start'.)
 
 The following Scripter commands will re-run the above example:
 
@@ -357,7 +357,7 @@ Here's another example, this time showing how to load and run the tape-based 9M7
 
 ![Screenshot](Console_screenshot2.jpg)
 
-(7) At the top of the Console window, click the lavender button labelled 'Load Tape'.
+(7) At the top of the Console window, click the lavender button labelled 'Load Tape'. (Not 'Start'.)
 
 (8) Now watch the 'IBM 716 Line Printer' window. You should see the following appear:
 
@@ -384,7 +384,7 @@ Finally, we'll have a little light show, exercising all 7 of the index registers
 
 (3) In the Tape Unit panel for the 'A1' drive you added above, click the 'Rew' button to rewind the loaded tape image (it's still 9M71B.BIN).
 
-(4) Once again, click the lavender 'Load Tape' button to start the program running.
+(4) Once again, click the lavender 'Load Tape' button to start the program running. (Not 'Start'.)
 
 (5) This time, the program halts the CPU with the IC (instruction counter) at 2.  Click 'Start' to continue the program.
 
@@ -433,7 +433,7 @@ Note that, except for tape unit B3, which we haven't yet done anything with, the
 
 (4) On the Tape Drives window, in the Tape Unit panel for B3, click the 'Opn' button, and navigate to ..\Files\Tapes. Open tape image file "KSYS61.BIN".
 
-(5) On the Console window, click 'Load Tape'.
+(5) On the Console window, click 'Load Tape'. (Not 'Start'.)
 
 (6) Check the Line Printer window. After a few seconds, you should see:
 
