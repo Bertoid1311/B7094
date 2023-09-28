@@ -339,6 +339,7 @@ After you've stopped the CPU, here's how you can reset things and re-run the sam
 The following Scripter commands will re-run the above example:
 
 ####
+    Show Window=Reader,Printer
     Reader Clear
     Load Reader File='9M21A.CBN'
     Press Clear
@@ -374,6 +375,7 @@ Here's another example, this time showing how to load and run the tape-based 9M7
 Again, the following Scripter commands will re-run the above example:
 
 ####
+    Show Window=Tape,Printer
     Config Del All
     Config Add Tape=A1
     Mount Tape=A1 File='9M71B.BIN'
