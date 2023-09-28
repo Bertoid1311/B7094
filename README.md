@@ -304,7 +304,7 @@ Here's a step-by-step example of loading and running a program (the 9M21A diagno
 
 (4) At the bottom right of the Console window, in the row of buttons labelled 'Switches:', click the button corresponding to Switch 6. The label of the button will change from 'off' to 'ON', and its color will change from grey to purple.
 
-(5) At the top of the Console window, click the lavender button labelled 'Load Card'. (Do **not** click 'Start'.)
+(5) At the top of the Console window, click the lavender button labelled 'Load Card'. (Do **not** click 'Start'!)
 
 ![Screenshot](Console_screenshot1.jpg)
 
@@ -326,7 +326,7 @@ After you've stopped the CPU, here's how you can reset things and re-run the sam
 
 (4) Select the required 'off'/'ON' states of the Switches (re-select Switch 6 to re-run 9M21A). On a physical machine, the physical switches would stay put unless toggled manually; our 'Reset' turns them all back to 'off' as a convenience and a safety precaution.)
 
-(6) Once again, click the lavender 'Load Card' button to start the program running. (Not 'Start'.)
+(6) Once again, click the lavender 'Load Card' button to start the program running. (Not 'Start'!)
 
 The following Scripter commands will re-run the above example:
 
@@ -357,7 +357,7 @@ Here's another example, this time showing how to load and run the tape-based 9M7
 
 ![Screenshot](Console_screenshot2.jpg)
 
-(7) At the top of the Console window, click the lavender button labelled 'Load Tape'. (Not 'Start'.)
+(7) At the top of the Console window, click the lavender button labelled 'Load Tape'. (Not 'Start'!)
 
 (8) Now watch the 'IBM 716 Line Printer' window. You should see the following appear:
 
@@ -384,7 +384,7 @@ Finally, we'll have a little light show, exercising all 7 of the index registers
 
 (3) In the Tape Unit panel for the 'A1' drive you added above, click the 'Rew' button to rewind the loaded tape image (it's still 9M71B.BIN).
 
-(4) Once again, click the lavender 'Load Tape' button to start the program running. (Not 'Start'.)
+(4) Once again, click the lavender 'Load Tape' button to start the program running. (Not 'Start'!)
 
 (5) This time, the program halts the CPU with the IC (instruction counter) at 2.  Click 'Start' to continue the program.
 
@@ -433,7 +433,7 @@ Note that, except for tape unit B3, which we haven't yet done anything with, the
 
 (4) On the Tape Drives window, in the Tape Unit panel for B3, click the 'Opn' button, and navigate to ..\Files\Tapes. Open tape image file "KSYS61.BIN".
 
-(5) On the Console window, click 'Load Tape'. (Not 'Start'.)
+(5) On the Console window, click 'Load Tape'. (Not 'Start'!)
 
 (6) Check the Line Printer window. After a few seconds, you should see:
 
@@ -527,13 +527,15 @@ If you see "(Not Responding)" in the Tape Viewer's title bar, don't panic! It's 
 
 B7094 is a multi-threaded, event-driven application, and sometimes (hopefully not too often) things can jam up. For example, if you start the application and then click 'Power Off' before the Splash window has a chance to close on its own, the application will freeze. In this case, if you just click 'Close' on the Splash window (ignoring the spinning mouse pointer), B7094 will then terminate.
 
-By the way, if you **are** running a demo job and don't want to wait for it to finish, you can click the 'Stop' button on the Operator Console window at any time. The Scripter will treat the job as having completed normally, and both the Tape Viewer window (albeit with truncated contents, of course) and the Script Dialog window that says "Click 'Continue' to dismiss the tape viewer and redisplay the demo list." will come up. Just click 'Continue' at that point, and the demo suite will continue normally. You **could** also, after stopping the CPU in the middle of a job, hide the Tape Viewer and the Script Dialog window (if they happen to be obscuring the Console window) by unchecking them in the Control Panel, then click 'Start' on the Console window and let the job finish! If you then re-display the Tape Viewer and Script Dialog (by checking their boxes again in the Control Panel), they'll be in exactly the same state as when you stopped the CPU. But if you then, on the Tape Drives window, click on the drive letter corresponding to SYSOUT.BCD, the Tape Viewer will be "refreshed" to show the output of the whole job. If you then click 'Continue' on the Script Dialog window, the demo suite will continue normally. You can 'Stop' and 'Start' the CPU as many times as you like!
+By the way, if you **are** running a demo job and don't want to wait for it to finish, you can click the 'Stop' button on the Operator Console window at any time. The Scripter will treat the job as having completed normally, and both the Tape Viewer window (albeit with truncated contents, of course) and the Script Dialog window that says "Click 'Continue' to dismiss the tape viewer and redisplay the demo list." will come up. Just click 'Continue' at that point, and the demo suite will continue normally. You **could** also, after stopping the CPU in the middle of a job, hide the Tape Viewer and the Script Dialog window (if they happen to be obscuring the Console window) by unchecking them in the Control Panel, then click 'Start' on the Console window and let the job finish! If you then re-display the Tape Viewer and Script Dialog (by checking their boxes again in the Control Panel), they'll be in exactly the same state as when you stopped the CPU. But if you then, on the Tape Drives window, click on the drive letter corresponding to SYSOUT.BCD, the Tape Viewer will be "refreshed" to show the output of the whole job. If you then click 'Continue' on the Script Dialog window, the demo suite will continue normally. You can 'Stop' and 'Start' the CPU as many times as you like! (But see below under "Known Bugs".)
 
 If the emulator does hang permanently, or if something is just taking more time than you care to wait for, I'm afraid there's nothing for it but to kill the process in the Task Manager.
 
 ## Known bugs
 
 - If line numbering is turned on in the Editor window, the numbers in the parallel list box on the left side of the window will not update automatically as text is typed in. But they will be updated if the 'Line Numbers' checkbox is unchecked and then checked again, or if a file is loaded (the latter creates an additional editing box within the same Editor window; multiple text boxes are accessed via the file name tabs near the top of the window).  If text is entered (or loaded from a file) that's long enough to activate the scroll bar for the edit box, a scroll bar for the list box containing the line numbers will also be activated, but the scrolling will not be synchronized.  It will be up to the user to synchronize the line numbers with the text -- such as, by moving both bars to the beginning (or the end), and then scrolling downward (or upward) in discrete steps.
+
+- 'Stop'ping and then 'Start'ing the CPU; or checking 'Single Step' to stop the CPU, then unchecking it and re-'Start'ing the CPU, is not guaranteed to be 100% reliable. Mostly it works, but occasionally the CPU (the 7094's CPU) goes into a tight loop, where the console lights freeze but the instruction count at the bottom of the Console window keeps climbing. We've made certain operations uninterruptible (e.g., the CPU won't honor a stop request in the middle of an I/O operation -- the stop happens after the channel is finished), and this has greatly improved the reliability of 'Stop'/'Start', but it still doesn't seem to be bullet-proof.  
 
 ## About the mainframe
 
