@@ -139,7 +139,15 @@ To start, here's the procedure for **running** one of the Xample scripts. We'll 
 
 (3) Click the 'Open' button, and navigate to ..\Files\Scripts and open the file "Xample_Sysdmp.Fap.KSYS.EC7" (there's also an ASYS version of this file, but we're sticking with the KSYS version for reasons that will explained below).
 
-(4) Now just click the 'Run' button on the Editor window, and the job will run. You could then 'Close' the file in the Editor, if you want; otherwise it will be kept open even if you 'Power Off' and restart the emulator. (Editor sessions are saved in the ..\Bin\B7094.INI file in the [EditFiles] section.)  But don't close the example script file just yet.
+(4) Now just click the 'Run' button on the Editor window, and the job will run. The Editor will 'Hide' itself while the job is running, but will pop back when it finishes.  (By the way, if any of the larger windows -- the Editor, the Tape Viewer, or the Script Dialog -- are "getting in your face" and obscuring something else you want to see, you don't have to move them around to get them out of the way. Just hide them temporarily by unchecking their corresponding checkboxes in the Control Panel. If you re-check a box there, the corresponding window will then reappear.)
+
+This will be the "IBM 716 Line Printer" output:
+
+![Screenshot](Xample_screenshot.jpg)
+
+You may be worried about the "TURN TIMER ON", "PAUSE..CONTINUING", "TIMER WILL NOT RUN. NOTIFY IBM, LOG TIMES BY HAND.", "PAUSE..CONTINUING" messages at the top of the window, but these are harmless. The KSYS61 system expected an interval timer (for accounting) to be installed and turned on, and complains at startup about the lack of this, but then is willing to continue running without.
+
+You could now 'Close' the file in the Editor, if you want; otherwise it will be kept open even if you 'Power Off' and restart the emulator. (Editor sessions are saved in the ..\Bin\B7094.INI file in the [EditFiles] section.)  But don't close the example script file just yet; we'll look at it in a bit of detail.
 
 Scroll down a bit in the Editor, past the mounting of all the SCRATCH tape drives, and you'll see a line:
 
