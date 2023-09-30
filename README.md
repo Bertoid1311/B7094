@@ -144,7 +144,7 @@ To start, here's the procedure for **running** one of the Xample scripts. We'll 
 This will be the "IBM 716 Line Printer" output:
 
 <p align="center">
-<img src="Xample_screenshot.jpg" width="50%">
+<img src="Xample_screenshot.jpg" width="65%">
 </p>
 
 You may be worried about the "TURN TIMER ON", "PAUSE..CONTINUING", "TIMER WILL NOT RUN. NOTIFY IBM, LOG TIMES BY HAND.", "PAUSE..CONTINUING" messages at the top of the window, but these are harmless. The KSYS61 system expected an interval timer (for accounting) to be installed and turned on, and complains at startup about the lack of this, but then is willing to continue running without.
@@ -272,15 +272,21 @@ To create a new file (generally you'll be creating a script for B7094 to run), c
 
 You can start typing at this point, like so:
 
-![Screenshot](Editor_screenshot1.jpg)
+<p align="center">
+<img src="Editor_screenshot1.jpg" width="65%">
+</p>
 
 Now click the 'Run' button, and voilà:
 
-![Screenshot](Editor_screenshot2.jpg)
+<p align="center">
+<img src="Editor_screenshot2.jpg" width="65%">
+</p>
 
 Click either the 'Continue' or the 'Cancel' button, and the 'B7094 Scripter' window will close, the script will end, and the Editor window will re-open (in the former case, because there's no more script to Continue; in the latter case, continuation of a longer script would be Cancelled at that point):
 
-![Screenshot](Editor_screenshot3.jpg)
+<p align="center">
+<img src="Editor_screenshot3.jpg" width="65%">
+</p>
 
 When you clicked 'Run', the Editor automatically created a temporary file ..\Output\Temp.EC7 containing the text that you typed, and ran the Scripter from that file. The box turned green, and the label on the tab changed to 'Temp.EC7'. The color change indicates there's an active file associated with the text box, and will also occur if you 'Save' (to the temp file) or 'SaveAs' (to a "real" file), and the tab label will always reflect the name of that active file. If you 'Open' (any file), the box starts out green, and the tab label contains the name of the file you opened.
 
@@ -292,9 +298,13 @@ Any "real" files that you saved text to before you clicked 'Power Off' will be l
 
 The EC7 scripting language is another story. Probably the best way to get a grip on that would be to examine the existing scripts in the ..\Files\Scripts directory. Most of what you'll want to do will be in there somewhere. But there's also a manual, ..\Docs\B7094ScripterSyntax.txt that gives a full description of the language (admittedly, in somewhat opaque "formal syntax" style). Here's a sequence of commands from one of the more difficult-to-parse entries in the Syntax manual, and its result:
 
-![Screenshot](Editor_screenshot4.jpg)
+<p align="center">
+<img src="Editor_screenshot4.jpg" width="65%">
+</p>
 
-![Screenshot](Editor_screenshot5.jpg)
+<p align="center">
+<img src="Editor_screenshot5.jpg" width="65%">
+</p>
 
 ## Totally manual operation
 
@@ -306,23 +316,31 @@ Here's a step-by-step example of loading and running a program (the 9M21A diagno
 
 (2) In the Control Panel window, click the checkboxes for 'Reader' and 'Printer' to bring up the corresponding windows.
 
-![Screenshot](Control_Panel_screenshot.jpg)
+<p align="center">
+<img src="Control_Panel_screenshot.jpg" width="65%">
+</p>
 
 (3) In the 'IBM 711 Card Reader' window, click the 'Open' button and navigate to ..\Files\Cards. On the 'Open file' dialog window, select either 'Any file (*.*)' or 'Column Binary card files (*.CBN)' in the drop-down box to the right of the 'File name:' field. Double-click, or click and 'Open', "9M21A.CBN". The cards will appear in the Card Reader window and the file name will appear in the Card Reader window's title bar. (The column-binary data is not human-readable, except for the sequence numbers in the final eight columns of each card.)
 
-![Screenshot](Reader_screenshot1.jpg)
+<p align="center">
+<img src="Reader_screenshot1.jpg" width="65%">
+</p>
 
 (4) At the bottom right of the Console window, in the row of buttons labelled 'Switches:', click the button corresponding to Switch 6. The label of the button will change from 'off' to 'ON', and its color will change from grey to purple.
 
 (5) At the top of the Console window, click the lavender button labelled 'Load Card'. (Do **not** click 'Start'!)
 
-![Screenshot](Console_screenshot1.jpg)
+<p align="center">
+<img src="Console_screenshot1.jpg" width="65%">
+</p>
 
 **Note:** If you click the 'Load Card' (or 'Load Tape') Console button when nothing is loaded in the Card Reader (or no tape image file is mounted on the designated "boot" tape drive [by default A1, though this can be changed via the Scripter's "Set Boot=" command]) then your button click will simply be ignored.
 
 (6) Now watch the 'IBM 716 Line Printer' window. First, the message 'NOW PERFORMING DIAGNOSTIC 9M21' will appear. Then, after a while, additional lines will appear announcing "100 PROGRAM PASSES COMPLETE 9M21". (Hint: if you don't want to wait "a while", click the 'Dark' radiobutton on the Control Panel window.). The Line Printer window will accumulate output, like so:
 
-![Screenshot](Printer_screenshot1.jpg)
+<p align="center">
+<img src="Printer_screenshot1.jpg" width="65%">
+</p>
 
 (7) The program will continue running until the CPU is stopped by clicking 'Stop' at the top of the Console window.
 
@@ -360,19 +378,25 @@ Here's another example, this time showing how to load and run the tape-based 9M7
 
 (4) In the newly-visible Tape Unit panel, click the 'Opn' button, and navigate to ..\Files\Tapes. Open tape image file "9M71B.BIN". The name of the image file will appear next to its channel-letter+decimal-unit-number=device-address identifier. The 'Size:' of the image will also be displayed.
 
-![Screenshot](Tape_Unit_screenshot.jpg)
+<p align="center">
+<img src="Tape_Unit_screenshot.jpg" width="65%">
+</p>
 
 (5) On the Console window, click the button for  Switch 6, turning it 'ON'.
 
 (6) On the Console window, type the octal number "300017" into the text box labelled "Enter Console Keys', and then click the 'Accept' button. You will see the 'KEYS' register light up, like so:
 
-![Screenshot](Console_screenshot2.jpg)
+<p align="center">
+<img src="Console_screenshot2.jpg" width="65%">
+</p>
 
 (7) At the top of the Console window, click the lavender button labelled 'Load Tape'. (Not 'Start'!)
 
 (8) Now watch the 'IBM 716 Line Printer' window. You should see the following appear:
 
-![Screenshot](Printer_screenshot2.jpg)
+<p align="center">
+<img src="Printer_screenshot2.jpg" width="65%">
+</p>
 
 Again, the following Scripter commands will re-run the above example:
 
@@ -449,13 +473,17 @@ Note that, except for tape unit B3, which we haven't yet done anything with, the
 
 (6) Check the Line Printer window. After a few seconds, you should see:
 
-![Screenshot](Printer_screenshot3.jpg)
+<p align="center">
+<img src="Printer_screenshot3.jpg" width="65%">
+</p>
 
 (7) On the Console window, click 'Start'.
 
 (8) Now the Line Printer window will show:
 
-![Screenshot](Printer_screenshot4.jpg)
+<p align="center">
+<img src="Printer_screenshot4.jpg" width="65%">
+</p>
 
 (9) Now copy and paste the following commands into the Editor window (replacing the text already there), and click 'Run' again.
 
@@ -469,13 +497,17 @@ Note that, except for tape unit B3, which we haven't yet done anything with, the
 
 (10) Now the Card Reader window will show:
 
-![Screenshot](Reader_screenshot2.jpg)
+<p align="center">
+<img src="Reader_screenshot2.jpg" width="65%">
+</p>
 
 (11) On the Console window, click 'Start' again.
 
 (12) Finally, the Line Printer windows will show:
 
-![Screenshot](Printer_screenshot5.jpg)
+<p align="center">
+<img src="Printer_screenshot5.jpg" width="65%">
+</p>
 
 (13) Now click on the channel-letter+decimal-unit-number of the Tape Unit corresponding to SYSOU1 (A3). The Tape Viewer window will appear, displaying in BCD mode the output generated during this very brief run of IBSYS.
 
@@ -483,11 +515,15 @@ You can see from the unit assignments listed above that this IBSYS tape really "
 
 Also note the "Set SenSw 1 ON" in the list of commands we executed (and that Switch 1 is 'ON' on the Console window). This is necessary to tell IBSYS to look for control cards (the '$' cards) in the card reader. If Switch 1 remained 'off', then IBSYS would start looking for control cards on the tape drive corresponding to IBSYS's default assigment of System Unit SYSIN1, and this would happen the second time you pressed 'Start':
 
-![Screenshot](Printer_screenshot6.jpg)
+<p align="center">
+<img src="Printer_screenshot6.jpg" width="65%">
+</p>
 
 However, all is not lost: you can now **manually** turn on Switch 1 by clicking its button on the Console and (provided you loaded the card reader as described above) click 'Start' again, and the commands will now run normally:
 
-![Screenshot](Printer_screenshot7.jpg)
+<p align="center">
+<img src="Printer_screenshot7.jpg" width="65%">
+</p>
 
 In a more realistic scenario, where IBSYS is running one of its subsystems (such as IBJOB), it takes more than just having Sense Switch 1 ON to be able to continue to accept input from the card reader. You also, before invoking the subsystem, have to execute the following IBSYS commands (in the card reader):
 
@@ -497,7 +533,9 @@ In a more realistic scenario, where IBSYS is running one of its subsystems (such
 
 Refer to the demo scripts in ..\Files\Scripts\\*.EC7 to see how this is done. And note that FORTRAN II does not allow you to use the card reader for SYSIN1 at all.  If you try that, you'll get this:
 
-![Screenshot](Printer_screenshot8.jpg)
+<p align="center">
+<img src="Printer_screenshot8.jpg" width="65%">
+</p>
 
 **Note:** The above style of totally (or partially) manual operation works best with simple stand-alone programs such as the card diagnostic and tape diagnostic programs demonstrated here. For programs requiring a more complicated configuration and setup of the system (such as adding tape drives or assembling jobs) it quickly becomes cumbersome **not** to be using the Scripter. IBSYS itself probably falls into the "too cumbersome to run manually" category.
 
