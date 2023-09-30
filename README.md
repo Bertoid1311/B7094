@@ -143,7 +143,9 @@ To start, here's the procedure for **running** one of the Xample scripts. We'll 
 
 This will be the "IBM 716 Line Printer" output:
 
-![Screenshot](Xample_screenshot.jpg)
+<p align="center">
+<img src="Xample_screenshot.jpg" width="50%">
+</p>
 
 You may be worried about the "TURN TIMER ON", "PAUSE..CONTINUING", "TIMER WILL NOT RUN. NOTIFY IBM, LOG TIMES BY HAND.", "PAUSE..CONTINUING" messages at the top of the window, but these are harmless. The KSYS61 system expected an interval timer (for accounting) to be installed and turned on, and complains at startup about the lack of this, but then is willing to continue running without.
 
