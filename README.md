@@ -549,6 +549,8 @@ The 'Dark' radiobutton at the right end of the row of radiobuttons turns off dis
 
 ## Gotchas
 
+- If you have a script open in the Editor, and you reduce the width of the Editor window enough to make any lines in the script word-wrap, those lines will then be treated as separate commands when you click 'Run' and will cause the Scripter to error out. If you expand the Editor window's width to accommodate the longest line in your script (the lines will un-wrap automatically as you do so), then the Scripter will run as you expect it to.
+
 Screen "real estate" and the large number of display windows:
 
 - Initial window positions are read from the ..\Bin\B7094.INI file when the emulator starts up, and saved back to B7094.INI when the emulator shuts down (thus recording a changed window position if any window is moved while the emulator is running).  It is possible, for certain monitors, that a window might end up being "out of sight" for a given INI file.  In that case, you'd have to edit the INI file manually to bring the "lost" window back within range.
