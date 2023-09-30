@@ -279,7 +279,7 @@ You can start typing at this point, like so:
 Now click the 'Run' button, and voilà:
 
 <p align="center">
-<img src="Editor_screenshot2.jpg" width="65%">
+<img src="Editor_screenshot2.jpg" width="45%">
 </p>
 
 Click either the 'Continue' or the 'Cancel' button, and the 'B7094 Scripter' window will close, the script will end, and the Editor window will re-open (in the former case, because there's no more script to Continue; in the latter case, continuation of a longer script would be Cancelled at that point):
