@@ -18,6 +18,8 @@ There is a YouTube video [here](https://www.youtube.com/watch?v=4xaBS6pWrG0) tha
 
 There is also more documentation in the "Docs" sub-folder of the install folder, in the following files:
 
+- **B7094ReadMe.pdf** is the file you're now reading, converted to PDF (including the illustrations).
+
 - **B7094SourceReadMe.txt** lists the source files in the ..\Build\Source sub-folder of the install folder. Describes each window file in some detail, making it something of a "user's manual". Describes how to install and configure Lazarus/Free Pascal and rebuild the B7094 executables.
 
 - **B7094ScripterSyntax.txt** describes in detail the command syntax of the EC7 script language.
@@ -25,8 +27,6 @@ There is also more documentation in the "Docs" sub-folder of the install folder,
 - **B7094SuggestedManuals.txt** gives links to some useful manuals on bitsavers and elsewhere.
 
 - **B7094DebuggingExamples.txt** gives a couple of simple illustrations of how the facililties in B7094 can be used to perform some (admittedly rudimentary) debugging of programs running on the emulated machine.
-
-- **B7094ReadMe.txt** is similar to the information in this section of the GitHub README.
 
 - **B7094WhatsNew.txt** describes the current status and history of the emulator (including its very earliest history).
 
@@ -151,7 +151,7 @@ You may be worried about the "TURN TIMER ON", "PAUSE..CONTINUING", "TIMER WILL N
 
 You could now 'Close' the file in the Editor, if you want; otherwise it will be kept open even if you 'Power Off' and restart the emulator. (Editor sessions are saved in the ..\Bin\B7094.INI file in the [EditFiles] section.)  But don't close the example script file just yet; we'll look at it in a bit of detail.
 
-Scroll down a bit in the Editor, past the mounting of all the SCRATCH tape drives, and you'll see a line:
+Scroll down in the Editor past the mounting of all the SCRATCH tape drives, and you'll see a line:
 
 ####
     Include File='Sysdmp.Fap'    // Insert the source text
@@ -539,13 +539,33 @@ Refer to the demo scripts in ..\Files\Scripts\\*.EC7 to see how this is done. An
 
 **Note:** The above style of totally (or partially) manual operation works best with simple stand-alone programs such as the card diagnostic and tape diagnostic programs demonstrated here. For programs requiring a more complicated configuration and setup of the system (such as adding tape drives or assembling jobs) it quickly becomes cumbersome **not** to be using the Scripter. IBSYS itself probably falls into the "too cumbersome to run manually" category.
 
-The emulator is fairly robust. If you do something silly, like clicking 'Drop All Drives' while the CPU is operating, you'll get a message "CPU/Channel Check exists. Continue running script?". Just click 'No' at that point (you really have no other choice), then click either 'Reset' or 'Clear' on the Console window to clear the CPU error. You can then bring up the Editor, Open and 'Run' B7Demo.EC7 (or any other script file), and you'll be back in business.
+The emulator is fairly robust. If you do something silly, like clicking 'Drop All Drives' while the CPU is operating, you'll get a warning message "CPU/Channel Check exists. Continue running script?". Just click 'Yes' at that point and the demo script will reset the CPU automatically and re-display the menu from which you started the program you so rudely interrupted. If you answer 'No', the demo script (or whatever script you're running) will terminate (and the 'Stop Script' button in the top row of controls in the Control Panel will disappear). You could then bring up the Editor, Open and 'Run' B7Demo.EC7 (or any other script file), and you'd be back in business.
 
 ## 'True Factor' and 'Dark' Mode
 
 The controls in the last two rows of the Control Panel window allow you to control how often the "blinkies" on the Console window are updated; that is, how many CPU instructions are allowed to execute before the next display update is issued. A display update after every instruction we call a 'True Factor' of 1. Higher True Factors mean that more CPU instructions are allowed to execute before the next display update (the True Factor **is** that number of instructions). The default is 1,000 instructions per display update. The lower the True Factor, the slower execution will be, because of the overhead of updating the displays. The whole range of selectable True Factors is 1 to 10,000.  There are two ways to change the True Factor -- the most convenient way is to use the radiobuttons which provide a reasonable range of possibilities. The True Factor can also be entered directly. Tip: a True Factor of 30 gives a very satisfying light show, albeit with a significant reduction in execution speed compared to the default of 1,000. You can change the True Factor while the 7094's CPU is executing without any disruption, and the newly-chosen True Factor will take effect immediately.
 
 The 'Dark' radiobutton at the right end of the row of radiobuttons turns off display updating altogether, for a significant increase in execution speed.  If you start out in Dark Mode, the Console displays will remain dark. If you switch to Dark Mode during execution, the Console displays will remain as they were when Dark Mode was entered. The 'Update Displays' button on the Control Panel window allows you to force a display update the moment the button is clicked. In Dark Mode, this will take a "snapshot" of what the displays are (or would have been, if they were active) when the button is clicked (including the Tape Unit displays). You'll almost never catch the Channel displays showing a 'RUN'ning (blue indicator) state though, so don't be surprised if the channel is always in the 'STOP'ped (red indicator) state.
+
+## 'Stop'ping and 'Start'ing the CPU
+
+**Note:** The following procedure applies to the canned demo scripts, which are set up to detect and handle user-requested stops.
+
+If you're running a demo program, and you click the 'Stop' button at the top of the Console window, you'll be presented with this window:
+
+<p align="center">
+<img src="UserStop_screenshot.jpg" width="50%">
+</p>
+
+When you click 'Continue' (it's your only choice), that window will disappear and the Script Dialog window (the window containing the option menu you selected the demo program from) will "hide" itself (and the 'Script Dialog' checkbox on the Control Panel will become unchecked.)  The CPU is now yours to do with as you will. You can click 'Start' and 'Stop' on the Console as many times as you like; you can click the 'Single Step' checkbox on the Console and click 'Start' to step through the program instruction-by-instruction. You can even run the program to completion (the Tape Viewer won't appear automatically at the end if you do that, but you can still bring it up manually). When you're finished playing with the CPU, just check the 'Script Dialog' checkbox on the Control Panel to bring back the option menu and resume the demo suite. The process is reasonably foolproof -- you can even bring back the menu while the CPU is still running, and the script will stop and reset the CPU for you.
+
+There is also a 'Stops' window (bring it up by clicking its checkbox on the Control Panel):
+
+<p align="center">
+<img src="Stops_screenshot.jpg" width="65%">
+</p>
+
+If you enable one of these conditions as a 'Stop' by selecting the appropriate radiobutton, when the condition is fulfilled the CPU will throw a "User requested stop" which will be treated, the first time it occurs, the same as if you'd clicked the 'Stop' button on the Console. You can then re-start the CPU, but the condition will remain enabled until either the 'Enabled' checkbox on the 'Stops' window is unchecked, or until the Script Dialog window is summoned back.
 
 ## Gotchas
 
@@ -555,8 +575,7 @@ Screen "real estate" and the large number of display windows:
 
 - Initial window positions are read from the ..\Bin\B7094.INI file when the emulator starts up, and saved back to B7094.INI when the emulator shuts down (thus recording a changed window position if any window is moved while the emulator is running).  It is possible, for certain monitors, that a window might end up being "out of sight" for a given INI file.  In that case, you'd have to edit the INI file manually to bring the "lost" window back within range.
 
-- There's no way to avoid a "cramped" window layout with a single monitor, with windows potentially obscuring other windows.  A partial remedy for this is that it's possible, from the Control Panel, to de-select (and re-select) windows for display by checking and unchecking the 12 checkboxes
-corresponding to the windows.  For the canned demos, the script files normally control when windows are displayed and hidden -- for example, by bringing up the Tape Viewer when a job completes, and then automatically hiding it when you click 'Continue' (on the Scripter window that says
+- There's no way to avoid a "cramped" window layout with a single monitor, with windows potentially obscuring other windows.  A partial remedy for this is that it's possible, from the Control Panel, to de-select (and re-select) windows for display by checking and unchecking the 12 checkboxes corresponding to the windows.  For the canned demos, the script files normally control when windows are displayed and hidden -- for example, by bringing up the Tape Viewer when a job completes, and then automatically hiding it when you click 'Continue' (on the Scripter window that says
 "Click 'Continue' to dismiss the tape viewer and redisplay the demo list.") But if you wanted, for example, to see the whole Operator Console window at the point when a job completes, you could de-select both the Tape Viewer and the Script Dialog windows.  Then you could re-select one (or both) of those windows and click 'Continue' on the Scripter window to resume the demo suite.
 
 There are some things that can make the emulator seem to hang, but are just **very** slow:
@@ -580,10 +599,6 @@ If you see "(Not Responding)" in the Tape Viewer's title bar, don't panic! It's 
 - If you've activated the Core Plot window. This is a graphical display of core usage, with memory locations represented by blocks of colored pixels. Pixels in a block are black initially; a write to a location turns them blue, a read from a location turns them green, a (pending) instruction fetch flashes a pixel block white (before the actual fetch turns it green). This can be entertaining (and one of the canned demos features it), but it **really** slows down the emulator.
 
 B7094 is a multi-threaded, event-driven application, and sometimes (hopefully not too often) things can jam up. For example, if you start the application and then click 'Power Off' before the Splash window has a chance to close on its own, the application will freeze. In this case, if you just click 'Close' on the Splash window (ignoring the spinning mouse pointer), B7094 will then terminate.
-
-By the way, if you **are** running a demo job and don't want to wait for it to finish, you can click the 'Stop' button on the Operator Console window at any time. The Scripter will treat the job as having completed normally, and both the Tape Viewer window (albeit with truncated contents, of course) and the Script Dialog window that says "Click 'Continue' to dismiss the tape viewer and redisplay the demo list." will come up. Just click 'Continue' at that point, and the demo suite will continue normally. You **could** also, after stopping the CPU in the middle of a job, hide the Tape Viewer and the Script Dialog window (if they happen to be obscuring the Console window) by unchecking them in the Control Panel, then click 'Start' on the Console window and let the job finish! If you then re-display the Tape Viewer and Script Dialog (by checking their boxes again in the Control Panel), they'll be in exactly the same state as when you stopped the CPU. But if you then, on the Tape Drives window, click on the drive letter corresponding to SYSOUT.BCD, the Tape Viewer will be "refreshed" to show the output of the whole job. If you then click 'Continue' on the Script Dialog window, the demo suite will continue normally. You can 'Stop' and 'Start' the CPU as many times as you like!
-
-Speaking of 'Stop' and 'Start', if you click one of the 'Single Step' checkboxes on either the Control Panel or the Console, it is the same as issuing a stop request via the Console's 'Stop' button.  In this case, the stop request stays in effect, so you can click 'Start' to step through execution instruction by instruction. The 'Stops' window (click the corresponding checkbox on the Control Panel to bring it up) provides a similar capability -- allowing you to specify an address at which you want the 7094's CPU to stop either when an instruction is fetched from the specified address, or an address to stop at when a write to core memory occurs at the specified location (or both). You can also ask that just an entry be made in the Trace file without stopping for one or both of those occurrences. **Note:** a stop will be "requested" when the event is triggered, but the actual stopping point will be at the next "legal" opportunity to stop -- generally, after the next "regular" instruction. I/O operations cannot be stopped, and any channel operations in progress will complete before a stop request is "honored".  We have endeavored to make 'Stop'ping and re-'Start'ing the CPU as reliable as possible, and we hope we have achieved this.
 
 If the emulator does hang permanently, or if something is just taking more time than you care to wait for, I'm afraid there's nothing for it but to kill the process in the Task Manager.
 
