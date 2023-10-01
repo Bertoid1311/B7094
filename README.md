@@ -565,7 +565,7 @@ There is also a 'Stops' window (bring it up by clicking its checkbox on the Cont
 <img src="Stops_screenshot.jpg" width="65%">
 </p>
 
-If you enable one of these conditions as a 'Stop' by selecting the appropriate radiobutton, when the condition is fulfilled the CPU will throw a "User requested stop" which will be treated, the first time it occurs, the same as if you'd clicked the 'Stop' button on the Console. You can then re-start the CPU, but the condition will remain enabled until either the 'Enabled' checkbox on the 'Stops' window is unchecked, or until the Script Dialog window is summoned back.
+If you enable one of these conditions as a 'Stop' by selecting the appropriate radiobutton, when the condition is fulfilled the CPU will throw a "User requested stop" which will be treated, the first time it occurs, the same as if you'd clicked the 'Stop' button on the Console (and the Script Dialog window will "hide"). You can then re-start the CPU, and the Stop condition will remain enabled until the 'Enabled' checkbox on the 'Stops' window is unchecked. The Console 'Start' button will run the CPU until the Stop condition is triggered again (at which point the Console's red 'Stop' button will return to a blue 'Start'). If the Script Dialog window is summoned back while the Stop condition remains enabled, and a program is started or re-started from there, if the Stop condition is fulfilled again it will be treated as another 'User requested stop'.
 
 ## Gotchas
 
