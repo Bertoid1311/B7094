@@ -378,7 +378,7 @@ Here's another example, this time showing how to load and run the tape-based 9M7
 (4) In the newly-visible Tape Unit panel, click the 'Opn' button, and navigate to ..\Files\Tapes. Open tape image file "9M71B.BIN". The name of the image file will appear next to its channel-letter+decimal-unit-number=device-address identifier. The 'Size:' of the image will also be displayed.
 
 <p align="center">
-<img src="Tape_Unit_screenshot.jpg" width="65%">
+<img src="Tape_Drives_screenshot1.jpg" width="65%">
 </p>
 
 (5) On the Console window, click the button for  Switch 6, turning it 'ON'.
@@ -467,13 +467,23 @@ You could even alternate between executing commands via the Editor and Scripter,
     TextLoad Save BCD File='SysOut.BCD'
     Mount Tape=A3 File='&OutputPath\SysOut.BCD'
     Mount Tape=B4 SCRATCH
-    Set Boot=B3
     Press Clear
+    Set Boot=B3
     Set SenSw 1 ON
+
+The Tape Drives window will now look like:
+
+<p align="center">
+<img src="Tape_Drives_screenshot2.jpg" width="65%">
+</p>
 
 Note that, except for tape unit B3, which we haven't yet done anything with, the other 3 tapes show "Posn: 0" and "Size: 1". This is because the BCD tapes were all created (by "TextLoad Save") with a single P7B Tape Mark (EOF, or End of File; byte Hex 8F), and the binary SCRATCH tape was created with a single 0 byte.  You can see the EOFs in BCD mode of the Tape Viewer (as '~'), but Binary mode shows nothing (a single byte would be a very Short Word indeed!). The "read/write heads" of all the drives are still, however, pointing at the first byte position of the tape image file ("Posn: 0", counting from 0 offset).
 
 (4) On the Tape Drives window, in the Tape Unit panel for B3, click the 'Opn' button, and navigate to ..\Files\Tapes. Open tape image file "KSYS61.BIN".
+
+<p align="center">
+<img src="Tape_Drives_screenshot3.jpg" width="65%">
+</p>
 
 (5) On the Console window, click 'Load Tape'. (Not 'Start'!)
 
@@ -517,13 +527,15 @@ Note that, except for tape unit B3, which we haven't yet done anything with, the
 
 (13) Now click on the channel-letter+decimal-unit-number of the Tape Unit corresponding to SYSOU1 (A3). The Tape Viewer window will appear, displaying in BCD mode the output generated during this very brief run of IBSYS.
 
-You can see from the unit assignments listed above that this IBSYS tape really "expects" to be loaded from drive A1 (SYSLB1) and that drive B3 is assigned the function of secondary Peripheral Punch tape (SYSPP2), but we're simply showing that as far as the emulator is concerned, any configured drive can be set as the 'Load Tape' drive (though if no "Set Boot=" Scripter command is executed, the default is in fact A1).
+You can see from the unit assignments listed above that this IBSYS tape really "expects" to be loaded from drive A1 (SYSLB1) and that drive B3 is assigned the function of secondary Peripheral Punch tape (SYSPP2), but we're simply showing that as far as the emulator is concerned, any configured drive can be set as the 'Load Tape' drive. However, if no "Set Boot=" Scripter command is executed, the default is in fact A1. Also, a 'Reset' or 'Clear' of the CPU will reset the default boot drive to A1 (hence the 'Press Clear' comes **before** the 'Set Boot=B3' in the list of commands above).
 
 Also note the "Set SenSw 1 ON" in the list of commands we executed (and that Switch 1 is 'ON' on the Console window). This is necessary to tell IBSYS to look for control cards (the '$' cards) in the card reader. If Switch 1 remained 'off', then IBSYS would start looking for control cards on the tape drive corresponding to IBSYS's default assigment of System Unit SYSIN1, and this would happen the second time you pressed 'Start':
 
 <p align="center">
 <img src="Printer_screenshot6.jpg" width="65%">
 </p>
+
+A 'Reset' or 'Clear' of the CPU will also reset all the Sense Switches to OFF (hence the 'Press Clear' also comes before the 'Set SenSw 1 ON' in the list of commands above).
 
 However, all is not lost: you can now **manually** turn on Switch 1 by clicking its button on the Console and (provided you loaded the card reader as described above) click 'Start' again, and the commands will now run normally:
 
