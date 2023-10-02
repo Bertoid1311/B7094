@@ -350,7 +350,7 @@ If you did click 'Start' instead of 'Load Card' by mistake here, all that will h
 
 If you want to start over at any point, just click 'Stop' on the Console, 'Clear' on the Console (which will then show 'Clear & Reset complete'), click Sense Switch 6 to turn it ON again (it was reset to OFF by the 'Clear'), 'Clear' and 'Reload' on the Card Reader, and (optionally) 'Clear' on the Line Printer. Another 'Load Card' will now restart the diagnostic program.
 
-**Note:** If you click the 'Load Card' (or 'Load Tape') Console button when nothing is loaded in the Card Reader (or no tape image file is mounted on the designated "boot" tape drive [by default A1, though this can be changed via the Scripter's "Set Boot=" command]) then your button click will simply be ignored.
+**Note:** If you click the 'Load Card' (or 'Load Tape') Console button when nothing is loaded in the Card Reader (or no tape image file is mounted on the designated "boot" tape drive [by default A1, though this can be changed via the Scripter's 'Set Boot=' command]) then your button click will simply be ignored.
 
 The following Scripter commands will re-run the above example:
 
