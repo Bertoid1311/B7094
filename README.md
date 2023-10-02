@@ -348,7 +348,7 @@ The Line Printer window will accumulate the output, like so:
 
 If you did click 'Start' instead of 'Load Card' by mistake here, all that will happen is that the CPU will stop immediately and the run-state message (at the bottom of the Console window) will change from 'Reset complete' to 'Stopped - Press Start'.  If you then click 'Start' again, nothing will happen. If you then click 'Load Card' (as you should have done in the first place) the Card Reader will consume one card and the CPU will stop again. **Now** if you press 'Start' the diagnostic program will run.
 
-If you want to start over at any point, just click 'Stop' on the Console, 'Clear' on the Console (which will then show 'Clear & Reset complete'), click Sense Switch 6 to turn it ON again (it was reset to OFF by the 'Clear'), 'Clear' and 'Reload' on the Card Reader, and (optionally) 'Clear' on the Line Printer. Another 'Load Card' will now restart the diagnostic program.
+If you want to start over at any point, just click 'Stop' on the Console, 'Clear' on the Console (which will then show 'Clear & Reset complete'), click Sense Switch 6 to turn it 'ON' again (it was reset to 'off' by the 'Clear'), 'Clear' and 'Reload' on the Card Reader, and (optionally) 'Clear' on the Line Printer. Another 'Load Card' will now restart the diagnostic program.
 
 **Note:** If you click the 'Load Card' (or 'Load Tape') Console button when nothing is loaded in the Card Reader (or no tape image file is mounted on the designated "boot" tape drive [by default A1, though this can be changed via the Scripter's 'Set Boot=' command]) then your button click will simply be ignored.
 
@@ -535,7 +535,7 @@ Also note the "Set SenSw 1 ON" in the list of commands we executed (and that Swi
 <img src="Printer_screenshot6.jpg" width="65%">
 </p>
 
-A 'Reset' or 'Clear' of the CPU will also reset all the Sense Switches to OFF (hence the 'Press Clear' also comes before the 'Set SenSw 1 ON' in the list of commands above).
+A 'Reset' or 'Clear' of the CPU will also reset all the Sense Switches to 'off' (hence the 'Press Clear' also comes before the 'Set SenSw 1 ON' in the list of commands above).
 
 However, all is not lost: you can now **manually** turn on Switch 1 by clicking its button on the Console and (provided you loaded the card reader as described above) click 'Start' again, and the commands will now run normally:
 
