@@ -371,7 +371,7 @@ Here's another example, this time showing how to load and run the tape-based 9M7
 
 (1) Start the emulator, and click 'End Demonstration Script'.
 
-(2) In the Control Panel window, click the checkboxes for 'TapeDrives' and 'Printer'.
+(2) In the Control Panel window, click the checkboxes for 'Printer' and 'TapeDrives'.
 
 (3) On the 'IBM 729 Tape Drives' window, click 'Add Drive' (this automatically selects the 'Show All' radiobutton).
 
