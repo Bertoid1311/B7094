@@ -334,9 +334,11 @@ Here's a step-by-step example of loading and running a program (the 9M21A diagno
 <img src="Console_screenshot1.jpg" width="65%">
 </p>
 
-**Note:** If you click the 'Load Card' (or 'Load Tape') Console button when nothing is loaded in the Card Reader (or no tape image file is mounted on the designated "boot" tape drive [by default A1, though this can be changed via the Scripter's "Set Boot=" command]) then your button click will simply be ignored.
+(6) Now watch the 'IBM 716 Line Printer' window. First, the message 'NOW PERFORMING DIAGNOSTIC 9M21' will appear. Then, after a moment, additional lines will appear announcing "100 PROGRAM PASSES COMPLETE 9M21".
 
-(6) Now watch the 'IBM 716 Line Printer' window. First, the message 'NOW PERFORMING DIAGNOSTIC 9M21' will appear. Then, after a while, additional lines will appear announcing "100 PROGRAM PASSES COMPLETE 9M21". (Hint: if you don't want to wait "a while", click the 'Dark' radiobutton on the Control Panel window.). The Line Printer window will accumulate output, like so:
+(**Hint:** if you don't want to wait "a moment", click the 'Dark' radiobutton on the Control Panel window. This is also an excellent opportunity to try out the other 'True Factor' radiobuttons on the Control Panel, to see how they vary the "light show" on the Console. 'True Factor' is described in more detail below.)
+
+The Line Printer window will accumulate the output, like so:
 
 <p align="center">
 <img src="Printer_screenshot1.jpg" width="65%">
@@ -344,29 +346,26 @@ Here's a step-by-step example of loading and running a program (the 9M21A diagno
 
 (7) The program will continue running until the CPU is stopped by clicking 'Stop' at the top of the Console window.
 
-After you've stopped the CPU, here's how you can reset things and re-run the same program (similar steps could be taken to run a different program).
+If you did click 'Start' by mistake here, all that will happen is that the CPU will stop immediately and the run-state message (at the bottom of the Console window) will change from 'Reset complete' to 'Stopped - Press Start'.  If you then click 'Start' again, nothing will happen. If you then click 'Load Card' (as you should have done in the first place) the Card Reader will consume one card and the CPU will stop again. **Now** if you press 'Start' the diagnostic program will run.
 
-(1) Click 'Clear' on the Line Printer window to delete the text there.
+If you want to start over at any point, just click 'Stop' on the Console, 'Clear' on the Console (which will then show 'Clear & Reset complete'), click Sense Switch 6 to turn it ON again (it was reset to OFF by the 'Clear'), 'Clear' and 'Reload' on the Card Reader, and (optionally) 'Clear' on the Line Printer. Another 'Load Card' will now restart the diagnostic program.
 
-(2) Click 'Reload' on the Card Reader window to reload the last card file you loaded, or click 'Open' to reload either the same or load a new file.
-
-(3) Click 'Clear' on the Console window. This both clears (zeroes-out) core memory **and** resets the CPU (whereas 'Reset' just resets the CPU without clearing memory). The emulator's 'Reset' is actually the equivalent of the power-off/power-on cycle of a physical machine, which would have left the contents of non-volatile core memory intact.
-
-(4) Select the required 'off'/'ON' states of the Switches (re-select Switch 6 to re-run 9M21A). On a physical machine, the physical switches would stay put unless toggled manually; our 'Reset' turns them all back to 'off' as a convenience and a safety precaution.)
-
-(6) Once again, click the lavender 'Load Card' button to start the program running. (Not 'Start'!)
+**Note:** If you click the 'Load Card' (or 'Load Tape') Console button when nothing is loaded in the Card Reader (or no tape image file is mounted on the designated "boot" tape drive [by default A1, though this can be changed via the Scripter's "Set Boot=" command]) then your button click will simply be ignored.
 
 The following Scripter commands will re-run the above example:
 
 ####
     Show Window=Reader,Printer
+    Printer Clear
     Reader Clear
     Load Reader File='9M21A.CBN'
     Press Clear
     Set SenSw 6 ON
     Press LoadCard
 
-You can bring up the Editor and copy-and-paste the above commands into a 'New' edit box and then click 'Run' to try them out. Scripter commands are case-insensitve; the capitalization above is strictly a matter of personal preference. Also, the '=' in a script is generally optional; it's there to improve readability but is otherwise ignored. Note that we cannot stop the CPU via the Scripter; the 'Press LoadCard' command will not return until the CPU stops on its own (or is manually stopped by clicking the Console's 'Stop' button, as above).
+You can bring up the Editor and copy-and-paste the above commands into a 'New' edit box and then click 'Run' to try them out. Scripter commands are case-insensitve; the capitalization above is strictly a matter of personal preference. Also, the '=' in a script is generally optional; it's there to improve readability but is otherwise ignored.
+
+Note that we cannot stop the CPU via the Scripter; the 'Press LoadCard' command will not finish until the CPU stops on its own (or is manually stopped by clicking the Console's 'Stop' button, as above).
 
 Here's another example, this time showing how to load and run the tape-based 9M71B diagnostic via manual operation of an emulated tape drive, and also showing how to perform Console Keys entry on the Console window.
 
