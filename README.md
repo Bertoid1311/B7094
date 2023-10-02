@@ -346,7 +346,7 @@ The Line Printer window will accumulate the output, like so:
 
 (7) The program will continue running until the CPU is stopped by clicking 'Stop' at the top of the Console window.
 
-If you did click 'Start' by mistake here, all that will happen is that the CPU will stop immediately and the run-state message (at the bottom of the Console window) will change from 'Reset complete' to 'Stopped - Press Start'.  If you then click 'Start' again, nothing will happen. If you then click 'Load Card' (as you should have done in the first place) the Card Reader will consume one card and the CPU will stop again. **Now** if you press 'Start' the diagnostic program will run.
+If you did click 'Start' instead of 'Load Card' by mistake here, all that will happen is that the CPU will stop immediately and the run-state message (at the bottom of the Console window) will change from 'Reset complete' to 'Stopped - Press Start'.  If you then click 'Start' again, nothing will happen. If you then click 'Load Card' (as you should have done in the first place) the Card Reader will consume one card and the CPU will stop again. **Now** if you press 'Start' the diagnostic program will run.
 
 If you want to start over at any point, just click 'Stop' on the Console, 'Clear' on the Console (which will then show 'Clear & Reset complete'), click Sense Switch 6 to turn it ON again (it was reset to OFF by the 'Clear'), 'Clear' and 'Reload' on the Card Reader, and (optionally) 'Clear' on the Line Printer. Another 'Load Card' will now restart the diagnostic program.
 
