@@ -401,6 +401,7 @@ Again, the following Scripter commands will re-run the above example:
 
 ####
     Show Window=Tape,Printer
+    Printer Clear
     Config Del All
     Config Add Tape=A1
     Mount Tape=A1 File='9M71B.BIN'
