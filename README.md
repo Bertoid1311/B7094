@@ -410,6 +410,12 @@ Again, the following Scripter commands will re-run the above example:
     Enter Keys=300017
     Press LoadTape
 
+Note that, if the Console Keys register is entered via a Scripter command such as 'Enter Keys=300017', the text box on the Console window will contain a full 12 octal digits (36 bits), but the number doesn't have to be typed that way if it's entered manually:
+
+<p align="center">
+<img src="Console_screenshot3.jpg" width="65%">
+</p>
+
 This time, the CPU stops on its own, the script ends, and the Editor window reappears.
 
 Finally, we'll have a little light show, exercising all 7 of the index registers in succession, until you get tired and click 'Stop' on the Console window.
