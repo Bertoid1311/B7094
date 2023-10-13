@@ -563,7 +563,7 @@ Note that, except for tape unit B3, which we haven't yet done anything with, the
 <img src="Printer_screenshot5.jpg" width="65%">
 </p>
 
-(13) Now click on the channel-letter+decimal-unit-number of the Tape Unit corresponding to SYSOU1 (A3). The Tape Viewer window will appear, displaying in BCD mode the output generated during this very brief run of IBSYS.
+(13) Now click on the channel-letter+decimal-unit-number of the Tape Unit corresponding to SYSOU1 (A3=01203 SYSOUT.BCD). The Tape Viewer window will appear, displaying in BCD mode the output generated during this very brief run of IBSYS.
 
 You can see from the unit assignments listed above that this IBSYS tape really "expects" to be loaded from drive A1 (SYSLB1) and that drive B3 is assigned the function of secondary Peripheral Punch tape (SYSPP2), but we're simply showing that as far as the emulator is concerned, any configured drive can be set as the 'Load Tape' drive. However, if no "Set Boot=" Scripter command is executed, the default is in fact A1. Also, a 'Reset' or 'Clear' of the CPU will reset the default boot drive to A1 (hence the 'Press Clear' comes **before** the 'Set Boot=B3' in the list of commands above).
 
