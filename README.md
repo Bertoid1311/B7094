@@ -509,7 +509,7 @@ You could even alternate between executing commands via the Editor and Scripter,
     Set Boot=B3
     Set SenSw 1 ON
 
-The Tape Drives window will now look like:
+Click the 'All' radiobutton on the Tape Drives window. It will now look like:
 
 <p align="center">
 <img src="Tape_Drives_screenshot2.jpg" width="65%">
