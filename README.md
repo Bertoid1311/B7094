@@ -36,7 +36,7 @@ Finally, note that this project is maintained solely at the leisure of its autho
 
 If you're a "casual" user, and running Windows, just:
 
-- Download the B7094V34A_\*.zip distribution archive
+- Download a B7094V34A_\*.zip distribution archive
 
 - Extract it into a new folder
 
