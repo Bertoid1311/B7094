@@ -30,6 +30,8 @@ Checksums are listed for the following files:
     B7094V34A_64.tgz
     reloc_scripts_x-nix.tgz
 
+Finally, note that this project is maintained solely at the leisure of its author. Users are welcome to record any bugs or complaints in the GitHub "Issues" list, but there's no guarantee that they'll be addressed in a timely fashion (or at all).
+
 ## Basic usage
 
 If you're a "casual" user, and running Windows, just:
