@@ -1,5 +1,15 @@
 B7094 is a Windows-based emulator for the IBM 7094 mainframe computer from the 1960s.
 
+## Downloading this software
+
+First of all, note that this is **unsigned** software. The developer has no wish to pay money to a certificate-granting authority to alter this.  This means, at best, that the first time you run one of the executables provided here, you'll get the standard warning from Windows:
+
+<p align="center">
+<img src="Windows_security_warning.jpg" width="45%">
+</p>
+
+At worst, Windows Defender will be in a mood not to allow you to download the executable(s) at all. There's nothing we can do about this. You might want to wait a while for Defender's malware signature file to be updated, and then try again. We have provided a number of alternatives, one of which might work if the file containing both the 32-bit and the 64-bit executable is blocked: a file containing only the 32-bit executable, and a file containing only the 64-bit executable. Sometimes Defender blocks one, sometimes the other (seldom both at the same time). There's also, as a last resort, a file containing only the source code (the files with the executables also contain the source, and there are extensive instructions on how to install Lazarus/Free Pascal and rebuild from source, for what it's worth).
+
 ## Basic usage
 
 If you're a "casual" user, and running Windows, just:
