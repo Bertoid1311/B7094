@@ -208,7 +208,7 @@ Note that the "Include File=" command in the script is surrounded by text consti
 
 ####
     $LIST
-    $DATE          091423
+    $DATE          101323
     $UNITS
     $JOB           SYSDMP
     $EXECUTE       FORTRAN
@@ -248,7 +248,11 @@ There's no demo source file that's pure IBJOB/MAP ("IBMAP") Macro Assembly Progr
 
 If no path is given, the Scripter's "Include File=" command will find the file of that name in the ..\Files\Cards directory. This is the default directory where B7094 keeps source-code "decks" for all the included demo programs. This is true even if, as is the case here, the program and its enclosing control cards must be converted to a tape before the job can run (which is required here because the FORTRAN II subsystem does not permit job input from cards. This conversion occurs slightly further on in the "Xample_Sysdmp.Fap.KSYS.EC7" script file you currently have open in the Editor.) The ..\Files\Tapes directory is where the IBSYS tapes live, in addition to some other binary files that are used to create relocatable binary jobs for input on tape. Most of the files in ..\Files\Cards are text files -- either source code or input data for a demo program -- though there are also some binary files in that directory, used to create relocatable binary jobs for input via the card reader.
 
-There are two alternatives if you want to keep your own files elsewhere than in the expected directories: a) use the full path name in the "Include File" command or b) add to or change the list of default search paths on the B7094 "Configuration" window (click the "Config" checkbox on the Control Panel to bring it up). You might in fact want to create ..\Files\MyScripts and ..\Files\MyCards directories underneath your B7094 installation directory, and add these directories to the list of search paths on the Configuration window.
+There are two alternatives if you want to keep your own files elsewhere than in the expected directories: a) use the full path name in the "Include File" command or b) add to or change the list of default search paths on the B7094 "Configuration" window (click the "Config" checkbox on the Control Panel to bring it up). You might in fact want to create ..\Files\MyScripts and ..\Files\MyCards directories underneath your B7094 installation directory, and add these directories to the list of search paths on the Configuration window:
+
+<p align="center">
+<img src="Configuration_screenshot.jpg" width="65%">
+</p>
 
 The ..\Output directory is something of a scrapheap. It contains files built by the Scripter (e.g., SysIn.BCD), files created during execution of a program (e.g., SysOut.BCD), SCRATCH.*.BIN files created during system setup, various bits and pieces used during the assembly of a relocatable binary job (reloc.bin, RelocHeader.BIN, RelocTrailer.BIN), trace (.TRC) files, and Tape Viewer dump (.DMP) files.
 
