@@ -21,15 +21,14 @@ For the paranoid, there's also a file "SHA_512_checksums.txt" containing checksu
 Checksums are listed for the following files:
 
 ####
+    B7094V34A_32+64.zip
     B7094V34A_32.zip
     B7094V34A_64.zip
-    B7094V34A_32+64.zip
     B7094V34A_Src_only.zip
     B7094V34A_32.tgz
-    B7094V34A_64.tgz
     B7094V34A_32+64.tgz
+    B7094V34A_64.tgz
     reloc_scripts_x-nix.tgz
-    B7094-main.zip
 
 ## Basic usage
 
