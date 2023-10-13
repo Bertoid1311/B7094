@@ -413,7 +413,7 @@ Here's another example, this time showing how to load and run the tape-based 9M7
 
 (3) On the 'IBM 729 Tape Drives' window, click 'Add Drive' (this automatically selects the 'Show All' radiobutton).
 
-(4) In the newly-visible Tape Unit panel, click the 'Opn' button, and navigate to ..\Files\Tapes. Open tape image file "9M71B.BIN". The name of the image file will appear next to its channel-letter+decimal-unit-number=device-address identifier. The 'Size:' of the image will also be displayed.
+(4) In the newly-visible Tape Unit panel, click the 'Opn' button, and navigate to ..\Files\Tapes. Open tape image file "9M71B.BIN". The name of the image file will appear next to its channel-letter+decimal-unit-number=octal-device-address identifier. The 'Size:' of the image will also be displayed.
 
 <p align="center">
 <img src="Tape_Drives_screenshot1.jpg" width="65%">
