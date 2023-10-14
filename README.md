@@ -58,6 +58,8 @@ There is also more documentation in the "Docs" sub-folder of the install folder,
 
 - **B7094SuggestedManuals.txt** gives links to some useful manuals on bitsavers and elsewhere.
 
+- **B7094DebuggingExamples.pdf** gives a couple of simple illustrations of how the facililties in B7094 can be used to perform some (admittedly rudimentary) debugging of programs running on the emulated machine.
+
 - **B7094WhatsNew.txt** describes the current status and history of the emulator (including its very earliest history).
 
 ## Additional details
