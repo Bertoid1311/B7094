@@ -44,7 +44,7 @@ There is also more documentation in the "Docs" sub-folder of the install folder,
 
 - **B7094ReadMe.pdf** started out as this README.md, then ballooned into an illustrated user's manual.  That's been converted to a PDF (including the illustrations) and tucked into the Docs subdirectory. The earlier README.md and all its attendant jpgs (as well as a markdown file and jpgs that became "B7094DebuggingExamples.pdf") are preserved in "markdown_archive.zip".
 
-- **B7094SourceReadMe.txt** lists the source files in the ..\Build\Source sub-folder of the install folder. Describes each window file in some detail, making it something of a "user's manual". Describes how to install and configure Lazarus/Free Pascal and rebuild the B7094 executables.
+- **B7094SourceReadMe.txt** lists the source files in the ..\Build\Source sub-folder of the install folder. Describes each window file in some detail, also making it something of a "user's manual". Describes how to install and configure Lazarus/Free Pascal and rebuild the B7094 executables.
 
 - **B7094ScripterSyntax.txt** describes in detail the command syntax of the EC7 script language.
 
