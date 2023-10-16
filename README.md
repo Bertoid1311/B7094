@@ -16,9 +16,9 @@ Checksums are listed for the following files:
     B7094V34A_64.zip
     B7094V34A_Src_only.zip
     B7094V34A_32+64.tgz
-    reloc_scripts_x-nix.tgz
+    reloc_scripts_X-nix.tgz
 
-The B7094V34A_32+64.zip and B7094V34A_32+64.tgz archives have identical contents; the latter is only provided for the convenience of Linux users who'd like to try out B7094 under Wine but don't happen to have Zip installed. The contents of "reloc_scripts_x-nix.tgz" are described in "B7094ReadMe.pdf", included in the documentation (but that archive can be ignored by most users).
+The B7094V34A_32+64.zip and B7094V34A_32+64.tgz archives have identical contents; the latter is only provided for the convenience of Linux users who'd like to try out B7094 under Wine but don't happen to have Zip installed. The contents of "reloc_scripts_X-nix.tgz" are described in "B7094ReadMe.pdf", included in the documentation (but that archive can be ignored by most users).
 
 Finally, note that this project is maintained solely at the leisure of its author. Users are welcome to record any bugs or complaints in the GitHub "Issues" list, but there's no guarantee that they'll be addressed in a timely fashion (or at all).
 
