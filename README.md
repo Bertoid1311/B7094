@@ -53,3 +53,7 @@ There is also more documentation in the "Docs" sub-folder of the install folder,
 - **B7094WhatsNew.txt** describes the current status and history of the emulator (including its very earliest history).
 
 ## Enjoy!
+
+B7094 running on an ARM-based Mac Mini, via wine 9.0 and the Rosetta 2 x86-to-ARM translator:
+
+![screenshot](B7094_on_Mac_Mini.jpg)
